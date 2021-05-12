@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="it">
 <context>
     <name>@default</name>
     <message>
@@ -120,22 +120,25 @@ Published under the GNU Public License {1999-2014 ?} {1999-2015 ?}</translation>
     </message>
     <message>
         <source>MusE</source>
-        <translation type="unfinished">MusE</translation>
+        <translation>MusE</translation>
     </message>
     <message>
         <source>Internals</source>
-        <translation type="unfinished"></translation>
+        <translation>Parti interne</translation>
     </message>
     <message>
         <source>System information (useful for debugging):</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioni di sistema (utili per il debugging):</translation>
     </message>
     <message>
         <source>(C) Copyright 1999-2020 the MusE development team.
 See https://muse-sequencer.github.io for new versions and more information.
 
 Published under the GNU Public License.</source>
-        <translation type="unfinished"></translation>
+        <translation>(C) Copyright 1999-2020 il team di sviluppo di MusE
+Visita https://muse-sequencer.github.io per aggiornamenti e ulteriri informazioni.
+
+Rilasciato sotto la GNU&#xa0;Public License.</translation>
     </message>
 </context>
 <context>
@@ -166,7 +169,7 @@ Published under the GNU Public License.</source>
     </message>
     <message>
         <source>y-stretch</source>
-        <translation type="unfinished"></translation>
+        <translation>allunga-y</translation>
     </message>
     <message>
         <source>Events</source>
@@ -178,11 +181,11 @@ Published under the GNU Public License.</source>
     </message>
     <message>
         <source>poly pressure</source>
-        <translation type="unfinished"></translation>
+        <translation>poly pressure</translation>
     </message>
     <message>
         <source>controller</source>
-        <translation type="unfinished"></translation>
+        <translation>controller</translation>
     </message>
     <message>
         <source>aftertouch</source>
@@ -190,11 +193,11 @@ Published under the GNU Public License.</source>
     </message>
     <message>
         <source>pitch bend</source>
-        <translation type="unfinished"></translation>
+        <translation>pitch bend</translation>
     </message>
     <message>
         <source>program change</source>
-        <translation type="unfinished"></translation>
+        <translation>program change</translation>
     </message>
     <message>
         <source>special</source>
@@ -383,63 +386,63 @@ Published under the GNU Public License.</source>
     </message>
     <message>
         <source>Themes</source>
-        <translation type="unfinished"></translation>
+        <translation>Temi</translation>
     </message>
     <message>
         <source>Show names</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra nomi</translation>
     </message>
     <message>
         <source>Show e&amp;vents</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra e&amp;venti</translation>
     </message>
     <message>
         <source>Show Ca&amp;kewalk style</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra stile Ca&amp;kewalk</translation>
     </message>
     <message>
         <source>Wave Drawing in Parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Suddivisione dell&apos;onda</translation>
     </message>
     <message>
         <source>O&amp;nly outline</source>
-        <translation type="unfinished"></translation>
+        <translation>So&amp;lo contorni</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiunti</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimuovi</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella</translation>
     </message>
     <message>
         <source>Show snap grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra griglia magnetica</translation>
     </message>
     <message>
         <source>Choose color...</source>
-        <translation type="unfinished"></translation>
+        <translation>Scegli colore...</translation>
     </message>
     <message>
         <source>Add to palette</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi alla palette</translation>
     </message>
     <message>
         <source>Save all...</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva tutti...</translation>
     </message>
     <message>
         <source>Load all...</source>
-        <translation type="unfinished"></translation>
+        <translation>Carica tutti...</translation>
     </message>
     <message>
         <source>Size (pt)</source>
-        <translation type="unfinished"></translation>
+        <translation>DImensione (pt)</translation>
     </message>
     <message>
         <source>At what point size to switch from aliased text
@@ -450,23 +453,30 @@ Aliased text is bright and sharp but may look poor
  in some cases.
 The font family is forced to &apos;Sans&apos;, which should 
  give reasonable results at low point sizes.</source>
-        <translation type="unfinished"></translation>
+        <translation>A quale dimensione del carattere passare
+dal testo con aliasing a quello senza aliasing.
+Zero vuol dire usa sempre anti-aliasing.
+Il testo con aliasing è chiaro e definito ma in 
+alcuni casi ha un aspetto poco gradevole.
+La famiglia dei font è impostata a &apos;Sans&apos;, che 
+dovrebbe offrire risultati ragionevoli a basse 
+dimensioni del carattere.</translation>
     </message>
     <message>
         <source>Icon size</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensione icone</translation>
     </message>
     <message>
         <source>Custom cursor size</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensione del cursore personalizzata</translation>
     </message>
     <message>
         <source>Distribute current system font family to all other fonts</source>
-        <translation type="unfinished"></translation>
+        <translation>Adotta per tutti i font la famiglia dell&apos;attuale font di sistema</translation>
     </message>
     <message>
         <source>System</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistema</translation>
     </message>
     <message>
         <source>Font sizes for fonts 1-6 are determined at every program start, to optimally match the currently used system font.
@@ -479,54 +489,67 @@ Font 3: 100%
 Font 4: 80%
 Font 5: 80%
 Font 6: 80%</source>
-        <translation type="unfinished"></translation>
+        <translation>Le dimensioni dei font per i font 1-6 sono determinate ad ogni avvio del programma per meglio adattarsi al font di sistema in uso.
+Disabilita se vuoi fissare le dimensioni dei font nelle impostazioni qui in basso.
+
+Fattori di proporzione predefiniti:
+Font 1: 70%
+Font 2: 100%
+Font 3: 100%
+Font 4: 80%
+Font 5: 80%
+Font 1: 80%</translation>
     </message>
     <message>
         <source>Calculate and apply relative font sizes dynamically at program start</source>
-        <translation type="unfinished"></translation>
+        <translation>Calcola e applica dinamicamente dimensioni relative dei font all&apos;avvio del programma</translation>
     </message>
     <message>
         <source>Maximum aliased size, 0 = no alias</source>
-        <translation type="unfinished"></translation>
+        <translation>Massima dimensione con aliasing, 0 = No aliasing</translation>
     </message>
     <message>
         <source>Insert</source>
-        <translation type="unfinished"></translation>
+        <translation>Inserisci</translation>
     </message>
     <message>
         <source>Fill in optimal font sizes in relation to the system font</source>
-        <translation type="unfinished"></translation>
+        <translation>Compila dimensioni di font ottimali in relazione al font di sistema</translation>
     </message>
     <message>
         <source>RMS/PEAK (&amp;traditional)</source>
-        <translation type="unfinished"></translation>
+        <translation>RMS/PEAK (&amp;tradizionale)</translation>
     </message>
     <message>
         <source>Current theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Tema attuale</translation>
     </message>
     <message>
         <source>If a user style sheet for one of  the MusE color schemes exists
 and is selected, it will be merged with the default style sheet
 for this scheme. The user style sheet takes precedence and 
 overwrites identical settings in the default style sheet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se esiste un foglio di stile utente per uno degli schemi di 
+colore di MusE ed esso è selezionato, sarà incorporato nel foglio
+di stile predefinito per quello schema. Il foglio di stile utente ha
+precedenza e sovrascrive le impostazioni corrispondenti nel
+foglio di stile predefinito.</translation>
     </message>
     <message>
         <source>Cascade default and user theme style sheets</source>
-        <translation type="unfinished"></translation>
+        <translation>Metti in cascata i fogli di stile predefinito e utente</translation>
     </message>
     <message>
         <source>Show icons in menus</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra icone nei menù</translation>
     </message>
     <message>
         <source>Use native standard dialogs</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa finestre di dialogo standard native</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Aiuto</translation>
     </message>
 </context>
 <context>
@@ -630,54 +653,54 @@ overwrites identical settings in the default style sheet.</source>
     </message>
     <message>
         <source>Affect CCs at</source>
-        <translation type="unfinished"></translation>
+        <translation>Applica su CC a</translation>
     </message>
 </context>
 <context>
     <name>AudioConverterSettingsBase</name>
     <message>
         <source>Audio Converter Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazioni convertitore audio</translation>
     </message>
     <message>
         <source>Available audio converters</source>
-        <translation type="unfinished"></translation>
+        <translation>Convertitori audio disponibili</translation>
     </message>
     <message>
         <source>Offline settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazioni tempo non reale...</translation>
     </message>
     <message>
         <source>Realtime settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazioni tempo reale...</translation>
     </message>
     <message>
         <source>Gui settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazioni interfaccia grafica...</translation>
     </message>
     <message>
         <source>Use default preferences (see Global Settings)</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa impostazioni predefinite (vedi Impostazioni globali)</translation>
     </message>
     <message>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferenze</translation>
     </message>
     <message>
         <source>When only samplerate conversion is required, use:</source>
-        <translation type="unfinished"></translation>
+        <translation>Quando è richiesta solo la conversione della frequenza di campionamento, usa:</translation>
     </message>
     <message>
         <source>When time stretching or pitch shifting is required, use:</source>
-        <translation type="unfinished"></translation>
+        <translation>Quando è richiesto il time stretching o il pitch shifting, usa:</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation>Annulla</translation>
     </message>
 </context>
 <context>
@@ -702,23 +725,23 @@ overwrites identical settings in the default style sheet.</source>
     <name>ChooseSysexBase</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra di dialogo</translation>
     </message>
     <message>
         <source>Hex:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hex:</translation>
     </message>
     <message>
         <source>Comment:</source>
-        <translation type="unfinished"></translation>
+        <translation>Commento:</translation>
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;OK</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished">A&amp;nnulla</translation>
+        <translation>A&amp;nnulla</translation>
     </message>
 </context>
 <context>
@@ -761,7 +784,7 @@ overwrites identical settings in the default style sheet.</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Stato</translation>
     </message>
 </context>
 <context>
@@ -783,7 +806,7 @@ overwrites identical settings in the default style sheet.</source>
     <name>ConfigMidiFileBase</name>
     <message>
         <source>MusE: Config Midi File Import/Export</source>
-        <translation type="unfinished"></translation>
+        <translation>MusE: Configura import/export file MIDI</translation>
     </message>
     <message>
         <source>Import:</source>
@@ -819,11 +842,11 @@ overwrites identical settings in the default style sheet.</source>
     </message>
     <message>
         <source>Enable extended smf format (currently not implemented)</source>
-        <translation type="unfinished"></translation>
+        <translation>Abilita formato SMF esteso (non implementato)</translation>
     </message>
     <message>
         <source>Use &amp;2-byte time signatures instead of standard 4</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa indicazioni di tempo a &amp;2 byte piuttosto che ai 4 standard</translation>
     </message>
     <message>
         <source>Alt+2</source>
@@ -839,67 +862,69 @@ overwrites identical settings in the default style sheet.</source>
     </message>
     <message>
         <source>Note: Format 0 uses the FIRST midi track&apos;s name/comment in the arranger</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: Il formato 0 usa il nome/commento della PRIMA traccia MIDI nell&apos;arrangiatore</translation>
     </message>
     <message>
         <source>Division:</source>
-        <translation type="unfinished"></translation>
+        <translation>Suddivisione:</translation>
     </message>
     <message>
         <source>0 (single track)</source>
-        <translation type="unfinished"></translation>
+        <translation>0 (traccia singola)</translation>
     </message>
     <message>
         <source>1 (multiple tracks)</source>
-        <translation type="unfinished"></translation>
+        <translation>1 (tracce multiple)</translation>
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;OK</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished">A&amp;nnulla</translation>
+        <translation>A&amp;nnulla</translation>
     </message>
     <message>
         <source>Default instrument:</source>
-        <translation type="unfinished"></translation>
+        <translation>Strumento predefinito:</translation>
     </message>
     <message>
         <source>Device Name metas trump Port metas if both exist</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Omitted &quot;if both exist&quot; for brevity, should be clear from context</translatorcomment>
+        <translation>Meta dei nomi dei dispositivi prevalgono su quelli delle porte</translation>
     </message>
     <message>
         <source>Instrument Name metas trump Mode sysexes if both exist</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Omitted &quot;if both exist&quot; for brevity, should be clear from context</translatorcomment>
+        <translation>Meta dei nomi degli strumenti prevalgono sui sysex delle modalità</translation>
     </message>
     <message>
         <source>Mode sysexes</source>
-        <translation type="unfinished"></translation>
+        <translation>Sysex delle modalità</translation>
     </message>
     <message>
         <source>Instrument name metas</source>
-        <translation type="unfinished"></translation>
+        <translation>Meta dei nomi degli strumenti</translation>
     </message>
     <message>
         <source>Port metas</source>
-        <translation type="unfinished"></translation>
+        <translation>Meta porte</translation>
     </message>
     <message>
         <source>Device name metas</source>
-        <translation type="unfinished"></translation>
+        <translation>Meta nomi dei dispositivi</translation>
     </message>
     <message>
         <source>Export a Port/Device meta for format 0</source>
-        <translation type="unfinished"></translation>
+        <translation>Esporta un meta porta/dispositivo per il formato 0</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importa</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Esporta</translation>
     </message>
     <message>
         <source>Running Status saves space by not 
@@ -907,11 +932,15 @@ overwrites identical settings in the default style sheet.</source>
 If this is off every event will have a 
  status byte, increasing file size.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Lo stato di esecuzione risparmia 
+spazio evitando di ripetere gli invii 
+di byte di stato. Se disabilitato, 
+aumenterà la dimensione dei file.
+</translation>
     </message>
     <message>
         <source>Use Running &amp;Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa &amp;Stato di esecuzione</translation>
     </message>
     <message>
         <source>To turn a note off some devices can use 
@@ -919,11 +948,16 @@ If this is off every event will have a
  both. When used with Running Status 
  this setting saves space. It is safe to 
  leave this off.</source>
-        <translation type="unfinished"></translation>
+        <translation>Per fermare una nota alcuni dispositivi
+possono usare messaggi note off, 
+messaggi note on con velocità nulla o
+entrambi. Quando usato con lo Stato di
+esecuzione questa impostazione 
+risparmia spazio. È sicuro disabilitarla.</translation>
     </message>
     <message>
         <source>Replace note-offs with &amp;zero velocity note-ons</source>
-        <translation type="unfinished"></translation>
+        <translation>Sostituisci note-off con note-on a velocità &amp;zero</translation>
     </message>
     <message>
         <source>If enabled, and a drum track has any drum map 
@@ -936,7 +970,18 @@ All drum notes and drum controllers will be
  the unmodified note.
 
 See &quot;What&apos;s This ?&quot; for more info.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se abilitato e una traccia percussione ha 
+sovrscrive, Porta Canale e ANote delle drum map, 
+queste saranno applicate alle note
+della percussione ed ai loro controller.
+
+Se disabilitato, le mappature delle percussioni
+saranno ignorate durante l&apos;esportazione.
+Tutte le note ed i controller della percussione 
+saranno esportate usando la Porta ed il Canale
+della traccia e la nota non modificata.
+
+Vedi &quot;Cos&apos;è questo ?&quot; per maggiori informazioni.</translation>
     </message>
     <message>
         <source>If enabled, and a drum track has any drum map
@@ -967,11 +1012,43 @@ If re-importing or opening in another midi
  can have a chance at faithful reproduction. 
 Some user adjustment may be required 
  (choice of instruments, ports, etc).</source>
-        <translation type="unfinished"></translation>
+        <translation>Se abilitato e una traccia percussione ha 
+sovrscrive, Porta Canale e ANote delle drum 
+map, queste saranno applicate alle note
+della percussione ed ai loro controller.
+Le sovascritture di Porte richiedono la 
+creazione di una traccia separata 
+(formato 1 richiesto). Le sovrascritture di Canali 
+continueranno ad apparire nella stessa traccia
+del file esportato, ma non appena re-importato 
+in un programma come MusE,questo lo tratterà 
+come una nuova traccia e ne creerà una.
+
+Se disabilitato, le drum map saranno ignorate.
+Tutte le note ed i controller della percussione 
+saranno esportate usando la Porta ed il Canale
+della traccia e la nota non modificata. Quando si
+re-importa in un altro programma, starà a quel
+programma decidere se ridirezionare le
+Porte, i Canali e le Note per far suonare la 
+traccia nella maniera voluta.
+
+Le sovrascritture della drum map sono una
+particolarità di MusE. Quando re-importi in 
+MusE, per una riproduzione fedele all&apos;originale
+disabilita questa impostizione e applica una drum
+map ed alcune sovrascritture in un secondo 
+momento.
+Se re-importi o apri il file in un lettore MIDI 
+diverso, abilità questa impostazione così che esso
+possa avere una possibilità di riprodurlo in maniera
+fedele all&apos;originale.
+Potrebbe essere richiesto qualche altro 
+aggiustamento (strumenti, porte, etc.).</translation>
     </message>
     <message>
         <source>Apply drum map Port, Channel, ANote overrides </source>
-        <translation type="unfinished"></translation>
+        <translation>Applica sovrascritture di Porta, Canale ed ANote delle drum map </translation>
     </message>
     <message>
         <source>If enabled, any drum notes or drum controllers
@@ -984,7 +1061,17 @@ If disabled, any drum notes or drum controllers
  is overridden will stay on that track in the midi file.
 
 See &quot;What&apos;s This ?&quot; for more info.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se abilitato, qualsiasi nota o controller di
+percussioni su una data drum map in cui
+il Canale è sovrascritto andrà in una traccia
+separata nel file MIDI.
+
+Se disabilitato, qualsiasi nota o controller di
+percussioni su una data drum map in cui
+il Canale è sovrascritto rimarrà nella stessa
+traccia nel file MIDI.
+
+Vedi &quot;Cos&apos;è questo ?&quot; per maggiori informazioni.</translation>
     </message>
     <message>
         <source>If enabled, any drum notes or drum controllers
@@ -1002,26 +1089,42 @@ In this mode the track events can be on different
  app such as MusE, MusE will automatically
  create the extra track.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Se abilitato, qualsiasi nota o controller di
+percussioni su una data drum map in cui
+il Canale è sovrascritto andrà in una traccia
+separata nel file MIDI. La traccia aggiuntiva
+è creata in automatico. In questa modalità 
+tutti gli eventi in una traccia del file MIDI
+sono sullo stesso canale.
+
+Se disabilitato, qualsiasi nota o controller di
+percussioni su una data drum map in cui
+il Canale è sovrascritto rimarrà nella stessa
+traccia nel file MIDI. In questa modalità gli 
+eventi della traccia possono essere su canali
+diversi. Se tuttavia il file è re-importato in un
+programma come MusE, questo creerà
+automaticamente la traccia aggiuntiva.
+</translation>
     </message>
     <message>
         <source>Drum map Channel overrides go to a separate track</source>
-        <translation type="unfinished"></translation>
+        <translation>Sovrascritture dei Canali delle drum map</translation>
     </message>
     <message>
         <source>Export instrument or mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Esporta strumento o modalità:</translation>
     </message>
     <message>
         <source>Export port or device metas:</source>
-        <translation type="unfinished"></translation>
+        <translation>Esporta meta di porta o dispositivo:</translation>
     </message>
 </context>
 <context>
     <name>CopyOnWriteDialogBase</name>
     <message>
         <source>Copy Wave Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia file audio</translation>
     </message>
     <message>
         <source>Some sound files will be copied to the Project Directory, 
@@ -1034,11 +1137,20 @@ Multiple copies will be made in some cases.
 
 If no Project has been created yet, you will be asked to,
 giving another chance to cancel.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alcuni file audio saranno copiati nella cartella di 
+progetto, perché non sono scrivibili oppure perché più 
+eventi audio indipendenti li condividono.
+(Se preferisci piuttosto che gli Eventi audio siano 
+interdipendenti, prova ad usare Clona parti.)
+
+Copie multiple saranno effettuate in alcuni casi.
+
+Se nessun Progetto è stato ancora creato, ti sarà data 
+un&apos;altra possibilità per annullare.</translation>
     </message>
     <message>
         <source>These files will be copied to the Project Directory:</source>
-        <translation type="unfinished"></translation>
+        <translation>Questi file verranno copiati nella cartella di progetto:</translation>
     </message>
 </context>
 <context>
@@ -1093,27 +1205,27 @@ giving another chance to cancel.</source>
     </message>
     <message>
         <source>&amp;Looped Events</source>
-        <translation type="unfinished"></translation>
+        <translation>Eventi in &amp;Loop</translation>
     </message>
     <message>
         <source>Parts</source>
-        <translation type="unfinished">Parti</translation>
+        <translation>Parti</translation>
     </message>
     <message>
         <source>Selected parts or c&amp;urrent part</source>
-        <translation type="unfinished"></translation>
+        <translation>Parti selezionate o parte att&amp;uale</translation>
     </message>
     <message>
         <source>All parts &amp;in editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutte le part&amp;i nell&apos;editor</translation>
     </message>
     <message>
         <source>&amp;Absolute</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Assoluto</translation>
     </message>
     <message>
         <source>Rela&amp;tive</source>
-        <translation type="unfinished"></translation>
+        <translation>Rela&amp;tive</translation>
     </message>
 </context>
 <context>
@@ -6804,21 +6916,21 @@ Connected tracks are also &apos;phantom&apos; soloed.</source>
     <name>MusEGui::CompactKnob</name>
     <message>
         <source>off</source>
-        <translation type="unfinished">spento</translation>
+        <translation>spento</translation>
     </message>
 </context>
 <context>
     <name>MusEGui::CompactPatchEdit</name>
     <message>
         <source>Patch name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome patch</translation>
     </message>
 </context>
 <context>
     <name>MusEGui::CompactSlider</name>
     <message>
         <source>off</source>
-        <translation type="unfinished">spento</translation>
+        <translation>spento</translation>
     </message>
 </context>
 <context>
@@ -9597,6 +9709,7 @@ Likely the selected track is the wrong type.</source>
             <numerusform>%n parts out of %1 could not be imported.
 Likely the selected track is the wrong type.
         </numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -9606,6 +9719,7 @@ Likely the selected track is the wrong type.</source>
             <numerusform>%n parts could not be imported.
 Likely the selected track is the wrong type.
         </numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -10135,6 +10249,7 @@ Likely the selected track is the wrong type.</source>
             <numerusform>%n parts out of %1 could not be pasted.
 Likely the selected track is the wrong type.
         </numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -10144,6 +10259,7 @@ Likely the selected track is the wrong type.</source>
             <numerusform>%n parts could not be pasted.
 Likely the selected track is the wrong type.
         </numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -10270,6 +10386,7 @@ Likely the selected track is the wrong type.
         <translation type="unfinished">
             <numerusform>%n quarters
         </numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -10290,6 +10407,7 @@ Likely the selected track is the wrong type.
         <translation type="unfinished">
             <numerusform>%n quarters
         </numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -14700,7 +14818,7 @@ Continue?</source>
     </message>
     <message>
         <source>Open pianoroll</source>
-        <translation type="unfinished">Apri pianoroll</translation>
+        <translation>Apri pianoroll</translation>
     </message>
     <message>
         <source>Open drumeditor</source>
