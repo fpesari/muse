@@ -1232,222 +1232,232 @@ un&apos;altra possibilità per annullare.</translation>
     <name>DeicsOnzeGui</name>
     <message>
         <source>Save configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva configurazione</translation>
     </message>
     <message>
         <source>Critical Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore grave</translation>
     </message>
     <message>
         <source>Cannot open file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile aprire il file %1</translation>
     </message>
     <message>
         <source>Parsing error for file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore di lettura per il file %1</translation>
     </message>
     <message>
         <source>Load category dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra di caricamento categoria</translation>
     </message>
     <message>
         <source>Load set dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra di caricamento insieme</translation>
     </message>
     <message>
         <source>Save set dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra di salvataggio insieme</translation>
     </message>
     <message>
         <source>New category</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuova categoria</translation>
     </message>
     <message>
         <source>Delete category</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella categoria</translation>
     </message>
     <message>
         <source>Load category</source>
-        <translation type="unfinished"></translation>
+        <translation>Carica categoria</translation>
     </message>
     <message>
         <source>Save category</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva categoria</translation>
     </message>
     <message>
         <source>Load set</source>
-        <translation type="unfinished"></translation>
+        <translation>Carica set</translation>
     </message>
     <message>
         <source>Save set</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva set</translation>
     </message>
     <message>
         <source>Delete set</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella set</translation>
     </message>
     <message>
         <source>New subcategory</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuova sottocategoria</translation>
     </message>
     <message>
         <source>Delete subcategory</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella sottocategoria</translation>
     </message>
     <message>
         <source>Load subcategory</source>
-        <translation type="unfinished"></translation>
+        <translation>Carica sottocategoria</translation>
     </message>
     <message>
         <source>Save subcategory</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva sottocategoria</translation>
     </message>
     <message>
         <source>New preset</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuovo preset</translation>
     </message>
     <message>
         <source>Delete preset</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella preset</translation>
     </message>
     <message>
         <source>Load preset</source>
-        <translation type="unfinished"></translation>
+        <translation>Carica preset</translation>
     </message>
     <message>
         <source>Save preset</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva preset</translation>
     </message>
     <message>
         <source>No more category supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Altre categorie non supportate</translation>
     </message>
     <message>
         <source>You can not add more categories</source>
-        <translation type="unfinished"></translation>
+        <translation>Non puoi aggiungere altre categorie</translation>
     </message>
     <message>
         <source>Do you really want to delete %1 ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vuoi davvero cancellare %1?</translation>
     </message>
     <message>
         <source>&amp;Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>S&amp;i</translation>
     </message>
     <message>
         <source>&amp;No</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;No</translation>
     </message>
     <message>
         <source>No category selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Nessuna categoria selezionata</translation>
     </message>
     <message>
         <source>You must first select a category.</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>&quot;First&quot; was implied</translatorcomment>
+        <translation>Devi selezionare una categoria.</translation>
     </message>
     <message>
         <source>Replace or add</source>
-        <translation type="unfinished"></translation>
+        <translation>Sostituisci o aggiungi</translation>
     </message>
     <message>
         <source>%1 is supposed to be affected to the hbank number %2, but there is already one on this slot.
  Do you want to replace it or to add it in the next free slot ?</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>CHECK: affected to?</translatorcomment>
+        <translation>%1 è probabilmente collegato all&apos;hbank numero %2, ma ce n&apos;è già una in questo spazio.
+ Vuoi sostituirla oppure inserirla nel prossimo spazio libero?</translation>
     </message>
     <message>
         <source>&amp;Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sostituisci</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">&amp;Aggiungi</translation>
+        <translation>&amp;Aggiungi</translation>
     </message>
     <message>
         <source>Download error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore di scaricamento</translation>
     </message>
     <message>
         <source>There is no more free category slot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non esistono altri spazi liberi per le categorie.</translation>
     </message>
     <message>
         <source>Save category dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra di salvataggio categoria</translation>
     </message>
     <message>
         <source>No more subcategory supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Altre sottocategorie non supportate</translation>
     </message>
     <message>
         <source>You can not add more subcategories</source>
-        <translation type="unfinished"></translation>
+        <translation>Non puoi aggiungere altre sottocategorie</translation>
     </message>
     <message>
         <source>No subcategory selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Nessuna categoria selezionata</translation>
     </message>
     <message>
         <source>You must first select a subcategory.</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>&quot;First&quot; was implied</translatorcomment>
+        <translation>Devi necessariamente selezionare una categoria.</translation>
     </message>
     <message>
         <source>Load subcategory dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra di caricamento sottocategoria</translation>
     </message>
     <message>
         <source>%1 is supposed to be affected to the lbank number %2, but there is already one on this slot.
  Do you want to replace it or to add it in the next free slot ?</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>CHECK: affected to?</translatorcomment>
+        <translation>%1 è probabilmente collegato all&apos;lbank numero %2, ma ce n&apos;è già una in questo spazio.
+ Vuoi sostituirla oppure inserirla nel prossimo spazio libero?</translation>
     </message>
     <message>
         <source>There is no more free subcategory slot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non esistono altri spazi liberi per le sottocategorie.</translation>
     </message>
     <message>
         <source>Save subcategory dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra di salvataggio sottocategoria</translation>
     </message>
     <message>
         <source>No more preset supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Altri preset non supportati</translation>
     </message>
     <message>
         <source>You can not add more presets</source>
-        <translation type="unfinished"></translation>
+        <translation>Non puoi aggiungere altri preset</translation>
     </message>
     <message>
         <source>No preset selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Nessun preset selezionato</translation>
     </message>
     <message>
         <source>You must first select a preset.</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>&quot;First&quot; was implied</translatorcomment>
+        <translation>Devi necessariamente selezionare un preset.</translation>
     </message>
     <message>
         <source>Load preset dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra di caricamento preset</translation>
     </message>
     <message>
         <source>%1 is supposed to be affected to the prog number %2, but there is already one on this slot.
  Do you want to replace it or to add it in the next free slot ?</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>CHECK: affected to?</translatorcomment>
+        <translation>%1 è probabilmente collegato al prog numero %2, ma ce n&apos;è già una in questo spazio.
+ Vuoi sostituirla oppure inserirla nel prossimo spazio libero?</translation>
     </message>
     <message>
         <source>There is no more free preset slot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non esistono altri spazi liberi per i preset.</translation>
     </message>
     <message>
         <source>Save preset dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra di salvataggio preset</translation>
     </message>
     <message>
         <source>Browse set dialog</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>CHECK: set?</translatorcomment>
+        <translation>Finestra di navigazione set</translation>
     </message>
     <message>
         <source>Browse image dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra di navigazione immagini</translation>
     </message>
 </context>
 <context>
