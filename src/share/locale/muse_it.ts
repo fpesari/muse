@@ -2461,15 +2461,15 @@ Wave form 8 = &lt;i&gt;if &lt;b&gt;t&lt;/b&gt;&amp;#060 pi then sin(2*&lt;b&gt;t
     </message>
     <message>
         <source>Parts</source>
-        <translation type="unfinished">Parti</translation>
+        <translation>Parti</translation>
     </message>
     <message>
         <source>Selected parts or c&amp;urrent part</source>
-        <translation type="unfinished"></translation>
+        <translation>Parti selezionate o parte att&amp;uale</translation>
     </message>
     <message>
         <source>All parts &amp;in editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutte le parti &amp;in editor</translation>
     </message>
 </context>
 <context>
@@ -2621,227 +2621,227 @@ Wave form 8 = &lt;i&gt;if &lt;b&gt;t&lt;/b&gt;&amp;#060 pi then sin(2*&lt;b&gt;t
     <name>EditGainBase</name>
     <message>
         <source>MusE: Modify gain</source>
-        <translation type="unfinished"></translation>
+        <translation>MusE: Modifica gain</translation>
     </message>
     <message>
         <source>Gain</source>
-        <translation type="unfinished"></translation>
+        <translation>Gain</translation>
     </message>
     <message>
         <source>200%</source>
-        <translation type="unfinished">200%</translation>
+        <translation>200%</translation>
     </message>
     <message>
         <source>100%</source>
-        <translation type="unfinished">100%</translation>
+        <translation>100%</translation>
     </message>
     <message>
         <source>0%</source>
-        <translation type="unfinished">0%</translation>
+        <translation>0%</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Reset</translation>
     </message>
     <message>
         <source>Alt+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+R</translation>
     </message>
     <message>
         <source>&amp;Apply</source>
-        <translation type="unfinished">&amp;Applica</translation>
+        <translation>&amp;Applica</translation>
     </message>
     <message>
         <source>Alt+A</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished">A&amp;nnulla</translation>
+        <translation>A&amp;nnulla</translation>
     </message>
     <message>
         <source>Alt+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+C</translation>
     </message>
 </context>
 <context>
     <name>EditInstrumentBase</name>
     <message>
         <source>MusE: Instrument Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>MusE: Editor strumenti</translation>
     </message>
     <message>
         <source>Instrument Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome strumento:</translation>
     </message>
     <message>
         <source>Selected instrument name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome strumento selezionato.</translation>
     </message>
     <message>
         <source>List of defined instruments.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista degli strumenti definiti.</translation>
     </message>
     <message>
         <source>Pa&amp;tches</source>
-        <translation type="unfinished"></translation>
+        <translation>Pa&amp;tches</translation>
     </message>
     <message>
         <source>List of groups and patches.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista di gruppi e patch.</translation>
     </message>
     <message>
         <source>Group/Patch</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppo/Patch</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Proprietà</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Nome:</translation>
+        <translation>Nome:</translation>
     </message>
     <message>
         <source>Group or patch name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome del gruppo o della patch</translation>
     </message>
     <message>
         <source>High Bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bank alta:</translation>
     </message>
     <message>
         <source>Patch high bank number</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero patch bank alta</translation>
     </message>
     <message>
         <source>Patch high bank number. --- means don&apos;t care.</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero patch bank alta. --- per ignorare.</translation>
     </message>
     <message>
         <source>---</source>
         <comment>dont care</comment>
-        <translation type="unfinished"></translation>
+        <translation>---</translation>
     </message>
     <message>
         <source>Low Bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bank bassa:</translation>
     </message>
     <message>
         <source>Patch low bank number</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero patch bank bassa</translation>
     </message>
     <message>
         <source>Patch low bank number. --- means don&apos;t care.</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero patch bank alta. --- per ignorare.</translation>
     </message>
     <message>
         <source>---</source>
-        <translation type="unfinished"></translation>
+        <translation>---</translation>
     </message>
     <message>
         <source>Program:</source>
-        <translation type="unfinished"></translation>
+        <translation>Programma:</translation>
     </message>
     <message>
         <source>Patch program number</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero di programma patch</translation>
     </message>
     <message>
         <source>Drum</source>
-        <translation type="unfinished"></translation>
+        <translation>Percussioni</translation>
     </message>
     <message>
         <source>Delete group or patch</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella gruppo o patch</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">&amp;Cancella</translation>
+        <translation>&amp;Cancella</translation>
     </message>
     <message>
         <source>Alt+D</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+D</translation>
     </message>
     <message>
         <source>New patch</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuova patch</translation>
     </message>
     <message>
         <source>New &amp;Patch</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuova &amp;Patch</translation>
     </message>
     <message>
         <source>Alt+P</source>
-        <translation type="unfinished">Alt+P</translation>
+        <translation>Alt+P</translation>
     </message>
     <message>
         <source>New group</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuovo gruppo</translation>
     </message>
     <message>
         <source>New &amp;Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuovo &amp;Gruppo</translation>
     </message>
     <message>
         <source>Alt+G</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+G</translation>
     </message>
     <message>
         <source>List of defined controllers</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista di controller definiti</translation>
     </message>
     <message>
         <source>List of defined controllers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista di controller definiti.</translation>
     </message>
     <message>
         <source>Name                  </source>
-        <translation type="unfinished"></translation>
+        <translation>Nome                  </translation>
     </message>
     <message>
         <source>Type       </source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo       </translation>
     </message>
     <message>
         <source>H-Ctrl</source>
-        <translation type="unfinished">H-Ctrl</translation>
+        <translation>H-Ctrl</translation>
     </message>
     <message>
         <source>L-Ctrl</source>
-        <translation type="unfinished">L-Ctrl</translation>
+        <translation>L-Ctrl</translation>
     </message>
     <message>
         <source>Min  </source>
-        <translation type="unfinished"></translation>
+        <translation>Min  </translation>
     </message>
     <message>
         <source>Max  </source>
-        <translation type="unfinished"></translation>
+        <translation>Max  </translation>
     </message>
     <message>
         <source>Def  </source>
-        <translation type="unfinished"></translation>
+        <translation>Pred  </translation>
     </message>
     <message>
         <source>Midi controller name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome controller MIDI</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo:</translation>
     </message>
     <message>
         <source>Midi controller type</source>
-        <translation type="unfinished">Tipo controllo Midi</translation>
+        <translation>Tipo controller Midi</translation>
     </message>
     <message>
         <source>Midi controller number high byte</source>
-        <translation type="unfinished">Numero controller Midi (byte alto)</translation>
+        <translation>Numero controller MIDI byte alto</translation>
     </message>
     <message>
         <source>Midi controller number low byte (* means drum controller)</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero controller MIDI byte basso (* significa controller percussioni)</translation>
     </message>
     <message>
         <source>Midi controller number low byte. 
@@ -2858,19 +2858,19 @@ Examples: The GS and XG instruments&apos;
     <message>
         <source>*</source>
         <comment>wild card</comment>
-        <translation type="unfinished">*</translation>
+        <translation>*</translation>
     </message>
     <message>
         <source>Range:</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervallo:</translation>
     </message>
     <message>
         <source>Min</source>
-        <translation type="unfinished"></translation>
+        <translation>Min</translation>
     </message>
     <message>
         <source>Minimum value. If negative, auto-translate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valore minimo. Se negativo, auto-traduzione.</translation>
     </message>
     <message>
         <source>Minimum value. If the minimum value 
@@ -2892,43 +2892,43 @@ Type &apos;Pitch&apos; is the exception. It is biased
  at zero, even with a negative minimum:
 &apos;Pitch&apos;: Min: -8192 Max: 8191
 True range: Min: -8192 Max: 8191 (bias 0)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Max</source>
-        <translation type="unfinished"></translation>
+        <translation>Max</translation>
     </message>
     <message>
         <source>Maximum value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valore massimo</translation>
     </message>
     <message>
         <source>Default:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valore predefinito:</translation>
     </message>
     <message>
         <source>L-Bank</source>
-        <translation type="unfinished"></translation>
+        <translation>L-Bank</translation>
     </message>
     <message>
         <source>off</source>
-        <translation type="unfinished">spento</translation>
+        <translation>spento</translation>
     </message>
     <message>
         <source>Progr.</source>
-        <translation type="unfinished"></translation>
+        <translation>Progr.</translation>
     </message>
     <message>
         <source>???</source>
-        <translation type="unfinished"></translation>
+        <translation>???</translation>
     </message>
     <message>
         <source>H-Bank</source>
-        <translation type="unfinished"></translation>
+        <translation>H-Bank</translation>
     </message>
     <message>
         <source>Default value. Off: No default.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valore predefinito. Off: nessun valore predefinito.</translation>
     </message>
     <message>
         <source>Default (initial) value. Off means no default.
@@ -2946,204 +2946,206 @@ Caution! Watch out for controllers such as
  values. You should probably turn &apos;off&apos; their 
  default (in piano roll or drum edit, and 
  instrument editor).</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>off</source>
         <comment>dont care</comment>
-        <translation type="unfinished">spento</translation>
+        <translation>spento</translation>
     </message>
     <message>
         <source>Add common controller</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>CHECK: &quot;comune&quot; or &quot;generico&quot;?</translatorcomment>
+        <translation>Aggiungi controller comune</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">&amp;Aggiungi</translation>
+        <translation>&amp;Aggiungi</translation>
     </message>
     <message>
         <source>Alt+A</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>Delete controller</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella controller</translation>
     </message>
     <message>
         <source>Create a new controller</source>
-        <translation type="unfinished"></translation>
+        <translation>Crea nuovo controller</translation>
     </message>
     <message>
         <source>New &amp;Controller</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuovo &amp;Controller</translation>
     </message>
     <message>
         <source>Alt+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+C</translation>
     </message>
     <message>
         <source>S&amp;ysEx</source>
-        <translation type="unfinished"></translation>
+        <translation>S&amp;ysEx</translation>
     </message>
     <message>
         <source>SysEx List:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista SysEx:</translation>
     </message>
     <message>
         <source>Hex Entry:</source>
-        <translation type="unfinished"></translation>
+        <translation>Codice Hex:</translation>
     </message>
     <message>
         <source>New SysE&amp;x</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuovo SysE&amp;x</translation>
     </message>
     <message>
         <source>Alt+X</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+X</translation>
     </message>
     <message>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Strumenti</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;File</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Aiuto</translation>
     </message>
     <message>
         <source>&amp;New</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Nuovo</translation>
     </message>
     <message>
         <source>New</source>
-        <translation type="unfinished">Nuovo</translation>
+        <translation>Nuovo</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Apri...</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <source>&amp;Save</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Salva</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <source>Save &amp;As...</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva &amp;come...</translation>
     </message>
     <message>
         <source>Save As</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva come</translation>
     </message>
     <message>
         <source>new item</source>
-        <translation type="unfinished"></translation>
+        <translation>nuovo elemento</translation>
     </message>
     <message>
         <source>What&apos;s this?</source>
-        <translation type="unfinished"></translation>
+        <translation>Cos&apos;è questo?</translation>
     </message>
     <message>
         <source>Show in tracks:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra nelle tracce:</translation>
     </message>
     <message>
         <source>Midi</source>
-        <translation type="unfinished">Midi</translation>
+        <translation>MIDI</translation>
     </message>
     <message>
         <source>Drum&amp;maps</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Mappe percussioni</translation>
     </message>
     <message>
         <source>Patch Collections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Raccolta patch:</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Copia</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Rimuovo</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Su</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Down</translation>
     </message>
     <message>
         <source>Contro&amp;llers</source>
-        <translation type="unfinished"></translation>
+        <translation>Contro&amp;ller</translation>
     </message>
     <message>
         <source>&amp;Add Common...</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>CHECK: &quot;comune&quot; or &quot;generico&quot;?</translatorcomment>
+        <translation>&amp;Aggiungi comune...</translation>
     </message>
     <message>
         <source>W</source>
-        <translation type="unfinished"></translation>
+        <translation>C</translation>
     </message>
     <message>
         <source>Comment:</source>
-        <translation type="unfinished"></translation>
+        <translation>Commento:</translation>
     </message>
     <message>
         <source>&amp;Initialization</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Inizializzazione</translation>
     </message>
     <message>
         <source>Instrument initialization sequence:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sequenza di inizializzazione strumento:</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Aggiungi...</translation>
     </message>
     <message>
         <source>&amp;Change...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Cambia...</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Chiudi</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Chiudi</translation>
+        <translation>Chiudi</translation>
     </message>
     <message>
         <source>Note off mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Modalità note-off:</translation>
     </message>
     <message>
         <source>Note off mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modalità note-off</translation>
     </message>
     <message>
         <source>Selects how to handle note off events.
@@ -3157,51 +3159,51 @@ Refer to the instrument manufacturer&apos;s
     </message>
     <message>
         <source>Patch program number. --- means don&apos;t care.</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero di programma patch. --- per ignorare.</translation>
     </message>
     <message>
         <source>&amp;Drum</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Percussioni</translation>
     </message>
     <message>
         <source>High Bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Bank alta</translation>
     </message>
     <message>
         <source>Low Bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Bank bassa</translation>
     </message>
     <message>
         <source>Program</source>
-        <translation type="unfinished">Programma</translation>
+        <translation>Programma</translation>
     </message>
     <message>
         <source>Patch program number.  --- means don&apos;t care.</source>
-        <translation type="unfinished"></translation>
+        <translation>Patch program number.  --- means don&apos;t care.</translation>
     </message>
     <message>
         <source>Patch Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome patch:</translation>
     </message>
     <message>
         <source>Dr def</source>
-        <translation type="unfinished"></translation>
+        <translation>Dr def</translation>
     </message>
     <message>
         <source>Drum default:</source>
-        <translation type="unfinished"></translation>
+        <translation>Percussioni predefinite:</translation>
     </message>
     <message>
         <source>Note: The enclosing F0 ... F7 are not required</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: Non occorre racchiudere tra F0...F7</translation>
     </message>
     <message>
         <source>Info</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioni</translation>
     </message>
     <message>
         <source>Additional information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioni aggiuntive</translation>
     </message>
 </context>
 <context>
@@ -3243,35 +3245,36 @@ Refer to the instrument manufacturer&apos;s
     <name>EditSysexDialogBase</name>
     <message>
         <source>MusE: Enter SysEx</source>
-        <translation type="unfinished"></translation>
+        <translation>MusE: Inserisci SysEx</translation>
     </message>
     <message>
         <source>TimePosition:</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>CHECK: Did a literal translation</translatorcomment>
+        <translation>PosizioneTempo:</translation>
     </message>
     <message>
         <source>Comment:</source>
-        <translation type="unfinished"></translation>
+        <translation>Commento:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Nome:</translation>
+        <translation>Nome:</translation>
     </message>
     <message>
         <source>&amp;Select...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Seleziona...</translation>
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;OK</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished">A&amp;nnulla</translation>
+        <translation>A&amp;nnulla</translation>
     </message>
     <message>
         <source>Hex: Note: The enclosing F0 ... F7 are not required</source>
-        <translation type="unfinished"></translation>
+        <translation>Hex: Nota: Non occorre racchiudere tra F0...F7</translation>
     </message>
 </context>
 <context>
@@ -8287,7 +8290,7 @@ Double-click a slot to insert FX</source>
     </message>
     <message>
         <source>Custom column</source>
-        <translation type="unfinished"></translation>
+        <translation>Colonna personalizzata</translation>
     </message>
 </context>
 <context>
@@ -8295,23 +8298,24 @@ Double-click a slot to insert FX</source>
     <message>
         <source>High bank: Low bank: Program
 (Ctrl-double-click on/off)</source>
-        <translation type="unfinished"></translation>
+        <translation>Bank alta: Bank bassa: Programma
+(Ctrl-doppio-click on/off)</translation>
     </message>
     <message>
         <source>off</source>
-        <translation type="unfinished">spento</translation>
+        <translation>spento</translation>
     </message>
     <message>
         <source>High bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Bank alta</translation>
     </message>
     <message>
         <source>Low bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Bank bassa</translation>
     </message>
     <message>
         <source>Program</source>
-        <translation type="unfinished">Programma</translation>
+        <translation>Programma</translation>
     </message>
 </context>
 <context>
@@ -8326,79 +8330,79 @@ Double-click a slot to insert FX</source>
     </message>
     <message>
         <source>Edit tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifica strumenti</translation>
     </message>
     <message>
         <source>Tempo</source>
-        <translation type="unfinished"></translation>
+        <translation>Velocità</translation>
     </message>
     <message>
         <source>Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiave</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Tempo</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished">Valore</translation>
+        <translation>Valore</translation>
     </message>
     <message>
         <source>Reposition of the initial tempo and signature events is not allowed</source>
-        <translation type="unfinished"></translation>
+        <translation>Riposizionamento degli eventi iniziali di velocità e tempo non permesso</translation>
     </message>
     <message>
         <source>MusE: List Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>MusE: Editor di lista</translation>
     </message>
     <message>
         <source>Input error, conversion not OK or value out of range</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore di input, conversione errata o valore fuori portata</translation>
     </message>
     <message>
         <source>Reposition of tempo and signature events to start position is not allowed!</source>
-        <translation type="unfinished"></translation>
+        <translation>Riposizionamento degli eventi di velocità e tempo alla posizione iniziale non permesso!</translation>
     </message>
     <message>
         <source>Signature</source>
-        <translation type="unfinished"></translation>
+        <translation>Metrica</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posizione</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella</translation>
     </message>
     <message>
         <source>Insert tempo change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio di velocità</translation>
     </message>
     <message>
         <source>Insert time signature change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio di tempo</translation>
     </message>
     <message>
         <source>Insert key change</source>
-        <translation type="unfinished"></translation>
+        <translation>Inserisci cambio di chiave</translation>
     </message>
     <message>
         <source>Edit position</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifica posizione</translation>
     </message>
     <message>
         <source>Edit value</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifica valore</translation>
     </message>
     <message>
         <source>Delete event</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella evento</translation>
     </message>
 </context>
 <context>
@@ -14681,7 +14685,7 @@ Robert Jonsson
     <name>midiWarnInitPendingBase</name>
     <message>
         <source>Instrument initialization</source>
-        <translation type="unfinished"></translation>
+        <translation>Inizializzazione strumenti</translation>
     </message>
     <message>
         <source>MusE should now send some Instrument Initialization Sequences.
@@ -14693,11 +14697,11 @@ Typically you should answer yes here.
 You can always do it manually from the Midi menu.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Don&apos;t ask me again</source>
-        <translation type="unfinished"></translation>
+        <translation>Non chidermelo più</translation>
     </message>
 </context>
 <context>
