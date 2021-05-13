@@ -2562,15 +2562,15 @@ Wave form 8 = &lt;i&gt;if &lt;b&gt;t&lt;/b&gt;&amp;#060 pi then sin(2*&lt;b&gt;t
     </message>
     <message>
         <source>Time Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posizione tempo</translation>
     </message>
     <message>
         <source>Available Controller:</source>
-        <translation type="unfinished"></translation>
+        <translation>Controller disponibile:</translation>
     </message>
     <message>
         <source>Create New Controller</source>
-        <translation type="unfinished"></translation>
+        <translation>Crea nuovo controller</translation>
     </message>
     <message>
         <source>textLabel3</source>
@@ -2578,27 +2578,27 @@ Wave form 8 = &lt;i&gt;if &lt;b&gt;t&lt;/b&gt;&amp;#060 pi then sin(2*&lt;b&gt;t
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished">Valore</translation>
+        <translation>Valore</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation type="unfinished"></translation>
+        <translation>Controller</translation>
     </message>
     <message>
         <source>H-Bank</source>
-        <translation type="unfinished"></translation>
+        <translation>H-Bank</translation>
     </message>
     <message>
         <source>L-Bank</source>
-        <translation type="unfinished"></translation>
+        <translation>L-Bank</translation>
     </message>
     <message>
         <source>Program</source>
-        <translation type="unfinished">Programma</translation>
+        <translation>Programma</translation>
     </message>
     <message>
         <source>off</source>
-        <translation type="unfinished">spento</translation>
+        <translation>off</translation>
     </message>
     <message>
         <source>pushButton4</source>
@@ -2610,11 +2610,11 @@ Wave form 8 = &lt;i&gt;if &lt;b&gt;t&lt;/b&gt;&amp;#060 pi then sin(2*&lt;b&gt;t
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished">A&amp;nnulla</translation>
+        <translation>A&amp;nnulla</translation>
     </message>
     <message>
         <source>Note</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota</translation>
     </message>
 </context>
 <context>
@@ -3486,15 +3486,15 @@ states</source>
     </message>
     <message>
         <source>Parts</source>
-        <translation type="unfinished">Parti</translation>
+        <translation>Parti</translation>
     </message>
     <message>
         <source>Selected parts or c&amp;urrent part</source>
-        <translation type="unfinished"></translation>
+        <translation>Parti selezionate o parte att&amp;uale</translation>
     </message>
     <message>
         <source>All parts &amp;in editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutte le part&amp;i nell&apos;editor</translation>
     </message>
 </context>
 <context>
@@ -4108,7 +4108,7 @@ Disable to use an alternate standard
     </message>
     <message>
         <source>Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi...</translation>
     </message>
     <message>
         <source>Edit...</source>
@@ -4435,86 +4435,89 @@ Turn off to reduce clutter.</source>
     <name>LegatoBase</name>
     <message>
         <source>MusE: Legato</source>
-        <translation type="unfinished"></translation>
+        <translation>MusE: Legato</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Intervallo</translation>
+        <translation>Intervallo</translation>
     </message>
     <message>
         <source>All Events</source>
-        <translation type="unfinished">Tutti gli eventi</translation>
+        <translation>Tutti gli eventi</translation>
     </message>
     <message>
         <source>Selected Events</source>
-        <translation type="unfinished">Eventi selezionati</translation>
+        <translation>Eventi selezionati</translation>
     </message>
     <message>
         <source>Looped Events</source>
-        <translation type="unfinished">Eventi del loop</translation>
+        <translation>Eventi in loop</translation>
     </message>
     <message>
         <source>Selected Looped</source>
-        <translation type="unfinished">Eventi del loop selezionati</translation>
+        <translatorcomment>CHECK: is it loop?</translatorcomment>
+        <translation>Loop selezionati</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazioni</translation>
     </message>
     <message>
         <source> ticks</source>
-        <translation type="unfinished"></translation>
+        <translation>battiti</translation>
     </message>
     <message>
         <source>Minimum Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Lunghezza minima</translation>
     </message>
     <message>
         <source>Allow shortening notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Permetti accorciamento note</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <source>Parts</source>
-        <translation type="unfinished">Parti</translation>
+        <translation>Parti</translation>
     </message>
     <message>
         <source>Selected parts or c&amp;urrent part</source>
-        <translation type="unfinished"></translation>
+        <translation>Parti selezionate o parte att&amp;uale</translation>
     </message>
     <message>
         <source>All parts &amp;in editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutte le parti &amp;in editor</translation>
     </message>
 </context>
 <context>
     <name>MITTransposeBase</name>
     <message>
         <source>MusE: Midi Input Plugin: Transpose</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>CHECK: is it &quot;del&quot;?</translatorcomment>
+        <translation>MusE: MIDI input del plugin: Trasponi</translation>
     </message>
     <message>
         <source>On</source>
-        <translation type="unfinished">acceso</translation>
+        <translation>On</translation>
     </message>
     <message>
         <source>TriggerKey</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>CHECK: Chiave</translatorcomment>
+        <translation>Chiave</translation>
     </message>
     <message>
         <source>Transpose:</source>
-        <translation type="unfinished"></translation>
+        <translation>Trasponi:</translation>
     </message>
     <message>
         <source>+0</source>
-        <translation type="unfinished"></translation>
+        <translation>+0</translation>
     </message>
 </context>
 <context>
@@ -4560,35 +4563,35 @@ Turn off to reduce clutter.</source>
     <name>MetronomeConfigBase</name>
     <message>
         <source>MusE: Metronome Config</source>
-        <translation type="unfinished"></translation>
+        <translation>MusE: Configurazione metronome</translation>
     </message>
     <message>
         <source>Audio Beep</source>
-        <translation type="unfinished"></translation>
+        <translation>Beep audio</translation>
     </message>
     <message>
         <source>Choose outputs...</source>
-        <translation type="unfinished"></translation>
+        <translation>Scegli output...</translation>
     </message>
     <message>
         <source>50</source>
-        <translation type="unfinished">50</translation>
+        <translation>50</translation>
     </message>
     <message>
         <source>MIDI Click</source>
-        <translation type="unfinished"></translation>
+        <translation>Click MIDI</translation>
     </message>
     <message>
         <source>Midi Channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Canale MIDI</translation>
     </message>
     <message>
         <source>Measure Note</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota della misura</translation>
     </message>
     <message>
         <source>Measure Velocity</source>
-        <translation type="unfinished"></translation>
+        <translation>Intensità della misura</translation>
     </message>
     <message>
         <source>Beat Velocity</source>
@@ -4600,7 +4603,7 @@ Turn off to reduce clutter.</source>
     </message>
     <message>
         <source>Midi Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Porta MIDI</translation>
     </message>
     <message>
         <source>Precount</source>
@@ -4608,7 +4611,7 @@ Turn off to reduce clutter.</source>
     </message>
     <message>
         <source>Bars</source>
-        <translation type="unfinished"></translation>
+        <translation>Misure</translation>
     </message>
     <message>
         <source>From Mastertrack</source>
@@ -4616,7 +4619,7 @@ Turn off to reduce clutter.</source>
     </message>
     <message>
         <source>/</source>
-        <translation type="unfinished"></translation>
+        <translation>/</translation>
     </message>
     <message>
         <source>Signature</source>
@@ -4636,39 +4639,39 @@ Turn off to reduce clutter.</source>
     </message>
     <message>
         <source>&amp;Apply</source>
-        <translation type="unfinished">&amp;Applica</translation>
+        <translation>&amp;Applica</translation>
     </message>
     <message>
         <source>Alt+A</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;OK</translation>
     </message>
     <message>
         <source>Alt+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+O</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished">A&amp;nnulla</translation>
+        <translation>A&amp;nnulla</translation>
     </message>
     <message>
         <source>Alt+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+C</translation>
     </message>
     <message>
         <source>Volume</source>
-        <translation type="unfinished"></translation>
+        <translation>Volume</translation>
     </message>
     <message>
         <source>Audio master</source>
-        <translation type="unfinished"></translation>
+        <translation>Master audio</translation>
     </message>
     <message>
         <source>Meas</source>
-        <translation type="unfinished"></translation>
+        <translation>Mis</translation>
     </message>
     <message>
         <source>Beat</source>
@@ -4684,15 +4687,15 @@ Turn off to reduce clutter.</source>
     </message>
     <message>
         <source>Sample</source>
-        <translation type="unfinished"></translation>
+        <translation>Campione</translation>
     </message>
     <message>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferenze</translation>
     </message>
     <message>
         <source>Apply the settings globally or to the current song:</source>
-        <translation type="unfinished"></translation>
+        <translation>Applica le impostazioni globalmente o solo a questa composizione:</translation>
     </message>
     <message>
         <source>Use global metronome</source>
@@ -4716,11 +4719,11 @@ Turn off to reduce clutter.</source>
     </message>
     <message>
         <source>Audio</source>
-        <translation type="unfinished">Audio</translation>
+        <translation>Audio</translation>
     </message>
     <message>
         <source>MIDI</source>
-        <translation type="unfinished"></translation>
+        <translation>MIDI</translation>
     </message>
     <message>
         <source>Accent 2 Velocity</source>
@@ -4740,7 +4743,7 @@ Turn off to reduce clutter.</source>
     </message>
     <message>
         <source>Off</source>
-        <translation type="unfinished">spento</translation>
+        <translation>Off</translation>
     </message>
     <message>
         <source>Accents</source>
@@ -4764,7 +4767,7 @@ Turn off to reduce clutter.</source>
     </message>
     <message>
         <source>User</source>
-        <translation type="unfinished"></translation>
+        <translation>Utente</translation>
     </message>
     <message>
         <source>Preset sequences</source>
@@ -4781,7 +4784,7 @@ Turn off to reduce clutter.</source>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>Delete preset</source>
@@ -4794,11 +4797,11 @@ Only user presets can be deleted.</source>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>Use preset</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa preset</translation>
     </message>
     <message>
         <source>Copy the preset to the current accents.</source>
@@ -4806,7 +4809,7 @@ Only user presets can be deleted.</source>
     </message>
     <message>
         <source>-&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>-&gt;</translation>
     </message>
     <message>
         <source>Reset to Factory or User defaults</source>
@@ -4819,7 +4822,7 @@ Only user presets can be deleted.</source>
     </message>
     <message>
         <source>!</source>
-        <translation type="unfinished"></translation>
+        <translation>!</translation>
     </message>
     <message>
         <source>Enable the precount</source>
@@ -4827,7 +4830,7 @@ Only user presets can be deleted.</source>
     </message>
     <message>
         <source>Enable</source>
-        <translation type="unfinished"></translation>
+        <translation>Abilita</translation>
     </message>
     <message>
         <source>Number of bars</source>
@@ -4859,11 +4862,11 @@ Only user presets can be deleted.</source>
     </message>
     <message>
         <source>Mute metronome</source>
-        <translation type="unfinished"></translation>
+        <translation>Silenzia metronomo</translation>
     </message>
     <message>
         <source>Not supported yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Non ancora supportato</translation>
     </message>
 </context>
 <context>
@@ -8866,14 +8869,14 @@ Unavailable devices or ports can be purged
     <name>MusEGui::Master</name>
     <message>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Strumenti</translation>
     </message>
 </context>
 <context>
     <name>MusEGui::MasterEdit</name>
     <message>
         <source>MusE: Mastertrack</source>
-        <translation type="unfinished"></translation>
+        <translation>MusE: Traccia master</translation>
     </message>
     <message>
         <source>Window &amp;Config</source>
@@ -8881,11 +8884,11 @@ Unavailable devices or ports can be purged
     </message>
     <message>
         <source>Info</source>
-        <translation type="unfinished"></translation>
+        <translation>Info</translation>
     </message>
     <message>
         <source>Cursor</source>
-        <translation type="unfinished"></translation>
+        <translation>Cursore</translation>
     </message>
     <message>
         <source>Off</source>
@@ -8893,23 +8896,25 @@ Unavailable devices or ports can be purged
     </message>
     <message>
         <source>&amp;Display</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>CHECK: is it the right display?</translatorcomment>
+        <translation>&amp;Mostra</translation>
     </message>
     <message>
         <source>Time at cursor position</source>
-        <translation type="unfinished"></translation>
+        <translation>Tempo alla posizione mouse</translation>
     </message>
     <message>
         <source>Tempo at cursor position</source>
-        <translation type="unfinished"></translation>
+        <translation>Velocità alla posizione mouse</translation>
     </message>
     <message>
         <source>Mastertrack</source>
-        <translation type="unfinished"></translation>
+        <translation>Traccia master</translation>
     </message>
     <message>
         <source>Display menu: View-specific display options.</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>CHECK: is it &quot;mostra menù&quot; or &quot;menù &apos;Mostra&apos;&quot;?</translatorcomment>
+        <translation>Mostra menù: vedi opzioni di visualizzazione.</translation>
     </message>
 </context>
 <context>
@@ -10443,38 +10448,39 @@ Likely the selected track is the wrong type.
     </message>
     <message>
         <source>Left click: Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Click sx: Suona</translation>
     </message>
     <message>
         <source>Right click: Select key</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>CHECK: is it key for &quot;chiave&quot; or &quot;tasto&quot;? We are talking piano so I suppose the second</translatorcomment>
+        <translation>Click dx: Seleziona tasto</translation>
     </message>
 </context>
 <context>
     <name>MusEGui::PianoCanvas</name>
     <message>
         <source>Pianoroll canvas: Use Pencil tool to draw and edit MIDI events, Pointer tool to select and edit. Press F1 for help.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Note: </source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: </translation>
     </message>
     <message>
         <source>Velocity: </source>
-        <translation type="unfinished"></translation>
+        <translation>Intensità: </translation>
     </message>
     <message>
         <source>Start (bar): </source>
-        <translation type="unfinished"></translation>
+        <translation>Inizio (misura): </translation>
     </message>
     <message>
         <source>Start (time): </source>
-        <translation type="unfinished"></translation>
+        <translation>Inizio (tempo): </translation>
     </message>
     <message>
         <source>Length (ticks): </source>
-        <translation type="unfinished"></translation>
+        <translation>Lunghezza (battiti): </translation>
     </message>
     <message>
         <source>LMB: Select/Move | CTRL+LMB: Multi select/Move&amp;copy | SHIFT+LMB: Select pitch | MMB: Delete | CTRL+RMB: Trim length</source>
@@ -10521,7 +10527,7 @@ Likely the selected track is the wrong type.
     </message>
     <message>
         <source>&amp;Select</source>
-        <translation type="unfinished">&amp;Seleziona</translation>
+        <translation>&amp;Seleziona</translation>
     </message>
     <message>
         <source>Select &amp;All</source>
@@ -10545,11 +10551,11 @@ Likely the selected track is the wrong type.
     </message>
     <message>
         <source>&amp;Previous Part</source>
-        <translation type="unfinished"></translation>
+        <translation>Parte &amp;precedente</translation>
     </message>
     <message>
         <source>&amp;Next Part</source>
-        <translation type="unfinished"></translation>
+        <translation>Parte &amp;successiva</translation>
     </message>
     <message>
         <source>Fu&amp;nctions</source>
@@ -10557,7 +10563,7 @@ Likely the selected track is the wrong type.
     </message>
     <message>
         <source>Quantize</source>
-        <translation type="unfinished">Quantizza</translation>
+        <translation>Quantizza</translation>
     </message>
     <message>
         <source>Modify Note Length</source>
@@ -10565,7 +10571,7 @@ Likely the selected track is the wrong type.
     </message>
     <message>
         <source>Modify Velocity</source>
-        <translation type="unfinished">Modifica velocity</translation>
+        <translation>Modifica intensità</translation>
     </message>
     <message>
         <source>Crescendo/Decrescendo</source>
@@ -10573,7 +10579,7 @@ Likely the selected track is the wrong type.
     </message>
     <message>
         <source>Transpose</source>
-        <translation type="unfinished"></translation>
+        <translation>Trasponi</translation>
     </message>
     <message>
         <source>Erase Events</source>
@@ -10581,7 +10587,7 @@ Likely the selected track is the wrong type.
     </message>
     <message>
         <source>Move Notes</source>
-        <translation type="unfinished">Sposta note</translation>
+        <translation>Sposta note</translation>
     </message>
     <message>
         <source>Set Fixed Length</source>
@@ -10593,7 +10599,7 @@ Likely the selected track is the wrong type.
     </message>
     <message>
         <source>Legato</source>
-        <translation type="unfinished"></translation>
+        <translation>Legato</translation>
     </message>
     <message>
         <source>&amp;Plugins</source>
@@ -10665,7 +10671,7 @@ Likely the selected track is the wrong type.
     </message>
     <message>
         <source>&amp;Scripts</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Script</translation>
     </message>
     <message>
         <source>Scripts are applied to all or selected events. User scripts can be added in &apos;~/.config/MusE/MusE/scripts/&apos;. See &apos;MIDI scripting&apos; in MusE wiki.</source>
@@ -10919,7 +10925,7 @@ Right-click on plugins to add/remove from a category.</source>
     <name>MusEGui::PopupMenu</name>
     <message>
         <source>&lt;More...&gt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Altro...&gt; %1</translation>
     </message>
 </context>
 <context>
@@ -10988,7 +10994,7 @@ Right-click on plugins to add/remove from a category.</source>
     <name>MusEGui::RasterLabelCombo</name>
     <message>
         <source>Snap</source>
-        <translation type="unfinished"></translation>
+        <translation>Allinea</translation>
     </message>
 </context>
 <context>
@@ -11473,46 +11479,48 @@ the selected title is not unique</source>
     <name>MusEGui::ShortcutConfig</name>
     <message>
         <source>Save printable text file</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva file di testo stampabile</translation>
     </message>
     <message>
         <source>Text files (*.txt);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>File di testo (*.txt);;Tutti i file (*)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <source>Error opening file for saving</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore durante l&apos;apertura file per il salvaggio</translation>
     </message>
     <message>
         <source>Shortcuts for selected category: </source>
-        <translation type="unfinished"></translation>
+        <translation>Scorciatoie per la categoria selezionata: </translation>
     </message>
     <message>
         <source>Legend:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Legenda:
+</translation>
     </message>
     <message>
         <source>An error occurred while saving</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore durante il salvataggio</translation>
     </message>
 </context>
 <context>
     <name>MusEGui::SigScale</name>
     <message>
         <source>Signature scale</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>CHECK: is it signature as &quot;chiave&quot; or &quot;armatura&quot;?</translatorcomment>
+        <translation>Scala chiave</translation>
     </message>
 </context>
 <context>
     <name>MusEGui::SigToolbar</name>
     <message>
         <source>Time signature at current position</source>
-        <translation type="unfinished"></translation>
+        <translation>Metrica alla posizione attuale</translation>
     </message>
 </context>
 <context>
@@ -12368,7 +12376,7 @@ Missing data is muted</source>
     <name>PasteDialogBase</name>
     <message>
         <source>MusE: Paste Parts</source>
-        <translation type="unfinished"></translation>
+        <translation>MusE: Incolla parti</translation>
     </message>
     <message>
         <source>Number and raster</source>
@@ -12376,47 +12384,47 @@ Missing data is muted</source>
     </message>
     <message>
         <source> times</source>
-        <translation type="unfinished"></translation>
+        <translation> volte</translation>
     </message>
     <message>
         <source> ticks</source>
-        <translation type="unfinished"></translation>
+        <translation> battiti</translation>
     </message>
     <message>
         <source>Move, Merge, Clone</source>
-        <translation type="unfinished"></translation>
+        <translation>Sposta, Unisci, Clona</translation>
     </message>
     <message>
         <source>Move everything to the right</source>
-        <translation type="unfinished"></translation>
+        <translation>Sposta tutto a destra</translation>
     </message>
     <message>
         <source>Move only affected parts to the right</source>
-        <translation type="unfinished"></translation>
+        <translation>Sposta solo le parti coinvolte a destra</translation>
     </message>
     <message>
         <source>Put everything into a single track</source>
-        <translation type="unfinished"></translation>
+        <translation>Inserisci tutto in traccia singola</translation>
     </message>
     <message>
         <source>Merge with existing parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Unisci con le parti esistenti</translation>
     </message>
     <message>
         <source>Insert as clones (where possible)</source>
-        <translation type="unfinished"></translation>
+        <translation>Inserisci come cloni (ove possibile)</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <source>Insert</source>
-        <translation type="unfinished"></translation>
+        <translation>Inserisci</translation>
     </message>
     <message>
         <source>Raster</source>
@@ -12435,11 +12443,11 @@ Missing data is muted</source>
     </message>
     <message>
         <source> times</source>
-        <translation type="unfinished"></translation>
+        <translation> volte</translation>
     </message>
     <message>
         <source> ticks</source>
-        <translation type="unfinished"></translation>
+        <translation> battiti</translation>
     </message>
     <message>
         <source>Paste options</source>
@@ -12455,11 +12463,11 @@ Missing data is muted</source>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <source>&amp;Always into existing parts</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sempre in parti esistenti</translation>
     </message>
     <message>
         <source>&amp;Never into existing parts</source>
@@ -12480,19 +12488,20 @@ to be expanded by more than </source>
     </message>
     <message>
         <source>Erase existin&amp;g</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella esisten&amp;ti</translation>
     </message>
     <message>
         <source>Erase WYSIWYG</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella WYSIWYG</translation>
     </message>
     <message>
         <source>Erase inclusive</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>CHECK</translatorcomment>
+        <translation>Cancella inclusivi</translation>
     </message>
     <message>
         <source>Insert</source>
-        <translation type="unfinished"></translation>
+        <translation>Inserisci</translation>
     </message>
     <message>
         <source>Raster</source>
@@ -12503,148 +12512,149 @@ to be expanded by more than </source>
     <name>PluginDialogBase</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra</translation>
     </message>
     <message>
         <source>Ports:</source>
-        <translation type="unfinished"></translation>
+        <translation>Porte:</translation>
     </message>
     <message>
         <source>Mono</source>
-        <translation type="unfinished"></translation>
+        <translation>Mono</translation>
     </message>
     <message>
         <source>Mono + Stereo</source>
-        <translation type="unfinished"></translation>
+        <translation>Mono + Stereo</translation>
     </message>
     <message>
         <source>Stereo</source>
-        <translation type="unfinished"></translation>
+        <translation>Stereo</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutto</translation>
     </message>
     <message>
         <source>Plugin type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo plugin:</translation>
     </message>
     <message>
         <source>Filter:</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtro:</translation>
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;OK</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished">A&amp;nnulla</translation>
+        <translation>A&amp;nnulla</translation>
     </message>
 </context>
 <context>
     <name>PluginSettings</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Opzioni</translation>
     </message>
     <message>
         <source>Fixed speed</source>
-        <translation type="unfinished"></translation>
+        <translation>Velocità fissa</translation>
     </message>
     <message>
         <source>Transport affects audio latency</source>
-        <translation type="unfinished"></translation>
+        <translation>Il transport influenza la latenza audio</translation>
     </message>
     <message>
         <source>Override reported audio latency</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignora la latenza audio segnalata</translation>
     </message>
     <message>
         <source>Reported audio latency override value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valore della latenza audio segnalata da ignorare</translation>
     </message>
     <message>
         <source>Revert HiDPI scaling of native GUI</source>
-        <translation type="unfinished"></translation>
+        <translation>Annulla ridimensionamento HiDPI del GUI nativo</translation>
     </message>
     <message>
         <source>Set in Global settings-&gt;GUI tweaks</source>
-        <translation type="unfinished"></translation>
+        <translation>Imposta in Impostazioni globali &gt; Migliorie visive</translation>
     </message>
     <message>
         <source>Global setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazione globale</translation>
     </message>
     <message>
         <source>Additional information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioni aggiuntive</translation>
     </message>
     <message>
         <source>Follow global setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Segui impostazione globale</translation>
     </message>
     <message>
         <source>On</source>
-        <translation type="unfinished">acceso</translation>
+        <translation>On</translation>
     </message>
     <message>
         <source>Off</source>
-        <translation type="unfinished">spento</translation>
+        <translation>Off</translation>
     </message>
 </context>
 <context>
     <name>ProjectCreate</name>
     <message>
         <source>Create Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Crea progetto</translation>
     </message>
     <message>
         <source>Projects folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cartella progetti:</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Project Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome del progetto:</translation>
     </message>
     <message>
         <source>Project is a Template</source>
-        <translation type="unfinished"></translation>
+        <translation>Progetto è un modello</translation>
     </message>
     <message>
         <source>Write window state</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>CHECK</translatorcomment>
+        <translation>Stato della finestra di scrittura</translation>
     </message>
     <message>
         <source>Project song file type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato delle composizioni del progetto:</translation>
     </message>
     <message>
         <source>Project Path to song file:</source>
-        <translation type="unfinished"></translation>
+        <translation>Percorso della composizione nel progetto:</translation>
     </message>
     <message>
         <source>Song information:</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioni composizione:</translation>
     </message>
     <message>
         <source>&amp;Create project folder (recommended for audio projects)</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Crea cartella del progetto (consigliato per progetti audio)</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <source>Please first select the range for crescendo with the loop markers.</source>
@@ -12652,11 +12662,11 @@ to be expanded by more than </source>
     </message>
     <message>
         <source>Controller !</source>
-        <translation type="unfinished"></translation>
+        <translation>Controller !</translation>
     </message>
     <message>
         <source>Other !</source>
-        <translation type="unfinished"></translation>
+        <translation>Altri !</translation>
     </message>
     <message>
         <source>Switch on General Midi Level 1 mode</source>
@@ -12680,47 +12690,47 @@ to be expanded by more than </source>
     </message>
     <message>
         <source>Tracks:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tracce:</translation>
     </message>
     <message>
         <source>Midi ports:</source>
-        <translation type="unfinished"></translation>
+        <translation>Porte MIDI:</translation>
     </message>
     <message>
         <source>Midi devices:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositivi MIDI:</translation>
     </message>
     <message>
         <source>Jack:</source>
-        <translation type="unfinished"></translation>
+        <translation>JACK:</translation>
     </message>
     <message>
         <source>Jack midi:</source>
-        <translation type="unfinished"></translation>
+        <translation>JACK&#xa0;MIDI:</translation>
     </message>
     <message>
         <source>Current device</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositivo attuale</translation>
     </message>
     <message>
         <source>Others</source>
-        <translation type="unfinished"></translation>
+        <translation>Altri</translation>
     </message>
     <message>
         <source>Files</source>
-        <translation type="unfinished"></translation>
+        <translation>File</translation>
     </message>
     <message>
         <source>Synthesizers</source>
-        <translation type="unfinished"></translation>
+        <translation>Sintetizzatori</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri</translation>
     </message>
     <message>
         <source>Closed</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiuso</translation>
     </message>
     <message>
         <source>&lt;Properties&gt;</source>
@@ -12736,19 +12746,19 @@ to be expanded by more than </source>
     </message>
     <message>
         <source>Input routing</source>
-        <translation type="unfinished"></translation>
+        <translation>Cablaggio input</translation>
     </message>
     <message>
         <source>Warning: No input routes! Click to connect...</source>
-        <translation type="unfinished"></translation>
+        <translation>Attenzione: Nessun collegamento input! Clicka per connettere...</translation>
     </message>
     <message>
         <source>Output routing</source>
-        <translation type="unfinished"></translation>
+        <translation>Cablaggio output</translation>
     </message>
     <message>
         <source>Warning: No output routes! Click to connect...</source>
-        <translation type="unfinished"></translation>
+        <translation>Attenzione: Nessun collegamento output! Clicka per connettere...</translation>
     </message>
     <message>
         <source>TRACK</source>
@@ -12760,22 +12770,22 @@ to be expanded by more than </source>
     </message>
     <message>
         <source>MusE import error.</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore di importazione MusE.</translation>
     </message>
     <message>
         <source>MusE failed to import the file.
 Possibly this wasn&apos;t a sound file?
 If it was check the permissions, MusE
 sometimes requires write access to the file.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Instruments</source>
-        <translation type="unfinished"></translation>
+        <translation>Strumenti</translation>
     </message>
     <message>
         <source>FX slot</source>
-        <translation type="unfinished"></translation>
+        <translation>Spazio effetti</translation>
     </message>
 </context>
 <context>
@@ -13397,78 +13407,80 @@ This also turns on text word wrap, which may
     <name>SS_PluginFront</name>
     <message>
         <source>Clear and unload effect</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Preferred &quot;rimuovi&quot; to the more correct &quot;scarica&quot; because &quot;scarica&quot; also means &quot;download&quot;</translatorcomment>
+        <translation>Svuota e rimuovi effetto</translation>
     </message>
     <message>
         <source>Load effect</source>
-        <translation type="unfinished"></translation>
+        <translation>Carica effetto</translation>
     </message>
     <message>
         <source>Toggle display of effect parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra parametri degli effetti</translation>
     </message>
     <message>
         <source>Turn effect on/off</source>
-        <translation type="unfinished"></translation>
+        <translation>Abilita/disabilita effetto</translation>
     </message>
 </context>
 <context>
     <name>SetlenBase</name>
     <message>
         <source>MusE: Set Note Length</source>
-        <translation type="unfinished"></translation>
+        <translation>MusE: Imposta lunghezza nota</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Intervallo</translation>
+        <translation>Intervallo</translation>
     </message>
     <message>
         <source>All Events</source>
-        <translation type="unfinished">Tutti gli eventi</translation>
+        <translation>Tutti gli eventi</translation>
     </message>
     <message>
         <source>Selected Events</source>
-        <translation type="unfinished">Eventi selezionati</translation>
+        <translation>Eventi selezionati</translation>
     </message>
     <message>
         <source>Looped Events</source>
-        <translation type="unfinished">Eventi del loop</translation>
+        <translation>Eventi in loop</translation>
     </message>
     <message>
         <source>Selected Looped</source>
-        <translation type="unfinished">Eventi del loop selezionati</translation>
+        <translatorcomment>CHECK: meaning?</translatorcomment>
+        <translation>Loop selezionati</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished">Valore</translation>
+        <translation>Valore</translation>
     </message>
     <message>
         <source>New length</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuova lunghezza</translation>
     </message>
     <message>
         <source> ticks</source>
-        <translation type="unfinished"></translation>
+        <translation> battiti</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <source>Parts</source>
-        <translation type="unfinished">Parti</translation>
+        <translation>Parti</translation>
     </message>
     <message>
         <source>Selected parts or c&amp;urrent part</source>
-        <translation type="unfinished"></translation>
+        <translation>Parti selezionate o parte att&amp;uale</translation>
     </message>
     <message>
         <source>All parts &amp;in editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutte le part&amp;i nell&apos;editor</translation>
     </message>
 </context>
 <context>
@@ -13506,67 +13518,67 @@ This also turns on text word wrap, which may
     <name>ShortcutConfigBase</name>
     <message>
         <source>Configure Keyboard Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Configura scorciatoie tastiera</translation>
     </message>
     <message>
         <source>Shortcut Category</source>
-        <translation type="unfinished"></translation>
+        <translation>Categoria scorciatoia</translation>
     </message>
     <message>
         <source>Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Scorciatoia</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Descrizione</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Svuota</translation>
     </message>
     <message>
         <source>Alt+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+C</translation>
     </message>
     <message>
         <source>&amp;Define</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Definisci</translation>
     </message>
     <message>
         <source>Alt+D</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+D</translation>
     </message>
     <message>
         <source>&amp;Apply</source>
-        <translation type="unfinished">&amp;Applica</translation>
+        <translation>&amp;Applica</translation>
     </message>
     <message>
         <source>Alt+A</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>&amp;Printable file...</source>
-        <translation type="unfinished"></translation>
+        <translation>File &amp;stampabile...</translation>
     </message>
     <message>
         <source>Alt+P</source>
-        <translation type="unfinished">Alt+P</translation>
+        <translation>Alt+P</translation>
     </message>
     <message>
         <source>&amp;Ok</source>
-        <translation type="unfinished">&amp;OK</translation>
+        <translation>&amp;OK</translation>
     </message>
     <message>
         <source>Alt+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+O</translation>
     </message>
     <message>
         <source>Filter:</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtro:</translation>
     </message>
     <message>
         <source>&amp;Reset all</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Azzera tutto</translation>
     </message>
 </context>
 <context>
@@ -13639,15 +13651,15 @@ This also turns on text word wrap, which may
     </message>
     <message>
         <source>Mix</source>
-        <translation type="unfinished"></translation>
+        <translation>Mix</translation>
     </message>
     <message>
         <source>Chn</source>
-        <translation type="unfinished"></translation>
+        <translation>Chn</translation>
     </message>
     <message>
         <source>Channel routing</source>
-        <translation type="unfinished"></translation>
+        <translation>Cablaggio dei canali</translation>
     </message>
 </context>
 <context>
@@ -13752,201 +13764,207 @@ When open, may slow program slightly. This dialog is NOT shown.</source>
     <name>SongInfo</name>
     <message>
         <source>Song Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioni composizione</translation>
     </message>
     <message>
         <source>Show on song load</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra al caricamento composizione</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished">A&amp;nnulla</translation>
+        <translation>A&amp;nnulla</translation>
     </message>
     <message>
         <source>Alt+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+C</translation>
     </message>
     <message>
         <source>&amp;Ok</source>
-        <translation type="unfinished">&amp;OK</translation>
+        <translation>&amp;OK</translation>
     </message>
     <message>
         <source>Alt+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+O</translation>
     </message>
 </context>
 <context>
     <name>SynthConfigBase</name>
     <message>
         <source>Name</source>
-        <translation type="unfinished">Nome</translation>
+        <translation>Nome</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>File</translation>
     </message>
     <message>
         <source>Inst</source>
-        <translation type="unfinished"></translation>
+        <translation>Strum</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versione</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Descrizione</translation>
     </message>
     <message>
         <source>&amp;Apply</source>
-        <translation type="unfinished">&amp;Applica</translation>
+        <translation>&amp;Applica</translation>
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;OK</translation>
     </message>
     <message>
         <source>Configure midi devices, midi ports, and synthesizers</source>
-        <translation type="unfinished"></translation>
+        <translation>Configura dispositivi MIDI, porte MIDI e sintetizzatori</translation>
     </message>
     <message>
         <source>Available soft synthesizers</source>
-        <translation type="unfinished"></translation>
+        <translation>Sintetizzatori virtuali disponibili</translation>
     </message>
     <message>
         <source>Useable devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositivi usabili</translation>
     </message>
     <message>
         <source>Add:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi:</translation>
     </message>
     <message>
         <source>Synth</source>
-        <translation type="unfinished"></translation>
+        <translation>Sintetizzatore</translation>
     </message>
     <message>
         <source>ALSA</source>
-        <translation type="unfinished"></translation>
+        <translation>ALSA</translation>
     </message>
     <message>
         <source>JACK</source>
-        <translation type="unfinished"></translation>
+        <translation>JACK</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>Rinomina</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimuovi</translation>
     </message>
     <message>
         <source>Device port assignments</source>
-        <translation type="unfinished"></translation>
+        <translation>Assegnazione porte dispositivi</translation>
     </message>
     <message>
         <source>List of available software synthesizers</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>&quot;software&quot; was implied</translatorcomment>
+        <translation>Lista dei sintetizzatori virtuali disponibili</translation>
     </message>
 </context>
 <context>
     <name>TransposeBase</name>
     <message>
         <source>MusE: Transpose</source>
-        <translation type="unfinished"></translation>
+        <translation>MusE: Trasponi</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Intervallo</translation>
+        <translation>Intervallo</translation>
     </message>
     <message>
         <source>All Events</source>
-        <translation type="unfinished">Tutti gli eventi</translation>
+        <translation>Tutti gli eventi</translation>
     </message>
     <message>
         <source>Selected Events</source>
-        <translation type="unfinished">Eventi selezionati</translation>
+        <translation>Eventi selezionati</translation>
     </message>
     <message>
         <source>Looped Events</source>
-        <translation type="unfinished">Eventi del loop</translation>
+        <translation>Eventi in loop</translation>
     </message>
     <message>
         <source>Selected Looped</source>
-        <translation type="unfinished">Eventi del loop selezionati</translation>
+        <translatorcomment>CHECK: meaning?</translatorcomment>
+        <translation>Loop selezionati</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished">Valore</translation>
+        <translation>Valore</translation>
     </message>
     <message>
         <source>Halftone-steps</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>CHECK: &quot;step&quot; was omitted, see if it works</translatorcomment>
+        <translation>Semitoni</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <source>Parts</source>
-        <translation type="unfinished">Parti</translation>
+        <translation>Parti</translation>
     </message>
     <message>
         <source>Selected parts or c&amp;urrent part</source>
-        <translation type="unfinished"></translation>
+        <translation>Parti selezionate o parte att&amp;uale</translation>
     </message>
     <message>
         <source>All parts &amp;in editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutte le part&amp;i nell&apos;editor</translation>
     </message>
 </context>
 <context>
     <name>UnusedWaveFiles</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra</translation>
     </message>
     <message>
         <source>List of unused audio files in current project directory:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista di file inutilizzati nella cartella del progetto attuale:</translation>
     </message>
     <message>
         <source>Current project</source>
-        <translation type="unfinished"></translation>
+        <translation>Progetto attuale</translation>
     </message>
     <message>
         <source>All .med files
 in current
  directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutti i file 
+.med nella
+cartella attuale</translation>
     </message>
     <message>
         <source>Move files to &apos;unused&apos; subdir</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>&apos;unused&apos; was not translated in case it&apos;s always the name of the directory</translatorcomment>
+        <translation>Sposta file nella sottocartella &apos;unused&apos;</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation>Annulla</translation>
     </message>
 </context>
 <context>
     <name>VAMGui</name>
     <message>
         <source>MusE: Load VAM Presets</source>
-        <translation type="unfinished"></translation>
+        <translation>MusE: Carica preset VAM</translation>
     </message>
     <message>
         <source>MusE: Save VAM Presets</source>
-        <translation type="unfinished"></translation>
+        <translation>MusE: Salva preset VAM</translation>
     </message>
 </context>
 <context>
@@ -14190,135 +14208,135 @@ Robert Jonsson
     <name>file_patterns</name>
     <message>
         <source>Midi/Kar (*.mid *.MID *.kar *.KAR *.mid.gz *.mid.bz2)</source>
-        <translation type="unfinished"></translation>
+        <translation>MIDI/Kar (*.mid *.MID *.kar *.KAR *.mid.gz *.mid.bz2)</translation>
     </message>
     <message>
         <source>Midi (*.mid *.MID *.mid.gz *.mid.bz2)</source>
-        <translation type="unfinished"></translation>
+        <translation>MIDI (*.mid *.MID *.mid.gz *.mid.bz2)</translation>
     </message>
     <message>
         <source>Karaoke (*.kar *.KAR *.kar.gz *.kar.bz2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Karaoke (*.kar *.KAR *.kar.gz *.kar.bz2)</translation>
     </message>
     <message>
         <source>All Files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutti i file (*)</translation>
     </message>
     <message>
         <source>Midi (*.mid)</source>
-        <translation type="unfinished"></translation>
+        <translation>MIDI (*.mid)</translation>
     </message>
     <message>
         <source>Karaoke (*.kar)</source>
-        <translation type="unfinished"></translation>
+        <translation>Karaoke (*.kar)</translation>
     </message>
     <message>
         <source>all known files (*.med *.med.gz *.med.bz2 *.mid *.midi *.kar)</source>
-        <translation type="unfinished"></translation>
+        <translation>tutti i formati noti (*.med *.med.gz *.med.bz2 *.mid *.midi *.kar)</translation>
     </message>
     <message>
         <source>med Files (*.med *.med.gz *.med.bz2)</source>
-        <translation type="unfinished"></translation>
+        <translation>File med (*.med *.med.gz *.med.bz2)</translation>
     </message>
     <message>
         <source>Uncompressed med Files (*.med)</source>
-        <translation type="unfinished"></translation>
+        <translation>File med non compressi (*.med)</translation>
     </message>
     <message>
         <source>gzip compressed med Files (*.med.gz)</source>
-        <translation type="unfinished"></translation>
+        <translation>File med compressi gzip (*.med.gz)</translation>
     </message>
     <message>
         <source>bzip2 compressed med Files (*.med.bz2)</source>
-        <translation type="unfinished"></translation>
+        <translation>File med compressi bzip2 (*.med.bz2)</translation>
     </message>
     <message>
         <source>mid Files (*.mid *.midi *.kar *.MID *.MIDI *.KAR)</source>
-        <translation type="unfinished"></translation>
+        <translation>File med (*.mid *.midi *.kar *.MID *.MIDI *.KAR)</translation>
     </message>
     <message>
         <source>(*.jpg *.gif *.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>(*.jpg *.gif *.png)</translation>
     </message>
     <message>
         <source>(*.jpg)</source>
-        <translation type="unfinished"></translation>
+        <translation>(*.jpg)</translation>
     </message>
     <message>
         <source>(*.gif)</source>
-        <translation type="unfinished"></translation>
+        <translation>(*.gif)</translation>
     </message>
     <message>
         <source>(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>(*.png)</translation>
     </message>
     <message>
         <source>part Files (*.mpt *.mpt.gz *.mpt.bz2)</source>
-        <translation type="unfinished"></translation>
+        <translation>File parte (*.mpt *.mpt.gz *.mpt.bz2)</translation>
     </message>
     <message>
         <source>part Files (*.mpt)</source>
-        <translation type="unfinished"></translation>
+        <translation>File parte (*.mpt)</translation>
     </message>
     <message>
         <source>gzip compressed part Files (*.mpt.gz)</source>
-        <translation type="unfinished"></translation>
+        <translation>File parti compressi gzip (*.mpt.gz)</translation>
     </message>
     <message>
         <source>bzip2 compressed part Files (*.mpt.bz2)</source>
-        <translation type="unfinished"></translation>
+        <translation>File parti compressi bzip2 (*.mpt.bz2)</translation>
     </message>
     <message>
         <source>Presets (*.pre *.pre.gz *.pre.bz2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Preset (*.pre *.pre.gz *.pre.bz2)</translation>
     </message>
     <message>
         <source>Presets (*.pre)</source>
-        <translation type="unfinished"></translation>
+        <translation>Preset (*.pre)</translation>
     </message>
     <message>
         <source>gzip compressed presets (*.pre.gz)</source>
-        <translation type="unfinished"></translation>
+        <translation>File preset compressi gzip (*.pre.gz)</translation>
     </message>
     <message>
         <source>bzip2 compressed presets (*.pre.bz2)</source>
-        <translation type="unfinished"></translation>
+        <translation>File preset compressi bzip2 (*.pre.bz2)</translation>
     </message>
     <message>
         <source>Presets (*.map *.map.gz *.map.bz2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Preset (*.map *.map.gz *.map.bz2)</translation>
     </message>
     <message>
         <source>Presets (*.map)</source>
-        <translation type="unfinished"></translation>
+        <translation>Preset (*.map)</translation>
     </message>
     <message>
         <source>gzip compressed presets (*.map.gz)</source>
-        <translation type="unfinished"></translation>
+        <translation>File preset compressi gzip (*.map.gz)</translation>
     </message>
     <message>
         <source>bzip2 compressed presets (*.map.bz2)</source>
-        <translation type="unfinished"></translation>
+        <translation>File preset compressi bzip2 (*.map.bz2)</translation>
     </message>
     <message>
         <source>Binary (*.bin)</source>
-        <translation type="unfinished"></translation>
+        <translation>Binari (*.bin)</translation>
     </message>
     <message>
         <source>Wave/Binary (*.wav *.ogg *.flac *.bin)</source>
-        <translation type="unfinished"></translation>
+        <translation>Wave/Binario (*.wav *.ogg *.flac)</translation>
     </message>
     <message>
         <source>Wave (*.wav *.ogg *.flac)</source>
-        <translation type="unfinished"></translation>
+        <translation>Wave (*.wav *.ogg *.flac)</translation>
     </message>
     <message>
         <source>Color configuration files (*.cfc)</source>
-        <translation type="unfinished"></translation>
+        <translation>File di configurazione colori (*.cfc)</translation>
     </message>
     <message>
         <source>Qt style sheets (*.qss)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fogli di stile Qt (*.qss)</translation>
     </message>
 </context>
 <context>
