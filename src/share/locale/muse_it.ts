@@ -12673,7 +12673,7 @@ deve essere estesa più di </translation>
     </message>
     <message>
         <source>Please first select the range for crescendo with the loop markers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Per favore seleziona l&apos;intervallo del crescendo con gli indicatori loop.</translation>
     </message>
     <message>
         <source>Controller !</source>
@@ -12685,23 +12685,23 @@ deve essere estesa più di </translation>
     </message>
     <message>
         <source>Switch on General Midi Level 1 mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Abilita modalità General Midi Livello 1</translation>
     </message>
     <message>
         <source>Switch on General Midi Level 2 mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Abilita modalità General Midi Livello 2</translation>
     </message>
     <message>
         <source>Switch off General Midi Level 1 or 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Disabilita modalità General Midi Livello 1 o 2</translation>
     </message>
     <message>
         <source>Switch on Roland GS mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Abilita modalità Roland GS</translation>
     </message>
     <message>
         <source>Switch on Yamaha XG mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Abilita modalità Yamaha XG</translation>
     </message>
     <message>
         <source>Tracks:</source>
@@ -13011,7 +13011,11 @@ If swing=0, this is normal
 If swing is 33, you get a 2:1-rhythm.
 If swing is -33, you get a 1:2-rhythm.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Se il cambiamento proposto in battiti o durata è minore della soglia, nessuna azione.
+Se swing=0, ritmo regolare.
+Se swing=33, ritmo 2:1.
+Se swing=-33, ritmo 1:2.
+</translation>
     </message>
     <message>
         <source>OK</source>
@@ -13038,11 +13042,11 @@ If swing is -33, you get a 1:2-rhythm.
     <name>RemoveBase</name>
     <message>
         <source>MusE: Erase Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>MusE: Cancella note</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Intervallo</translation>
+        <translation>Intervallo</translation>
     </message>
     <message>
         <source>All Events</source>
@@ -13062,19 +13066,19 @@ If swing is -33, you get a 1:2-rhythm.
     </message>
     <message>
         <source>Thresholds</source>
-        <translation type="unfinished"></translation>
+        <translation>Soglie</translation>
     </message>
     <message>
         <source> ticks</source>
-        <translation type="unfinished"></translation>
+        <translation> battiti</translation>
     </message>
     <message>
         <source>Velocity</source>
-        <translation type="unfinished"></translation>
+        <translation>Intensità</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Lunghezza</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -13084,58 +13088,64 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:7px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If nothing is checked, everything is removed.&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:7px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If velocity is checked, only notes with velo &amp;lt; threshold are removed.&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If both are checked, notes with velo &amp;lt; threshold OR with length &amp;lt; threshold are removed.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:7px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Se nulla è spuntato, tutto è rimosso.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:7px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Se l&apos;intensità è spuntata, solo le note meno intense della soglia sono rimosse.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Se entrambe sono selezionate. sono rimosse le note con intensità O lunghezza inferiori alla soglia.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <source>All Eve&amp;nts</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutti gli eve&amp;nti</translation>
     </message>
     <message>
         <source>Selec&amp;ted Events</source>
-        <translation type="unfinished"></translation>
+        <translation>Eventi seleziona&amp;ti</translation>
     </message>
     <message>
         <source>&amp;Looped Events</source>
-        <translation type="unfinished"></translation>
+        <translation>Eventi in &amp;loop</translation>
     </message>
     <message>
         <source>Selected L&amp;ooped</source>
-        <translation type="unfinished"></translation>
+        <translation>Eventi selezionati in l&amp;oop</translation>
     </message>
     <message>
         <source>Parts</source>
-        <translation type="unfinished">Parti</translation>
+        <translation>Parti</translation>
     </message>
     <message>
         <source>Selected parts or c&amp;urrent part</source>
-        <translation type="unfinished"></translation>
+        <translation>Parti selezionate o parte att&amp;uale</translation>
     </message>
     <message>
         <source>All parts &amp;in editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutte le part&amp;i nell&apos;editor</translation>
     </message>
 </context>
 <context>
     <name>RouteDialogBase</name>
     <message>
         <source>MusE: Routing</source>
-        <translation type="unfinished"></translation>
+        <translation>MusE: Cablaggio</translation>
     </message>
     <message>
         <source>Connect</source>
-        <translation type="unfinished"></translation>
+        <translation>Collega</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Scollega</translation>
     </message>
     <message>
         <source>List of available sources.
@@ -13144,14 +13154,23 @@ For items having a channel bar,
  connections can be Omni Mode
  (the textual item) or Channel Mode
  (the Channel bar channels).</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista delle origini disponibili.
+Connetti un&apos;origine ad una destinazione.
+Per elementi con una barra canale,
+le connessioni possono essere globali
+(elemento testuale) o di canali
+(i canali della barra Canale).</translation>
     </message>
     <message>
         <source>Connections View window.
 Shows all current connections.
 Thick lines are Omni Routes.
 Thin lines are Channel Routes.</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>?</translatorcomment>
+        <translation>Finestra Visualizza collegamenti.
+Mostra tutti i collegamenti attuali.
+Linee spesse sono collegamenti globali.
+Linee leggere sono collegamenti di canali.</translation>
     </message>
     <message>
         <source>List of available destinations.
@@ -13160,35 +13179,40 @@ For items having a channel bar,
  connections can be Omni Mode
  (the textual item) or Channel Mode
  (the Channel bar channels).</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista delle destinazioni disponibili.
+Connetti un&apos;origine ad una destinazione.
+Per elementi con una barra canale,
+le connessioni possono essere globali
+(elemento testuale) o di canali
+(i canali della barra Canale).</translation>
     </message>
     <message>
         <source>Itemized list of current connections.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista dei collegamenti attuali.</translation>
     </message>
     <message>
         <source>Show only selected sources</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra solo origini selezionate</translation>
     </message>
     <message>
         <source>Show only destination routes for selected source</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra solo destinazioni per origine selezionata</translation>
     </message>
     <message>
         <source>Show only selected destinations</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra solo destinazioni selezionati</translation>
     </message>
     <message>
         <source>Show only source routes for selected destination</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra solo origini per destinazione selezionata</translation>
     </message>
     <message>
         <source>Show all Midi Ports</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra tutte le porte MIDI</translation>
     </message>
     <message>
         <source>Auto adjust column size</source>
-        <translation type="unfinished"></translation>
+        <translation>Adatta colonne automaticamente</translation>
     </message>
     <message>
         <source>Automatically adjusts the source and destination
@@ -13196,19 +13220,23 @@ For items having a channel bar,
 This also turns on text word wrap, which may 
  cause slower response with larger lists.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Adatta automaticamente l&apos;ampiezza degli
+alberi di origine e destinazione quando gli splitter sono regolati.
+Abilita anche l&apos;andata a capo automatica, che potrebbe
+causare rallentamenti con liste lunghe.
+</translation>
     </message>
     <message>
         <source>Preferred route name or alias</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome o alias preferito della connessione</translation>
     </message>
     <message>
         <source>Connect source to destination</source>
-        <translation type="unfinished"></translation>
+        <translation>Connetti origine a destinazione</translation>
     </message>
     <message>
         <source>Remove selected route</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimuovi collegamento selezionato</translation>
     </message>
 </context>
 <context>
@@ -13378,43 +13406,43 @@ This also turns on text word wrap, which may
     <name>SRCResamplerSettingsBase</name>
     <message>
         <source>SRC Resampler Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazioni resampler SRC</translation>
     </message>
     <message>
         <source>Use default settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa impostazioni predefinite</translation>
     </message>
     <message>
         <source>Converter Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo converitore:</translation>
     </message>
     <message>
         <source>SINC Best quality</source>
-        <translation type="unfinished"></translation>
+        <translation>SINC Qualità migliore</translation>
     </message>
     <message>
         <source>SINC Medium quality</source>
-        <translation type="unfinished"></translation>
+        <translation>SINC Qualità media</translation>
     </message>
     <message>
         <source>SINC Fastest</source>
-        <translation type="unfinished"></translation>
+        <translation>SINC Più rapido</translation>
     </message>
     <message>
         <source>Zero Order Hold</source>
-        <translation type="unfinished"></translation>
+        <translation>Ricostruttore di ordine zero</translation>
     </message>
     <message>
         <source>Linear</source>
-        <translation type="unfinished"></translation>
+        <translation>Lineare</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation>Annulla</translation>
     </message>
 </context>
 <context>
@@ -14206,27 +14234,27 @@ Robert Jonsson
     <name>ZitaResamplerSettingsBase</name>
     <message>
         <source>Zita Resampler Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazioni Zita Resampler</translation>
     </message>
     <message>
         <source>Zita Resampler support is not enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Supporto Zita Resampler disabilitato</translation>
     </message>
     <message>
         <source>Use default settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa impostazioni predefinite</translation>
     </message>
     <message>
         <source>Options:</source>
-        <translation type="unfinished"></translation>
+        <translation>Opzioni:</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation>Annulla</translation>
     </message>
 </context>
 <context>
@@ -14368,360 +14396,364 @@ Robert Jonsson
     <name>freeverb</name>
     <message>
         <source>FreeVerb</source>
-        <translation type="unfinished"></translation>
+        <translation>FreeVerb</translation>
     </message>
     <message>
         <source>Room Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Volume stanza</translation>
     </message>
     <message>
         <source>Damping</source>
-        <translation type="unfinished"></translation>
+        <translation>Attenuazione</translation>
     </message>
     <message>
         <source>Wet Level</source>
-        <translation type="unfinished"></translation>
+        <translation>Livello wet</translation>
     </message>
     <message>
         <source>Tap-Reverberator</source>
-        <translation type="unfinished"></translation>
+        <translation>Tap-Reverberator</translation>
     </message>
     <message>
         <source>Decay [ms]</source>
-        <translation type="unfinished"></translation>
+        <translation>Decay [ms]</translation>
     </message>
     <message>
         <source>dB</source>
-        <translation type="unfinished">dB</translation>
+        <translation>dB</translation>
     </message>
     <message>
         <source>Dry Level [dB]</source>
-        <translation type="unfinished"></translation>
+        <translation>Livello dry [dB]</translation>
     </message>
     <message>
         <source>Wet Level [dB]</source>
-        <translation type="unfinished"></translation>
+        <translation>Livello wet [dB]</translation>
     </message>
     <message>
         <source>Preset:</source>
-        <translation type="unfinished"></translation>
+        <translation>Preset:</translation>
     </message>
     <message>
         <source>AfterBurn</source>
-        <translation type="unfinished"></translation>
+        <translation>AfterBurn</translation>
     </message>
     <message>
         <source>AfterBurn (Long)</source>
-        <translation type="unfinished"></translation>
+        <translation>AfterBurn (Lungo)</translation>
     </message>
     <message>
         <source>Ambience</source>
-        <translation type="unfinished"></translation>
+        <translation>Ambiente</translation>
     </message>
     <message>
         <source>Ambience (Thick)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ambiente (Spesso)</translation>
     </message>
     <message>
         <source>Ambience (Thick) - HD</source>
-        <translation type="unfinished"></translation>
+        <translation>Ambiente (Spesso) - HD</translation>
     </message>
     <message>
         <source>Cathedral</source>
-        <translation type="unfinished"></translation>
+        <translation>Cattedrale</translation>
     </message>
     <message>
         <source>Cathedral - HD</source>
-        <translation type="unfinished"></translation>
+        <translation>Cattedrale - HD</translation>
     </message>
     <message>
         <source>Drum Chamber</source>
-        <translation type="unfinished"></translation>
+        <translation>Sala percussioni</translation>
     </message>
     <message>
         <source>Garage</source>
-        <translation type="unfinished"></translation>
+        <translation>Garage</translation>
     </message>
     <message>
         <source>Garage (Bright)</source>
-        <translation type="unfinished"></translation>
+        <translation>Garage (Brillante)</translation>
     </message>
     <message>
         <source>Gymnasium</source>
-        <translation type="unfinished"></translation>
+        <translation>Ginnasio</translation>
     </message>
     <message>
         <source>Gymnasium (Bright)</source>
-        <translation type="unfinished"></translation>
+        <translation>Palestra (Brillante)</translation>
     </message>
     <message>
         <source>Gymnasium (Bright) - HD</source>
-        <translation type="unfinished"></translation>
+        <translation>Palestra (Brillante) - HD</translation>
     </message>
     <message>
         <source>Hall (Small)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sala (Piccola)</translation>
     </message>
     <message>
         <source>Hall (Medium)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sala (Media)</translation>
     </message>
     <message>
         <source>Hall (Large)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sala (Grande)</translation>
     </message>
     <message>
         <source>Hall (Large) - HD</source>
-        <translation type="unfinished"></translation>
+        <translation>Sala (Grande) - HD</translation>
     </message>
     <message>
         <source>Plate (Small)</source>
-        <translation type="unfinished"></translation>
+        <translation>Plate (Piccolo)</translation>
     </message>
     <message>
         <source>Plate (Medium)</source>
-        <translation type="unfinished"></translation>
+        <translation>Plate (Medio)</translation>
     </message>
     <message>
         <source>Plate (Large)</source>
-        <translation type="unfinished"></translation>
+        <translation>Plate (Grande)</translation>
     </message>
     <message>
         <source>Plate (Large) - HD</source>
-        <translation type="unfinished"></translation>
+        <translation>Plate (Grande) - HD</translation>
     </message>
     <message>
         <source>Pulse Chamber</source>
-        <translation type="unfinished"></translation>
+        <translation>Camera pulse</translation>
     </message>
     <message>
         <source>Pulse Chamber (Reverse)</source>
-        <translation type="unfinished"></translation>
+        <translation>Camera pulse (Inverso)</translation>
     </message>
     <message>
         <source>Resonator (96 ms)</source>
-        <translation type="unfinished"></translation>
+        <translation>Risonatore (96 ms)</translation>
     </message>
     <message>
         <source>Resonator (152 ms)</source>
-        <translation type="unfinished"></translation>
+        <translation>Risonatore (152 ms)</translation>
     </message>
     <message>
         <source>Resonator (208 ms)</source>
-        <translation type="unfinished"></translation>
+        <translation>Risonatore (208 ms)</translation>
     </message>
     <message>
         <source>Room (Small)</source>
-        <translation type="unfinished"></translation>
+        <translation>Camera (Piccola)</translation>
     </message>
     <message>
         <source>Room (Medium)</source>
-        <translation type="unfinished"></translation>
+        <translation>Camera (Media)</translation>
     </message>
     <message>
         <source>Room (Large)</source>
-        <translation type="unfinished"></translation>
+        <translation>Camera (Grande)</translation>
     </message>
     <message>
         <source>Room (Large) - HD</source>
-        <translation type="unfinished"></translation>
+        <translation>Camera (Grande) - HD</translation>
     </message>
     <message>
         <source>Slap Chamber</source>
-        <translation type="unfinished"></translation>
+        <translation>Camera slap</translation>
     </message>
     <message>
         <source>Slap Chamber - HD</source>
-        <translation type="unfinished"></translation>
+        <translation>Camera slap - HD</translation>
     </message>
     <message>
         <source>Slap Chamber (Bright)</source>
-        <translation type="unfinished"></translation>
+        <translation>Camera slap (Brillante)</translation>
     </message>
     <message>
         <source>Slap Chamber (Bright) HD</source>
-        <translation type="unfinished"></translation>
+        <translation>Camera slap (Brillante) HD</translation>
     </message>
     <message>
         <source>Smooth Hall (Small)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sala smooth (Piccola)</translation>
     </message>
     <message>
         <source>Smooth Hall (Medium)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sala smooth (Media)</translation>
     </message>
     <message>
         <source>Smooth Hall (Large)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sala smooth (Grande)</translation>
     </message>
     <message>
         <source>Smooth Hall (Large) - HD</source>
-        <translation type="unfinished"></translation>
+        <translation>Sala smooth (Grande) - HD</translation>
     </message>
     <message>
         <source>Vocal Plate</source>
-        <translation type="unfinished"></translation>
+        <translation>Plate vocale</translation>
     </message>
     <message>
         <source>Vocal Plate - HD</source>
-        <translation type="unfinished"></translation>
+        <translation>Plate vocale - HD</translation>
     </message>
     <message>
         <source>Warble Chamber</source>
-        <translation type="unfinished"></translation>
+        <translation>Camera gorgeggio</translation>
     </message>
     <message>
         <source>Warehoouse</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>mistake in original</translatorcomment>
+        <translation>Magazzino</translation>
     </message>
     <message>
         <source>Warehouse - HD</source>
-        <translation type="unfinished"></translation>
+        <translation>Magazzino - HD</translation>
     </message>
     <message>
         <source>Comb Filters</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtro comb</translation>
     </message>
     <message>
         <source>Allpass Filters</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtro allpass</translation>
     </message>
     <message>
         <source>Bandpass Filters</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtro bandpass</translation>
     </message>
     <message>
         <source>Enhanced Stereo</source>
-        <translation type="unfinished"></translation>
+        <translation>Stereo potenziato</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>File to open</source>
-        <translation type="unfinished"></translation>
+        <translation>File da aprire</translation>
     </message>
     <message>
         <source>Alsa midi only (using dummy audio driver)</source>
-        <translation type="unfinished"></translation>
+        <translation>Solo MIDI ALSA (con driver audio dummy)</translation>
     </message>
     <message>
         <source>Use RtAudio driver</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa driver RtAudio</translation>
     </message>
     <message>
         <source>Use JAckAudio driver to connect to Jack audio server</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa driver JackAudio per la connessione al server audio JACK</translation>
     </message>
     <message>
         <source>Do not try to auto-start the Jack audio server</source>
-        <translation type="unfinished"></translation>
+        <translation>Non provare ad avviare automaticamente il server JACK</translation>
     </message>
     <message>
         <source>Do not auto-populate midi ports with midi devices found, at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Non collegare automaticamente le porte MIDI ai dispositivi, all&apos;avvio</translation>
     </message>
     <message>
         <source>Force inclusion of ALSA midi even if using Jack</source>
-        <translation type="unfinished"></translation>
+        <translation>Forza inclusione di ALSA MIDI anche su JACK</translation>
     </message>
     <message>
         <source>Set audio driver real time priority to n (Dummy only, default 40. Else fixed by Jack.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Imposta priorità audio in tempo reale ad n (solo dummy, default 40. Altrimenti decide JACK)</translation>
     </message>
     <message>
         <source>Force midi real time priority to n (default: audio driver prio -1)
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Forza priorità MIDI in tempo reale ad n (default: priorità audio - 1)
+</translation>
     </message>
     <message>
         <source>Force plugin cache re-creation. (Automatic if any plugin path directories changed.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Forza ri-creazione della cache dei plugin (Automatico se cambia il percorso di un plugin.)</translation>
     </message>
     <message>
         <source>Do not re-create plugin cache. Avoids repeated re-creations in some circumstances. Use with care.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non ri-creare la cache dei plugin. Evita ri-creazioni ripetute in alcuni casi. Da usare con cautela.</translation>
     </message>
     <message>
         <source>Don&apos;t load LADSPA plugins</source>
-        <translation type="unfinished"></translation>
+        <translation>Non caricare plugin LADSPA</translation>
     </message>
     <message>
         <source>Don&apos;t load MESS plugins</source>
-        <translation type="unfinished"></translation>
+        <translation>Non caricare plugin MESS</translation>
     </message>
     <message>
         <source>Don&apos;t load VST plugins</source>
-        <translation type="unfinished"></translation>
+        <translation>Non caricare plugin VST</translation>
     </message>
     <message>
         <source>Don&apos;t load DSSI plugins</source>
-        <translation type="unfinished"></translation>
+        <translation>Non caricare plugin DSSI</translation>
     </message>
     <message>
         <source>Don&apos;t load LV2 plugins</source>
-        <translation type="unfinished"></translation>
+        <translation>Non caricare plugin LV2</translation>
     </message>
     <message>
         <source>Don&apos;t use LASH</source>
-        <translation type="unfinished"></translation>
+        <translation>Non usare LASH</translation>
     </message>
     <message>
         <source>Force locale to the given language/country code (xx = </source>
-        <translation type="unfinished"></translation>
+        <translation>Forza locale alla data lingua/codice Paese (xx = </translation>
     </message>
     <message>
         <source>Ubuntu/unity workaround: don&apos;t allow sharing menus and mdi-subwins.</source>
-        <translation type="unfinished"></translation>
+        <translation>Per Ubuntu/unity: non permettere condivisione menu e sottofinestre mdi.</translation>
     </message>
     <message>
         <source>Debug mode: no threads, no RT</source>
-        <translation type="unfinished"></translation>
+        <translation>Modalità debug: no thread, no tempo reale</translation>
     </message>
     <message>
         <source>Debug mode: enable some debug messages specify twice for lots of debug messages this may slow down MusE massively!</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>?</translatorcomment>
+        <translation>Modalità debug: abilita alcuni messaggi di debug specifica due volte per molti messaggi può rallentare molto MusE!</translation>
     </message>
     <message>
         <source>Debug mode: trace midi Input</source>
-        <translation type="unfinished"></translation>
+        <translation>Modalità debug: traccia input MIDI</translation>
     </message>
     <message>
         <source>Debug mode: trace midi Output</source>
-        <translation type="unfinished"></translation>
+        <translation>Modalità debug: traccia output MIDI</translation>
     </message>
     <message>
         <source>Debug mode: trace sync
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Modalità debug: traccia sync
+</translation>
     </message>
     <message>
         <source>Enable Python control support</source>
-        <translation type="unfinished"></translation>
+        <translation>Abilita supporto per controllo Python</translation>
     </message>
     <message>
         <source>Pyro nameserver host name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome host nameserver Pyro</translation>
     </message>
     <message>
         <source>Pyro nameserver host port</source>
-        <translation type="unfinished"></translation>
+        <translation>Porta host nameserver Pyro</translation>
     </message>
     <message>
         <source>Pyro daemon host name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome host servizio Pyro</translation>
     </message>
     <message>
         <source>Pyro daemon host port</source>
-        <translation type="unfinished"></translation>
+        <translation>Porta host servizio Pyro</translation>
     </message>
     <message>
         <source>Pyro communication timeout in seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Timeout di comunicazione Pyro, in secondi</translation>
     </message>
     <message>
         <source>Don&apos;t load LinuxVST plugins</source>
-        <translation type="unfinished"></translation>
+        <translation>Non caricare plugin LinuxVST</translation>
     </message>
 </context>
 <context>
