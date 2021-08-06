@@ -65,6 +65,7 @@
 #include "shortcuts.h"
 #include "drumedit.h"
 #include "utils.h"
+#include "functions.h"
 
 
 #ifdef DSSI_SUPPORT
@@ -114,7 +115,7 @@ TList::TList(Header* hdr, QWidget* parent, const char* name)
     //  full rect paint events even on small scrolls! See help on QPainter::scroll().
     setAttribute(Qt::WA_OpaquePaintEvent);
 
-    setStatusTip(tr("Track list: LMB to select track, CTRL+LMB to add to selection, SHIFT+LMB for range select. RMB in empty area to create tracks. Press F1 for help."));
+    setStatusTip(tr("Track list: LMB to select track, CTRL+LMB to add to selection, SHIFT+LMB for range select. Insert or RMB to create tracks. Press F1 for help."));
 
     setObjectName(name);
     ypos = 0;
@@ -159,6 +160,9 @@ void TList::songChanged(MusECore::SongChangedStruct_t flags)
         update();
     if (flags & (SC_TRACK_INSERTED | SC_TRACK_REMOVED | SC_TRACK_MODIFIED))
         adjustScrollbar();
+    if (flags & SC_TRACK_REMOVED && !MusEGlobal::song->tracks()->empty() && !MusECore::tracks_are_selected())
+        MusEGlobal::song->tracks()->at(0)->setSelected(true);
+
 }
 
 //---------------------------------------------------------
@@ -1416,7 +1420,7 @@ void TList::showAudioOutPopupMenu(MusECore::Track* t, int x, int y)
 
     QAction* actTrack = p->addAction(*MusEGui::downmixTrackSVGIcon, tr("Render Downmix to Selected Wave Track"));
     actTrack->setEnabled(!MusEGlobal::audio->bounce());
-    QAction* actFile = p->addAction(*MusEGui::downmixOnSVGIcon, tr("Render Downmix to a File..."));
+    QAction* actFile = p->addAction(*MusEGui::downmixFileSVGIcon, tr("Render Downmix to a File..."));
     actFile->setEnabled(!MusEGlobal::audio->bounce());
 
     QAction* ract = p->exec(mapToGlobal(QPoint(x, y)), nullptr);
@@ -1863,12 +1867,13 @@ void TList::mousePressEvent(QMouseEvent* ev)
 
     MusECore::Track* t    = y2Track(y + ypos);
 
-    TrackColumn col = TrackColumn(header->logicalIndexAt(x));
     if (t == nullptr) {
         if (button == Qt::RightButton) {
 
             // Show the menu
-            QAction* act = addTrackMenu->exec(ev->globalPos(), nullptr);
+            QMenu m(this);
+            MusEGui::populateAddTrack(&m, false, false);
+            QAction* act = m.exec(ev->globalPos(), nullptr);
 
             // Valid click?
             if(act)
@@ -1921,6 +1926,7 @@ void TList::mousePressEvent(QMouseEvent* ev)
     }
 
     mode = NORMAL;
+    TrackColumn col = TrackColumn(header->logicalIndexAt(x));
 
     if (button == Qt::LeftButton && col != COL_INPUT_MONITOR && col != COL_RECORD && col != COL_MUTE && col != COL_SOLO)
     {
@@ -2352,16 +2358,15 @@ void TList::mousePressEvent(QMouseEvent* ev)
                 a = p->addAction(*minusSVGIcon, tr("Delete Track"));
                 a->setData(1001);
 
-                if (selCnt > 1){
+                if (selCnt > 0){
                     p->addSeparator();
                     a = p->addAction(*duplSelTracksSVGIcon, tr("Duplicate Selected"));
                     a->setData(1004);
                     a->setShortcut(shortcuts[SHRT_DUPLICATE_TRACK].key);
                     a = p->addAction(*delSelTracksSVGIcon, tr("Delete Selected"));
                     a->setData(1003);
-                }
+                    a->setShortcut(shortcuts[SHRT_DELETE_TRACK].key);
 
-                if (selCnt > 0) {
                     p->addSeparator();
                     a = p->addAction(tr("Move Selected Up"));
                     a->setData(1006);
@@ -2407,8 +2412,10 @@ void TList::mousePressEvent(QMouseEvent* ev)
                     // 1016 is occupied.
                     p->addSeparator();
                 }
-                insertTrackMenu->setTitle(tr("Insert Track"));
-                p->addMenu(insertTrackMenu);
+                QMenu m(this);
+                m.setTitle(tr("Insert Track"));
+                MusEGui::populateAddTrack(&m, false, true);
+                p->addMenu(&m);
 
                 QAction* act = p->exec(ev->globalPos(), nullptr);
                 if (act) {
@@ -3238,14 +3245,28 @@ void TList::setHeader(Header* h)
     redraw();
 }
 
-void TList::populateAddTrack()
+void TList::openAddTrackMenu()
 {
-    addTrackMenu = new QMenu;
-    MusEGui::populateAddTrack(addTrackMenu, false, false, true);
+    if (addTrackOpened)
+        return;
 
-    insertTrackMenu = new QMenu;
-    MusEGui::populateAddTrack(insertTrackMenu, false, true);
+    addTrackOpened = true;
+
+    QMenu m(this);
+    MusEGui::populateAddTrack(&m, false, false);
+    QAction* act = m.exec(mapToGlobal(pos() + QPoint(5,0)), nullptr);
+    if (act) {
+        auto t = MusEGlobal::song->addNewTrack(act);  // Add at end of list.
+        if (t && t->isVisible()) {
+            MusEGlobal::song->selectAllTracks(false);
+            t->setSelected(true);
+            MusEGlobal::song->update(SC_TRACK_SELECTION);
+            adjustScrollbar();
+        }
+    }
+    addTrackOpened = false;
 }
+
 
 } // namespace MusEGui
 

@@ -55,7 +55,6 @@
 #include "track.h"
 //#include "meter.h"
 #include "combobox.h"
-#include "doublelabel.h"
 #include "knob.h"
 #include "slider.h"
 #include "strip.h"
@@ -94,11 +93,12 @@ bool ScrollArea::viewportEvent(QEvent* event)
 //    inputs | synthis | tracks | groups | master
 //---------------------------------------------------------
 
-AudioMixerApp::AudioMixerApp(QWidget* parent, MusEGlobal::MixerConfig* c)
+AudioMixerApp::AudioMixerApp(QWidget* parent, MusEGlobal::MixerConfig* c, bool docked)
    : QMainWindow(parent)
 {
       _resizeFlag = false;
       _preferKnobs = MusEGlobal::config.preferKnobsVsSliders;
+      _docked = docked;
       cfg = c;
       oldAuxsSize = 0;
       routingDialog = nullptr;
@@ -117,16 +117,17 @@ AudioMixerApp::AudioMixerApp(QWidget* parent, MusEGlobal::MixerConfig* c)
 
       //cfg->displayOrder = MusEGlobal::MixerConfig::STRIPS_TRADITIONAL_VIEW;
 
-      QMenu* menuConfig = menuBar()->addMenu(tr("&Create"));
-      MusEGui::populateAddTrack(menuConfig,true);
+      menuConfig = menuBar()->addMenu(tr("&Create"));
+      connect(menuConfig, &QMenu::aboutToShow, [=]() { menuConfig->clear(); MusEGui::populateAddTrack(menuConfig, true); } );
       connect(menuConfig, &QMenu::triggered, [](QAction* a) { MusEGlobal::song->addNewTrack(a); } );
-      
+
       QMenu* menuView = menuBar()->addMenu(tr("&View"));
       menuStrips = menuView->addMenu(tr("Strips"));
       connect(menuStrips, &QMenu::aboutToShow, [this]() { stripsMenu(); } );
 
-      routingId = menuView->addAction(tr("Routing"));
+      routingId = menuView->addAction(tr("Advanced Router..."));
       routingId->setCheckable(true);
+      routingId->setIcon(*routerSVGIcon);
       connect(routingId, &QAction::triggered, [this]() { toggleRouteDialog(); } );
 
       menuView->addSeparator();
@@ -196,11 +197,14 @@ AudioMixerApp::AudioMixerApp(QWidget* parent, MusEGlobal::MixerConfig* c)
       // Although this does not have any effect because we disabled the maximize button, just in case
       //  the maximize button is ever re-added and/or the maximum width imposed on the mixer window
       //  is ever removed, keep this - it will be required. No harm so far in leaving it in.
-      QSpacerItem* right_spacer = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding);
-      mixerLayout->addSpacerItem(right_spacer);
+      //      QSpacerItem* right_spacer = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding);
+      //      mixerLayout->addSpacerItem(right_spacer);
 
+      if (_docked)
+          mixerLayout->addStretch(1);
+      else
+          connect(view, SIGNAL(layoutRequest()), SLOT(setSizing()));
       // FIXME: Neither of these two replacement functor version work. What's wrong here?
-      connect(view, SIGNAL(layoutRequest()), SLOT(setSizing()));  
       //connect(view, &ScrollArea::layoutRequest, [this]() { setSizing(); } );
       //connect(view, QOverload<>::of(&ScrollArea::layoutRequest), [=]() { setSizing(); } );
       
@@ -221,28 +225,33 @@ void AudioMixerApp::stripsMenu()
 {
   menuStrips->clear();
   connect(menuStrips, &QMenu::triggered, [this](QAction* a) { handleMenu(a); } );
-  QAction *act;
 
-  act = menuStrips->addAction(tr("Traditional order"));
+  QAction *act;
+  QActionGroup *ag = new QActionGroup(this);
+  ag->setExclusive(true);
+
+  act = ag->addAction(tr("Traditional Order"));
   act->setData(MusEGlobal::MixerConfig::STRIPS_TRADITIONAL_VIEW);
   act->setCheckable(true);
   if (cfg->displayOrder == MusEGlobal::MixerConfig::STRIPS_TRADITIONAL_VIEW)
     act->setChecked(true);
 
-  act = menuStrips->addAction(tr("Arranger order"));
+  act = ag->addAction(tr("Arranger Order"));
   act->setData(MusEGlobal::MixerConfig::STRIPS_ARRANGER_VIEW);
   act->setCheckable(true);
   if (cfg->displayOrder == MusEGlobal::MixerConfig::STRIPS_ARRANGER_VIEW)
     act->setChecked(true);
 
-  act = menuStrips->addAction(tr("User order"));
+  act = ag->addAction(tr("User Order"));
   act->setData(MusEGlobal::MixerConfig::STRIPS_EDITED_VIEW);
   act->setCheckable(true);
   if (cfg->displayOrder == MusEGlobal::MixerConfig::STRIPS_EDITED_VIEW)
     act->setChecked(true);
 
+  menuStrips->addActions(ag->actions());
+
   menuStrips->addSeparator();
-  act = menuStrips->addAction(tr("Show all hidden strips"));
+  act = menuStrips->addAction(tr("Show All Hidden Strips"));
   act->setData(UNHIDE_STRIPS);
   menuStrips->addSeparator();
 
@@ -250,7 +259,7 @@ void AudioMixerApp::stripsMenu()
   int i=0,h=0;
   foreach (Strip *s, stripList) {
     if (!s->getStripVisible()){
-      act = menuStrips->addAction(tr("Unhide strip: ") + s->getTrack()->name());
+      act = menuStrips->addAction(tr("Unhide Strip: ") + s->getTrack()->name());
       act->setData(i);
       h++;
     }
@@ -678,18 +687,15 @@ void AudioMixerApp::addStrip(const MusECore::Track* t, const MusEGlobal::StripCo
 
     // Make them non-embedded: Moveable, hideable, and with an expander handle.
     if (t->isMidiTrack())
-          strip = new MidiStrip(central, (MusECore::MidiTrack*)t, true, false);
+          strip = new MidiStrip(central, (MusECore::MidiTrack*)t, true, false, _docked);
     else
-          strip = new AudioStrip(central, (MusECore::AudioTrack*)t, true, false);
+          strip = new AudioStrip(central, (MusECore::AudioTrack*)t, true, false, _docked);
 
     // Broadcast changes to other selected tracks.
     strip->setBroadcastChanges(true);
 
     // Set focus yielding to the mixer window.
-    if(MusEGlobal::config.smartFocus)
-    {
-      strip->setFocusYieldWidget(this);
-    }
+    strip->setFocusYieldWidget(this);
 
     connect(strip, &Strip::clearStripSelection, [this]() { clearStripSelection(); } );
     connect(strip, &Strip::moveStrip, [this](Strip* s) { moveStrip(s); } );
@@ -729,12 +735,13 @@ void AudioMixerApp::clearAndDelete()
 {
   DEBUG_MIXER(stderr, "clearAndDelete\n");
   // Remove and delete only strip widgets from the layout, not spacers/stretchers etc.
-  StripList::iterator si = stripList.begin();
-  for (; si != stripList.end(); ++si)
+//  StripList::iterator si = stripList.begin();
+//  for (; si != stripList.end(); ++si)
+  for (auto& si : stripList)
   {
-    mixerLayout->removeWidget(*si);
+    mixerLayout->removeWidget(si);
     //(*si)->deleteLater();
-    delete (*si);
+    delete si;
   }
 
   cfg->stripConfigList.clear();
@@ -773,11 +780,11 @@ void AudioMixerApp::initMixer()
     const int sz = cfg->stripOrder.size();
     for (int i=0; i < sz; i++) {
       DEBUG_MIXER(stderr, "processing strip [%s][%d]\n", cfg->stripOrder.at(i).toLatin1().data(), cfg->stripVisibility.at(i));
-      for (MusECore::ciTrack tli = tl->cbegin(); tli != tl->cend(); ++tli) {
-        if ((*tli)->name() == cfg->stripOrder.at(i)) {
+      for (const auto& tli : *tl) {
+        if (tli->name() == cfg->stripOrder.at(i)) {
           MusEGlobal::StripConfig sc;
           sc._visible = cfg->stripVisibility.at(i);
-          addStrip(*tli, sc);
+          addStrip(tli, sc);
           break;
         }
       }
@@ -797,9 +804,8 @@ void AudioMixerApp::initMixer()
       }
   }
   else {
-    for (MusECore::ciTrack tli = tl->cbegin(); tli != tl->cend(); ++tli) {
-      addStrip(*tli);
-    }
+    for (const auto& tli : *tl)
+      addStrip(tli);
   }
 }
 
@@ -911,7 +917,7 @@ bool AudioMixerApp::updateStripList()
 
 void AudioMixerApp::updateSelectedStrips()
 {
-  for (Strip *s : stripList)
+  for (Strip *s : qAsConst(stripList))
   {
     if(MusECore::Track* t = s->getTrack())
     {
@@ -1231,8 +1237,7 @@ void AudioMixerApp::selectNextStrip(bool isRight)
   }
 }
 
-bool AudioMixerApp::eventFilter(QObject *obj,
-                             QEvent *event)
+bool AudioMixerApp::eventFilter(QObject *obj, QEvent *event)
 {
   DEBUG_MIXER(stderr, "eventFilter type %d\n", (int)event->type());
     QKeyEvent *keyEvent = nullptr;//event data, if this is a keystroke event

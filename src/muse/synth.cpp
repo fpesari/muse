@@ -388,8 +388,6 @@ SynthI::SynthI()
 
       _readEnable = false;
       _writeEnable = false;
-      setVolume(1.0);
-      setPan(0.0);
       }
 
 SynthI::SynthI(const SynthI& si, int flags)
@@ -404,8 +402,6 @@ SynthI::SynthI(const SynthI& si, int flags)
 
       _readEnable = false;
       _writeEnable = false;
-      setVolume(1.0);
-      setPan(0.0);
 
       Synth* s = si.synth();
       if (s) {
@@ -413,6 +409,46 @@ SynthI::SynthI(const SynthI& si, int flags)
             n.setNum(s->instances());
             QString instance_name = s->name() + "-" + n;
             if(!initInstance(s, instance_name)) {  // false if success
+
+                  if(((flags & ASSIGN_PROPERTIES) && !(flags & ASSIGN_STD_CTRLS)) || (flags & ASSIGN_STD_CTRLS))
+                  {
+                    int af = CtrlList::ASSIGN_PROPERTIES;
+                    if(flags & ASSIGN_STD_CTRLS)
+                      af |= CtrlList::ASSIGN_VALUES;
+
+                    const AudioTrack& at = static_cast<const AudioTrack&>(si);
+                    AudioTrack* at_this = static_cast<AudioTrack*>(this);
+                    // The beginning of the special synth controller block.
+                    const int synth_id = (int)genACnum(MusECore::MAX_PLUGINS, 0);
+                    // The end of the special block.
+                    const int synth_id_end = synth_id + AC_PLUGIN_CTL_BASE;
+                    ciCtrlList icl           = at.controller()->lower_bound(synth_id);
+                    ciCtrlList icl_this      = at_this->controller()->lower_bound(synth_id);
+                    ciCtrlList icl_end       = at.controller()->lower_bound(synth_id_end);
+                    ciCtrlList icl_this_end  = at_this->controller()->lower_bound(synth_id_end);
+                    int id, id_this;
+                    CtrlList* cl, *cl_this;
+
+                    // Copy the special synth controller block...
+                    while(icl != icl_end && icl_this != icl_this_end)
+                    {
+                      cl      = icl->second;
+                      cl_this = icl_this->second;
+                      id      = cl->id();
+                      id_this = cl_this->id();
+                      if(id < id_this)
+                        ++icl;      // Let id catch up to this id.
+                      else if(id > id_this)
+                        ++icl_this; // Let this id catch up to id.
+                      else
+                      {
+                        // Match found. Copy properties, and values if required.
+                        cl_this->assign(*cl, af);
+                        ++icl;
+                        ++icl_this;
+                      }
+                    }
+                  }
                   return;
                   }
             }
@@ -553,18 +589,12 @@ void SynthI::recordEvent(MidiRecordEvent& event)
 // TODO Maybe support this later, but for now it's not a good idea to control from the synths.
 //      Especially since buggy ones may repeat events multiple times.
 #if 1
-      //
-      // transfer noteOn and Off events to gui for step recording and keyboard
-      // remote control (changed by flo93: added noteOff-events)
-      //
-      if (typ == ME_NOTEON) {
-            int pv = ((event.dataA() & 0xff)<<8) + (event.dataB() & 0xff);
-            MusEGlobal::song->putEvent(pv);
-            }
-      else if (typ == ME_NOTEOFF) {
-            int pv = ((event.dataA() & 0xff)<<8) + (0x00); //send an event with velo=0
-            MusEGlobal::song->putEvent(pv);
-            }
+      // transfer also to gui for realtime playback and remote control
+      if (typ == ME_NOTEON || typ == ME_NOTEOFF)
+      {
+          MusEGlobal::song->putEvent(event);
+      }
+
 #endif
 
       // Do not bother recording if it is NOT actually being used by a port.

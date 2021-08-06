@@ -799,8 +799,6 @@ void readConfiguration(Xml& xml, bool doReadMidiPortConfig, bool doReadGlobalCon
                               MusEGlobal::config.midiCtrlGraphMergeEraseWysiwyg = xml.parseInt();
                         else if (tag == "museTheme")
                               MusEGlobal::config.theme = xml.parse1();
-                        else if (tag == "useOldStyleStopShortCut")
-                              MusEGlobal::config.useOldStyleStopShortCut = xml.parseInt();
                         else if (tag == "useRewindOnStop")
                               MusEGlobal::config.useRewindOnStop = xml.parseInt();
                         else if (tag == "moveArmedCheckBox")
@@ -1094,8 +1092,15 @@ void readConfiguration(Xml& xml, bool doReadMidiPortConfig, bool doReadGlobalCon
                         else if (tag == "importMidiDefaultInstr")
                               MusEGlobal::config.importMidiDefaultInstr = xml.parse1();
                         
+                        else if (tag == "mixerDockedA")
+                              MusEGlobal::config.mixerDockedA = xml.parseInt();
+                        else if (tag == "mixerDockedB")
+                            MusEGlobal::config.mixerDockedB = xml.parseInt();
+
                         else if (tag == "showSplashScreen")
-                              MusEGlobal::config.showSplashScreen = xml.parseInt();
+                            MusEGlobal::config.showSplashScreen = xml.parseInt();
+                        else if (tag == "enableLash")
+                            MusEGlobal::config.enableLash = xml.parseInt();
                         else if (tag == "canvasShowPartType")
                               MusEGlobal::config.canvasShowPartType = xml.parseInt();
                         else if (tag == "canvasShowPartEvent")
@@ -1369,6 +1374,8 @@ void readConfiguration(Xml& xml, bool doReadMidiPortConfig, bool doReadGlobalCon
                               MusEGlobal::readPluginGroupConfiguration(xml);
                         else if (tag == "synthDialogFavorites")
                             MusEGui::SynthDialog::readFavConfiguration(xml);
+                        else if (tag == "synthDialogRecents")
+                            MusEGui::SynthDialog::readRecentsConfiguration(xml);
                         else if (tag == "mixdownPath")
                               MusEGlobal::config.mixdownPath = xml.parse1();
                         else if (tag == "showNoteNamesInPianoRoll")
@@ -2045,7 +2052,6 @@ void MusE::writeGlobalConfiguration(int level, MusECore::Xml& xml) const
       xml.intTag(level, "autoSave", MusEGlobal::config.autoSave);
       xml.strTag(level, "museTheme", MusEGlobal::config.theme);
       xml.strTag(level, "externalWavEditor", MusEGlobal::config.externalWavEditor);
-      xml.intTag(level, "useOldStyleStopShortCut", MusEGlobal::config.useOldStyleStopShortCut);
       xml.intTag(level, "useRewindOnStop", MusEGlobal::config.useRewindOnStop);
       xml.intTag(level, "moveArmedCheckBox", MusEGlobal::config.moveArmedCheckBox);
       xml.intTag(level, "popupsDefaultStayOpen", MusEGlobal::config.popupsDefaultStayOpen);
@@ -2125,7 +2131,11 @@ void MusE::writeGlobalConfiguration(int level, MusECore::Xml& xml) const
       MusEGlobal::config.mixer1.write(level, xml, true);
       MusEGlobal::config.mixer2.write(level, xml, true);
 
+      xml.intTag(level, "mixerDockedA", MusEGlobal::config.mixerDockedA);
+      xml.intTag(level, "mixerDockedB", MusEGlobal::config.mixerDockedB);
+
       xml.intTag(level, "showSplashScreen", MusEGlobal::config.showSplashScreen);
+      xml.intTag(level, "enableLash", MusEGlobal::config.enableLash);
       xml.intTag(level, "canvasShowPartType", MusEGlobal::config.canvasShowPartType);
       xml.intTag(level, "canvasShowPartEvent", MusEGlobal::config.canvasShowPartEvent);
       xml.intTag(level, "canvasShowGrid", MusEGlobal::config.canvasShowGrid);
@@ -2147,6 +2157,7 @@ void MusE::writeGlobalConfiguration(int level, MusECore::Xml& xml) const
       
       MusEGlobal::writePluginGroupConfiguration(level, xml);
       MusEGui::SynthDialog::writeFavConfiguration(level, xml);
+      MusEGui::SynthDialog::writeRecentsConfiguration(level, xml);
 
       writeSeqConfiguration(level, xml, false);
 

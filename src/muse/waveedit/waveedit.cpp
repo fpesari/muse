@@ -182,7 +182,7 @@ WaveEdit::WaveEdit(MusECore::PartList* pl, QWidget* parent, const char* name)
           selectNextPartAction = nullptr;
       }
 
-      menuFunctions = menuBar()->addMenu(tr("Func&tions"));
+      menuFunctions = menuBar()->addMenu(tr("Fu&nctions"));
 
       menuGain = menuFunctions->addMenu(tr("&Gain"));
       
@@ -854,12 +854,12 @@ void WaveEdit::keyPressEvent(QKeyEvent* event)
             wc->waveCmd(CMD_LEFT_NOSNAP);
             return;
             }
-      else if (key == shortcuts[SHRT_INSERT_AT_LOCATION].key) {
-            wc->waveCmd(CMD_INSERT);
+      else if (key == shortcuts[SHRT_LOC_PUSH_EVENTS].key) {
+            wc->waveCmd(CMD_PUSH);
             return;
             }
-      else if (key == Qt::Key_Backspace) {
-            wc->waveCmd(CMD_BACKSPACE);
+      else if (key == shortcuts[SHRT_LOC_PULL_EVENTS].key) {
+            wc->waveCmd(CMD_PULL);
             return;
             }
             

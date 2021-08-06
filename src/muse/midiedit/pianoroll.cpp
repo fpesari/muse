@@ -231,36 +231,36 @@ PianoRoll::PianoRoll(MusECore::PartList* pl, QWidget* parent, const char* name, 
 
 //      menuFunctions->setTearOffEnabled(true);
       
-      funcQuantizeAction = menuFunctions->addAction(*quantizeSVGIcon, tr("Quantize"));
+      funcQuantizeAction = menuFunctions->addAction(*quantizeSVGIcon, tr("Quantize..."));
       connect(funcQuantizeAction, &QAction::triggered, [this]() { cmd(PianoCanvas::CMD_QUANTIZE); } );
       
-      funcModVelAction = menuFunctions->addAction(tr("Change Event Velocity"));
+      funcModVelAction = menuFunctions->addAction(tr("Change Event Velocity..."));
       connect(funcModVelAction, &QAction::triggered, [this]() { cmd(PianoCanvas::CMD_MODIFY_VELOCITY); } );
 
-      funcCrescAction = menuFunctions->addAction(tr("Crescendo/Decrescendo"));
+      funcCrescAction = menuFunctions->addAction(tr("Crescendo/Decrescendo..."));
       connect(funcCrescAction, &QAction::triggered, [this]() { cmd(PianoCanvas::CMD_CRESCENDO); } );
 
-      funcNoteShiftAction = menuFunctions->addAction(tr("Move Events"));
+      funcNoteShiftAction = menuFunctions->addAction(tr("Move Events..."));
       connect(funcNoteShiftAction, &QAction::triggered, [this]() { cmd(PianoCanvas::CMD_NOTE_SHIFT); } );
 
-      funcDelOverlapsAction = menuFunctions->addAction(tr("Delete Overlaps"));
+      funcDelOverlapsAction = menuFunctions->addAction(tr("Delete Overlaps..."));
       connect(funcDelOverlapsAction, &QAction::triggered, [this]() { cmd(PianoCanvas::CMD_DELETE_OVERLAPS); } );
 
-      funcEraseEventAction = menuFunctions->addAction(tr("Erase Events"));
+      funcEraseEventAction = menuFunctions->addAction(tr("Erase Events..."));
       connect(funcEraseEventAction, &QAction::triggered, [this]() { cmd(PianoCanvas::CMD_ERASE_EVENT); } );
 
       menuFunctions->addSeparator();
 
-      funcGateTimeAction = menuFunctions->addAction(tr("Change Event Length"));
+      funcGateTimeAction = menuFunctions->addAction(tr("Change Event Length..."));
       connect(funcGateTimeAction, &QAction::triggered, [this]() { cmd(PianoCanvas::CMD_MODIFY_GATE_TIME); } );
       
-      funcSetFixedLenAction = menuFunctions->addAction(tr("Set Fixed Length"));
+      funcSetFixedLenAction = menuFunctions->addAction(tr("Set Fixed Length..."));
       connect(funcSetFixedLenAction, &QAction::triggered, [this]() { cmd(PianoCanvas::CMD_FIXED_LEN); } );
 
-      funcTransposeAction = menuFunctions->addAction(tr("Transpose"));
+      funcTransposeAction = menuFunctions->addAction(tr("Transpose..."));
       connect(funcTransposeAction, &QAction::triggered, [this]() { cmd(PianoCanvas::CMD_TRANSPOSE); } );
       
-      QAction* funcLegatoAction = menuFunctions->addAction(tr("Legato"));
+      QAction* funcLegatoAction = menuFunctions->addAction(tr("Legato..."));
       connect(funcLegatoAction, &QAction::triggered, [this]() { cmd(PianoCanvas::CMD_LEGATO); } );
 
       menuEdit->addSeparator();
@@ -521,6 +521,7 @@ PianoRoll::PianoRoll(MusECore::PartList* pl, QWidget* parent, const char* name, 
 
       connect(piano, SIGNAL(keyPressed(int, int, bool)), canvas, SLOT(pianoPressed(int, int, bool)));
       connect(piano, SIGNAL(keyReleased(int, bool)), canvas, SLOT(pianoReleased(int, bool)));
+      connect(piano, SIGNAL(shiftReleased()), canvas, SLOT(pianoShiftReleased()));
       connect(piano, SIGNAL(redirectWheelEvent(QWheelEvent*)), canvas, SLOT(redirectedWheelEvent(QWheelEvent*)));
       connect(piano, SIGNAL(wheelStep(bool)), vscroll, SLOT(stepScale(bool)));
       connect(srec, SIGNAL(toggled(bool)), SLOT(setSteprec(bool)));
@@ -1639,12 +1640,12 @@ void PianoRoll::keyPressEvent(QKeyEvent* event)
             pc->pianoCmd(CMD_LEFT_NOSNAP);
             return;
             }
-      else if (key == shortcuts[SHRT_INSERT_AT_LOCATION].key) {
-            pc->pianoCmd(CMD_INSERT);
+      else if (key == shortcuts[SHRT_LOC_PUSH_EVENTS].key) {
+            pc->pianoCmd(CMD_PUSH);
             return;
             }
-      else if (key == Qt::Key_Backspace) {
-            pc->pianoCmd(CMD_BACKSPACE);
+      else if (key == shortcuts[SHRT_LOC_PULL_EVENTS].key) {
+            pc->pianoCmd(CMD_PULL);
             return;
             }
       else if (key == shortcuts[SHRT_ZOOM_IN].key) {

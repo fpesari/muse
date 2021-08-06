@@ -1,3 +1,60 @@
+28.06.2021
+    - New: Mixers can now be opened in a docked window (optionally). 
+        When the mixer dock is floating, a top window title bar is added
+        so it's possible to minimize/maximize the window. (kybos)
+    - New: Custom themes (*.qss files) can be added to the HOME themes directory,
+        they will be displayed in the Appearance dialog theme selection. (kybos)
+20.06.2021
+    - Fix crash 1028: Make effects rack 'move up/down' synchronized and real-time friendly. (Tim)
+    - Also fixed a few problems with effects rack context menu.
+13.06.2021
+    - Fix 1002: Remove initial focus from mixer volume boxes. Fix related Smart Focus problems. (Tim)
+05.06.2021
+    - Fix more issue 1021: Copying synth track does not copy synth controllers. (Tim)
+02.06.2021
+    - Fix issue 1021: Copying synth track does not copy volume, pan. (Tim)
+31.05.2021
+    - Fix conflicting shortcuts in Add track menu. (kybos)
+29.05.2021
+    - Add: Global setting to enable LASH. Disabled by default. (kybos)
+28.05.2021
+    - Change default to sliders instead of knobs in mixer etc. (kybos)
+27.05.2021
+    - Fix: Dysfunctional duplicate shortcut for Push events. (kybos)
+    - Fix: Create customizable shortcut for Pull events. (kybos)
+    - Fix: Standardize shortcuts for Goto start/end, range start/end. (kybos)
+    - Add: Shortcut for Add track menu (default Insert). (kybos)
+    - Fix: Disallow Return and Escape as customizable keys to avoid conflicts. (kybos) 
+    - Fix: Non-standard dropdowns in Midi config dialog. (kybos)
+    - Possible fix 1013 + fix related errors in config.h.in + headers ex. plugin_cache_writer.h etc. (Tim)
+26.05.2021
+    - Add track menu: Move "Recently Used" to menu root.
+        Add key mnemonics for still faster access. (kybos)
+    - Enable polyphony for piano in pianoroll. (kybos)
+    - Fix: Step recording: Cursor not forwarded after chords. (kybos)
+25.05.2021
+    - New #999: Midi editors: Play events when dragged with keyboard. (kybos)
+21.05.2021
+    - Fix #1002 space stops working when opening mixer (rj)
+    - Fix #1003: Drum editor: Mouse drag event copy not working. (kybos)
+20.05.2021
+    - Fix #998: Add dedicated keyboard shortcut for deleting tracks in Arranger. (kybos)
+    - Fix: Use proper widgets in midi sync and midi config dialogs. (kybos)
+    - Fix: Don't show (and loop over) up to 200 unused ports in midi sync dialog. (kybos)
+    - Fix: MMC fastforward/rewind functionality (issue #652) (rj)
+    - More to 16.05: Fix midi metronome w/ latency correction. And rewrite 'stuck notes' code. (Tim)
+      Class MidiPlayEvent now has a latency member. The 'stuck notes' code uses it for inclusion
+       when converting from stuck-note-off ticks to frames. Midi metronome timing was incorrect.
+18.05.2021
+    - Synth selection dialog improvements: Current item is always preselected;
+        Info about multi-channel effects added; Better handling of Favorites (kybos)
+    - New submenus for Favorites and Recently used synths (kybos)
+    - Removed nested synth submenus (kybos)
+16.05.2021
+    - Fix issue 779: Missing notes if too close together. Broken 29.06.2019. (Tim)
+14.05.2021
+    - Added support for more MMC commands, including REC, Rewind, Forward (rj)
+    - Improved support for midi remote control, can now toggle REC enable for instance. (rj)
 01.05.2021
     - Update tool/lib versions to Ubuntu 18.04 LTS level. (kybos)
     - Update c++ version to c++17. (kybos)

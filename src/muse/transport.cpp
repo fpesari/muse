@@ -41,17 +41,12 @@
 
 // Forwards from header:
 #include <QComboBox>
-//#include <QHBoxLayout>
 #include <QLabel>
 #include <QSlider>
-//#include <QMouseEvent>
 #include <QToolButton>
-//#include <QKeyEvent>
 #include "sig.h"
 #include "pos.h"
 #include "posedit.h"
-#include "doublelabel.h"
-//#include "siglabel.h"
 #include "pixmap_button.h"
 #include "tempolabel.h"
 #include "sigedit.h"
@@ -462,8 +457,8 @@ Transport::Transport(QWidget* parent, const char* name)
       connect(buttons[5], SIGNAL(toggled(bool)), MusEGlobal::song, SLOT(setRecord(bool)));
       connect(MusEGlobal::song, SIGNAL(recordChanged(bool)), SLOT(setRecord(bool)));
       connect(buttons[0], SIGNAL(clicked()), MusEGlobal::song, SLOT(rewindStart()));
-      connect(buttons[1], SIGNAL(clicked()), MusEGlobal::song, SLOT(rewind()));
-      connect(buttons[2], SIGNAL(clicked()), MusEGlobal::song, SLOT(forward()));
+      connect(buttons[1], SIGNAL(clicked()), MusEGlobal::song, SLOT(rewindStep()));
+      connect(buttons[2], SIGNAL(clicked()), MusEGlobal::song, SLOT(forwardStep()));
 
       box4->addLayout(tb);
       hbox->addLayout(box4);

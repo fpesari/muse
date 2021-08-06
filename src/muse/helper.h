@@ -87,8 +87,8 @@ QMenu* midiPortsPopup(QWidget* parent = nullptr, int checkPort = -1, bool includ
 // Includes all listed in midiPortsPopup, plus unused devices.
 void midiPortsPopupMenu(MusECore::Track* t, int x, int y, bool allClassPorts, 
                         const QWidget* widget = nullptr, bool includeDefaultEntry = false);
-QMenu* populateAddSynth(QWidget* parent);
-QActionGroup* populateAddTrack(QMenu* addTrack, bool populateAll=false, bool insert=false, bool addHeader=false);
+//QMenu* populateAddSynth(QWidget* parent);
+QActionGroup* populateAddTrack(QMenu* addTrack, bool populateAll=false, bool insert=false, bool addkey=true);
 void openSynthGui(MusECore::Track* t);
 QStringList localizedStringListFromCharArray(const char** array, const char* context);
 QString getFilterExtension(const QString &filter);
@@ -108,6 +108,7 @@ void loadTheme(const QString&);
 void loadThemeColors(const QString&);
 // Call when the theme or stylesheet part of the configuration has changed, to actually switch them.
 //void updateThemeAndStyle();
+int countSelectedParts();
 } 
 
 #endif

@@ -36,6 +36,10 @@ QToolTip, QWhatsThat {
     font-size: 10pt;
 }   
 
+QAbstractSpinBox:focus {
+    border: 1px solid rgb(0,100,210);
+}
+
 QMenu {
     border: 1px solid rgb(0,90,160);
     menu-scrollable: true;
@@ -139,7 +143,6 @@ QToolBar QToolButton::menu-button {
     width: 13px;
 }
 
-
 QToolBar QAbstractSpinBox {
     background-color: rgb(30,40,50);
 /*
@@ -147,7 +150,7 @@ QToolBar QAbstractSpinBox {
 */
     border-radius: 2px;
     height: 20px;    
-    border: 1px solid rgb(0,100,210);
+    border: 1px solid rgb(0,90,160);
 }
 
 QToolBar QAbstractSpinBox::up-button { 
@@ -180,7 +183,7 @@ QToolBar QComboBox {
 /*
     color: rgb(152, 251, 152);
 */
-    border: 1px solid rgb(0,100,210);
+    border: 1px solid rgb(0,90,160);
     border-radius: 2px;
     padding: 1px;
     height: 20px;
@@ -227,11 +230,11 @@ QWidget#ListEdit QTreeView {
 }
 */
 
-QCheckBox::indicator {
+QCheckBox::indicator, QAbstractItemView::indicator {
     border: 2px solid rgb(90, 90, 90);
 }
 
-QCheckBox::indicator:checked {
+QCheckBox::indicator:checked, QAbstractItemView::indicator:checked {
     background: aqua;
 }
 
@@ -282,6 +285,10 @@ QTreeView, QListView {
     alternate-background-color: rgb(30,40,50);
     /* background: rgb(24,34,44); */
  }
+
+QTableWidget#mdevView {
+    gridline-color: rgb(70, 70, 70);
+}
 
 QMdiArea > QTabBar::tab:hover {
     color: yellow;

@@ -225,10 +225,14 @@ void GlobalSettingsConfig::updateSettings()
       
       recDrumGroup->button(MusEGlobal::config.newDrumRecordCondition)->setChecked(true);
 
+      cbEnableLash->setChecked(MusEGlobal::config.enableLash);
+#ifndef HAVE_LASH
+      cbEnableLash->setEnabled(false);
+#endif
+
       showSplash->setChecked(MusEGlobal::config.showSplashScreen);
       showDidYouKnow->setChecked(MusEGlobal::config.showDidYouKnow);
       externalWavEditorSelect->setText(MusEGlobal::config.externalWavEditor);
-      oldStyleStopCheckBox->setChecked(MusEGlobal::config.useOldStyleStopShortCut);
       moveArmedCheckBox->setChecked(MusEGlobal::config.moveArmedCheckBox);
       projectSaveCheckBox->setChecked(MusEGlobal::config.useProjectSaveDialog);
       popsDefStayOpenCheckBox->setChecked(MusEGlobal::config.popupsDefaultStayOpen);
@@ -267,6 +271,9 @@ void GlobalSettingsConfig::updateSettings()
       cbTabWave->setChecked(TopWin::_openTabbed[TopWin::WAVE]);
       cbTabScore->setChecked(TopWin::_openTabbed[TopWin::SCORE]);
       cbTabMaster->setChecked(TopWin::_openTabbed[TopWin::MASTER]);
+
+      cbAMixerDocked->setChecked(MusEGlobal::config.mixerDockedA);
+      cbBMixerDocked->setChecked(MusEGlobal::config.mixerDockedB);
 }
 
 //---------------------------------------------------------
@@ -340,10 +347,11 @@ void GlobalSettingsConfig::apply()
       MusEGlobal::config.showNoteTooltips = showNoteTooltipsCheckBox->isChecked();
       MusEGlobal::config.showTimeScaleBeatNumbers = showTimeScaleBeatNumbersCheckBox->isChecked();
       MusEGlobal::config.preferMidiVolumeDb = preferMidiVolumeDbCheckBox->isChecked();
+
       MusEGlobal::config.showSplashScreen = showSplash->isChecked();
+      MusEGlobal::config.enableLash = cbEnableLash->isChecked();
       MusEGlobal::config.showDidYouKnow   = showDidYouKnow->isChecked();
       MusEGlobal::config.externalWavEditor = externalWavEditorSelect->text();
-      MusEGlobal::config.useOldStyleStopShortCut = oldStyleStopCheckBox->isChecked();
       MusEGlobal::config.moveArmedCheckBox = moveArmedCheckBox->isChecked();
       MusEGlobal::config.useProjectSaveDialog = projectSaveCheckBox->isChecked();
       MusEGlobal::config.popupsDefaultStayOpen = popsDefStayOpenCheckBox->isChecked();
@@ -396,6 +404,9 @@ void GlobalSettingsConfig::apply()
       TopWin::_openTabbed[TopWin::WAVE] = cbTabWave->isChecked();
       TopWin::_openTabbed[TopWin::SCORE] = cbTabScore->isChecked();
       TopWin::_openTabbed[TopWin::MASTER] = cbTabMaster->isChecked();
+
+      MusEGlobal::config.mixerDockedA = cbAMixerDocked->isChecked();
+      MusEGlobal::config.mixerDockedB = cbBMixerDocked->isChecked();
 
       // If the division is to be changed, this will RE-NORMALIZE things like the tempo and signature lists,
       //  and RE-FILL the various editor rasterization (snap) table values.

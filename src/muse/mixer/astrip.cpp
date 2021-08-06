@@ -1391,8 +1391,8 @@ AudioStrip::~AudioStrip()
 //    create mixer strip
 //---------------------------------------------------------
 
-AudioStrip::AudioStrip(QWidget* parent, MusECore::AudioTrack* at, bool hasHandle, bool isEmbedded)
-   : Strip(parent, at, hasHandle, isEmbedded)
+AudioStrip::AudioStrip(QWidget* parent, MusECore::AudioTrack* at, bool hasHandle, bool isEmbedded, bool isDocked)
+   : Strip(parent, at, hasHandle, isEmbedded, isDocked)
       {
       _preferKnobs = MusEGlobal::config.preferKnobsVsSliders;
 
@@ -1668,7 +1668,7 @@ AudioStrip::AudioStrip(QWidget* parent, MusECore::AudioTrack* at, bool hasHandle
 
       // If smart focus is on redirect strip focus to slider label.
       //if(MusEGlobal::config.smartFocus)
-        setFocusProxy(sl);
+//         setFocusProxy(sl);
 
       connect(sl, SIGNAL(valueChanged(double,int)), SLOT(volLabelChanged(double)));
       connect(slider, SIGNAL(valueChanged(double,int)), sl, SLOT(setValue(double)));

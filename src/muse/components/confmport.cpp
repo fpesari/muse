@@ -34,6 +34,7 @@
 #include <QPixmap>
 #include <QHeaderView>
 #include <QSettings>
+#include <QStyledItemDelegate>
 
 #include "config.h"
 #include "confmport.h"
@@ -82,6 +83,29 @@ extern MusECore::SynthList synthis;
 }
 
 namespace MusEGui {
+
+
+class RightIconDelegate: public QStyledItemDelegate{
+public:
+    using QStyledItemDelegate::QStyledItemDelegate;
+protected:
+    void initStyleOption(QStyleOptionViewItem *option, const QModelIndex &index) const override
+    {
+        QStyledItemDelegate::initStyleOption(option, index);
+        option->decorationPosition = QStyleOptionViewItem::Right;
+    }
+};
+
+class RightAlignDelegate: public QStyledItemDelegate{
+public:
+    using QStyledItemDelegate::QStyledItemDelegate;
+protected:
+    void initStyleOption(QStyleOptionViewItem *option, const QModelIndex &index) const override
+    {
+        QStyledItemDelegate::initStyleOption(option, index);
+        option->displayAlignment = Qt::AlignRight;
+    }
+};
 
 //---------------------------------------------------------
 //   SynthItem
@@ -134,7 +158,7 @@ void MPConfig::okClicked()
 void MPConfig::changeDefInputRoutes(QAction* act)
 {
   QTableWidgetItem* item = mdevView->currentItem();
-  if(item == 0)
+  if(item == nullptr)
     return;
   QString id = mdevView->item(item->row(), DEVCOL_NO)->text();
   int no = atoi(id.toLatin1().constData()) - 1;
@@ -939,9 +963,9 @@ void MPConfig::setWhatsThis(QTableWidgetItem *item, int col)
             case DEVCOL_DEF_OUT_CHANS:
 #ifdef _USE_MIDI_TRACK_SINGLE_OUT_PORT_CHAN_
                   item->setWhatsThis(tr("Connect new midi tracks to this channel, on this port.")); break;
-#else                      
+#else
                   item->setWhatsThis(tr("Connect new midi tracks to these channels, on this port.")); break;
-#endif                      
+#endif
             default:
                   break;
             }
@@ -1031,9 +1055,16 @@ MPConfig::MPConfig(QWidget* parent)
       QSettings settings;
       restoreGeometry(settings.value("MPConfig/geometry").toByteArray());
 
+      // number of instances should be right-aligned
+      RightAlignDelegate *alignDelegate = new RightAlignDelegate(synthList);
+      synthList->setItemDelegateForColumn(2, alignDelegate);
+
+      RightIconDelegate *iconDelegate = new RightIconDelegate(mdevView);
+      mdevView->setItemDelegate(iconDelegate);
+
       mdevView->setRowCount(MusECore::MIDI_PORTS);
       mdevView->verticalHeader()->hide();
-      mdevView->setShowGrid(false);
+//      mdevView->setShowGrid(false);
 
       _showAliases = 1; // 0: Show second aliases, if available. 
       
@@ -1041,8 +1072,8 @@ MPConfig::MPConfig(QWidget* parent)
       columnnames << tr("Port")             
                   << tr("Device Name")
                   << tr("Instrument")
-                  << tr("Def in ch")
-                  << tr("Def out ch");
+                  << tr("Def In Ch")
+                  << tr("Def Out Ch");
       
       mdevView->setColumnCount(columnnames.size());
       mdevView->setHorizontalHeaderLabels(columnnames);
@@ -1051,18 +1082,24 @@ MPConfig::MPConfig(QWidget* parent)
             setToolTip(mdevView->horizontalHeaderItem(i), i);
             }
       mdevView->setFocusPolicy(Qt::NoFocus);
+      mdevView->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+      mdevView->horizontalHeader()->setSectionResizeMode(DEVCOL_NO ,QHeaderView::Fixed);
+//      mdevView->horizontalHeader()->setSectionResizeMode(DEVCOL_NAME ,QHeaderView::Stretch);
 
+      //instanceList->horizontalHeader()->setStretchLastSection( false );
+//      instanceList->horizontalHeader()->setSectionResizeMode(INSTCOL_STATE, QHeaderView::Stretch);
+      instanceList->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
       
       instanceList->verticalHeader()->hide();
       instanceList->setShowGrid(false);
       columnnames.clear();
       columnnames << tr("Device Name")
                   << tr("Type")
-                  << tr("I")
-                  << tr("O")
+                  << tr("Input")
+                  << tr("Output")
                   << tr("GUI")
-                  << tr("In")
-                  << tr("Out")
+                  << tr("Jack In")
+                  << tr("Jack Out")
                   << tr("State");
 
 #ifdef ALSA_SUPPORT
@@ -1081,9 +1118,6 @@ MPConfig::MPConfig(QWidget* parent)
       guiTimer = new QTimer(this);
       connect(guiTimer, &QTimer::timeout, this, &MPConfig::checkGUIState);
       guiTimer->start(500);
-
-      ledOn = *ledGreenSVGIcon;
-      ledOff = *ledOffSVGIcon;
 
       connect(instanceList, SIGNAL(itemPressed(QTableWidgetItem*)), SLOT(deviceItemClicked(QTableWidgetItem*)));
       connect(instanceList, SIGNAL(itemSelectionChanged()),         SLOT(deviceSelectionChanged()));
@@ -1122,7 +1156,7 @@ void MPConfig::checkGUIState()
             synth = static_cast<MusECore::SynthI*>(md);
 
         if (synth && synth->hasNativeGui())
-            item->setIcon(synth->nativeGuiVisible() ? ledOn : ledOff);
+            item->setCheckState(synth->nativeGuiVisible() ? Qt::Checked : Qt::Unchecked);
     }
 }
 
@@ -1354,7 +1388,7 @@ void MPConfig::songChanged(MusECore::SongChangedStruct_t flags)
             iitem->setTextAlignment(Qt::AlignCenter);
             addInstItem(row_cnt, INSTCOL_REC, iitem, instanceList);
             if(md->rwFlags() & 0x2)
-              iitem->setIcon(md->openFlags() & 2 ? ledOn : ledOff);
+              iitem->setCheckState(md->openFlags() & 2 ? Qt::Checked : Qt::Unchecked);
             else
               iitem->setIcon(QIcon(QPixmap()));
             
@@ -1364,7 +1398,7 @@ void MPConfig::songChanged(MusECore::SongChangedStruct_t flags)
             iitem->setTextAlignment(Qt::AlignCenter);
             addInstItem(row_cnt, INSTCOL_PLAY, iitem, instanceList);
             if(md->rwFlags() & 0x1)
-              iitem->setIcon(md->openFlags() & 1 ? ledOn : ledOff);
+              iitem->setCheckState(md->openFlags() & 1 ? Qt::Checked : Qt::Unchecked);
             else
               iitem->setIcon(QIcon(QPixmap()));
             
@@ -1374,7 +1408,7 @@ void MPConfig::songChanged(MusECore::SongChangedStruct_t flags)
             iitem->setTextAlignment(Qt::AlignCenter);
             addInstItem(row_cnt, INSTCOL_GUI, iitem, instanceList);
             if(synth && synth->hasNativeGui())
-              iitem->setIcon(synth->nativeGuiVisible() ? ledOn : ledOff);
+              iitem->setCheckState(synth->nativeGuiVisible() ? Qt::Checked : Qt::Unchecked);
             else
               iitem->setIcon(QIcon(QPixmap()));
 
@@ -1424,16 +1458,14 @@ void MPConfig::songChanged(MusECore::SongChangedStruct_t flags)
       instanceList->horizontalHeader()->setSectionResizeMode(INSTCOL_OUTROUTES, QHeaderView::Fixed);
       instanceList->horizontalHeader()->setSectionResizeMode(INSTCOL_INROUTES, QHeaderView::Fixed);
       
-      //instanceList->horizontalHeader()->setStretchLastSection( false );
-      instanceList->horizontalHeader()->setSectionResizeMode(INSTCOL_STATE, QHeaderView::Stretch);
-      instanceList->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
       deviceSelectionChanged();
       
       synthList->resizeColumnToContents(1);
+      synthList->resizeColumnToContents(2);
+      synthList->resizeColumnToContents(3);
+      synthList->resizeColumnToContents(4);
       mdevView->resizeColumnsToContents();
-      mdevView->horizontalHeader()->setSectionResizeMode(DEVCOL_NO ,QHeaderView::Fixed);
-            
-      mdevView->horizontalHeader()->setStretchLastSection( true );
+
       selectionChanged();
       }
 
@@ -1612,7 +1644,7 @@ void MPConfig::deviceItemClicked(QTableWidgetItem* item)
                   if(md->midiPort() != -1)
                     MusEGlobal::midiPorts[md->midiPort()].setMidiDevice(md); // reopen device // FIXME: This causes jack crash with R+W Jack midi device
                   MusEGlobal::audio->msgIdle(false);
-                  item->setIcon(openFlags & 2 ? ledOn : ledOff);
+                  item->setCheckState(openFlags & 2 ? Qt::Checked : Qt::Unchecked);
                   return;
         case INSTCOL_PLAY:
                   if(!(rwFlags & 1))
@@ -1623,13 +1655,13 @@ void MPConfig::deviceItemClicked(QTableWidgetItem* item)
                   if(md->midiPort() != -1)
                     MusEGlobal::midiPorts[md->midiPort()].setMidiDevice(md); // reopen device FIXME: This causes jack crash with R+W Jack midi device
                   MusEGlobal::audio->msgIdle(false);
-                  item->setIcon(openFlags & 1 ? ledOn : ledOff);
+                  item->setCheckState(openFlags & 1 ? Qt::Checked : Qt::Unchecked);
                   return;
         case INSTCOL_GUI:
                   if(synth && synth->hasNativeGui())
                   {
                     synth->showNativeGui(!synth->nativeGuiVisible());
-                    item->setIcon(synth->nativeGuiVisible() ? ledOn : ledOff);
+                    item->setCheckState(synth->nativeGuiVisible() ? Qt::Checked : Qt::Unchecked);
                   }
                   return;
                   

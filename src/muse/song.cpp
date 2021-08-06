@@ -47,6 +47,7 @@
 #include "midiseq.h"
 #include "gconfig.h"
 #include "sync.h"
+#include "midi_consts.h"
 #include "midictrl.h"
 #include "menutitleitem.h"
 #include "midi_audio_control.h"
@@ -74,6 +75,7 @@
 #include "audio.h"
 #include "midiport.h"
 #include "audiodev.h"
+#include "synthdialog.h"
 
 // For debugging output: Uncomment the fprintf section.
 #define ERROR_TIMESTRETCH(dev, format, args...)  fprintf(dev, format, ##args)
@@ -107,10 +109,10 @@ Song::Song(const char* name)
       _fCpuLoad = 0.0;
       _fDspLoad = 0.0;
       _xRunsCount = 0;
-      
-      noteFifoSize   = 0;
-      noteFifoWindex = 0;
-      noteFifoRindex = 0;
+
+      realtimeMidiEvents = new LockFreeMPSCRingBuffer<MidiRecordEvent>(256);
+      mmcEvents = new LockFreeMPSCRingBuffer<MMC_Commands>(256);
+
       undoList     = new UndoList(true);  // "true" means "this is an undoList",
       redoList     = new UndoList(false); // "false" means "redoList"
       _markerList  = new MarkerList;
@@ -127,34 +129,39 @@ Song::Song(const char* name)
 //---------------------------------------------------------
 
 Song::~Song()
-      {
-      delete undoList;
-      delete redoList;
-      delete _markerList;
-      if(_ipcOutEventBuffers)
+{
+    delete undoList;
+    delete redoList;
+    delete _markerList;
+    if(_ipcOutEventBuffers)
         delete _ipcOutEventBuffers;
-      if(_ipcInEventBuffers)
+    if(_ipcInEventBuffers)
         delete _ipcInEventBuffers;
-      }
+
+    delete realtimeMidiEvents;
+    delete mmcEvents;
+}
 
 //---------------------------------------------------------
 //   putEvent
 //---------------------------------------------------------
 
-void Song::putEvent(int pv)
-      {
-      if (noteFifoSize < REC_NOTE_FIFO_SIZE) {
-            recNoteFifo[noteFifoWindex] = pv;
-            noteFifoWindex = (noteFifoWindex + 1) % REC_NOTE_FIFO_SIZE;
-            ++noteFifoSize;
-            }
-      }
-
-void Song::putEventCC(char cc)
+void Song::putEvent(MidiRecordEvent &inputMidiEvent)
 {
-    if (MusEGlobal::rcEnableCC)
-        rcCC = cc;
+    if(!realtimeMidiEvents->put(inputMidiEvent))
+    {
+      fprintf(stderr, "Song::putEvent - OVERFLOW - Dropping input midi events sent to GUI!\n");
+    }
 }
+
+void Song::putMMC_Command(MMC_Commands command)
+{
+    if(!mmcEvents->put(command))
+    {
+      fprintf(stderr, "Song::putMMC_Command - OVERFLOW - Dropping input MMC commands sent to GUI!\n");
+    }
+}
+
 
 // REMOVE Tim. samplerate. Added. TODO
 #if 0
@@ -246,22 +253,24 @@ Track* Song::addNewTrack(QAction* action, Track* insertAt)
         else
         {
             n -= MENU_ADD_SYNTH_ID_BASE;
-            int ntype = n / MENU_ADD_SYNTH_ID_BASE;
-            if(ntype >= Synth::SYNTH_TYPE_END)
-                return nullptr;
+// not necessary - the old synth menus have been removed (kybos)
+//            int ntype = n / MENU_ADD_SYNTH_ID_BASE;
+//            if(ntype >= Synth::SYNTH_TYPE_END)
+//                return nullptr;
 
-            // if we ever support Wine VSTs through some other means than through dssi-vst this must be adapted
-            if (ntype == MusECore::Synth::VST_SYNTH)
-                ntype=MusECore::Synth::DSSI_SYNTH;
-            if (ntype == MusECore::Synth::LV2_EFFECT)
-                ntype=MusECore::Synth::LV2_SYNTH; // the LV2_EFFECT is a specialization used in the menu only, we reassign it to regular LV2_SYNTH
+//            // if we ever support Wine VSTs through some other means than through dssi-vst this must be adapted
+//            if (ntype == MusECore::Synth::VST_SYNTH)
+//                ntype=MusECore::Synth::DSSI_SYNTH;
+//            if (ntype == MusECore::Synth::LV2_EFFECT)
+//                ntype=MusECore::Synth::LV2_SYNTH; // the LV2_EFFECT is a specialization used in the menu only, we reassign it to regular LV2_SYNTH
 
-            n %= MENU_ADD_SYNTH_ID_BASE;
+//            n %= MENU_ADD_SYNTH_ID_BASE;
             if(n >= (int)MusEGlobal::synthis.size())
                 return nullptr;
 
             if (MusEGlobal::debugMsg)
-                fprintf(stderr, "Song::addNewTrack synth: type:%d idx:%d class:%s label:%s\n", ntype, n, MusEGlobal::synthis[n]->baseName().toLatin1().constData(), MusEGlobal::synthis[n]->name().toLatin1().constData());
+                fprintf(stderr, "Song::addNewTrack synth: idx:%d class:%s label:%s\n", n, MusEGlobal::synthis[n]->baseName().toLatin1().constData(), MusEGlobal::synthis[n]->name().toLatin1().constData());
+//            fprintf(stderr, "Song::addNewTrack synth: type:%d idx:%d class:%s label:%s\n", ntype, n, MusEGlobal::synthis[n]->baseName().toLatin1().constData(), MusEGlobal::synthis[n]->name().toLatin1().constData());
         }
 
         SynthI* si = createSynthI(MusEGlobal::synthis[n]->baseName(), MusEGlobal::synthis[n]->uri(),
@@ -272,6 +281,8 @@ Track* Song::addNewTrack(QAction* action, Track* insertAt)
             return nullptr;
 
         if (MusEGlobal::config.unhideTracks) SynthI::setVisible(true);
+
+        MusEGui::SynthDialog::addRecent(MusEGlobal::synthis[n]);
 
         // Add instance last in midi device list.
         for (int i = 0; i < MusECore::MIDI_PORTS; ++i)
@@ -653,7 +664,7 @@ bool Song::addEventOperation(const Event& event, Part* part, bool do_port_ctrls,
 //   Event ev(event);
   bool added = false;
   Part* p = part;
-  while(1)
+  while(true)
   {
     // This will find the event even if it has been modified. As long as the IDs AND the position are the same, it's a match.
     // NOTE: Multiple events with the same event base pointer or the same id number, in one event list, are FORBIDDEN.
@@ -1485,6 +1496,8 @@ void Song::setPlay(bool f)
 
 void Song::setStop(bool f)
 {
+      _fastMove = NORMAL_MOVEMENT; // reset fast move in stop cases
+
       if (MusEGlobal::extSyncFlag) {
           if (MusEGlobal::debugMsg)
             fprintf(stderr, "not allowed while using external sync");
@@ -1636,7 +1649,7 @@ void Song::setPos(POSTYPE posType, const Pos& val, bool sig,
 //   forward
 //---------------------------------------------------------
 
-void Song::forward()
+void Song::forwardStep()
       {
       unsigned newPos = pos[0].tick() + MusEGlobal::config.division;
       MusEGlobal::audio->msgSeek(Pos(newPos, true));
@@ -1646,7 +1659,7 @@ void Song::forward()
 //   rewind
 //---------------------------------------------------------
 
-void Song::rewind()
+void Song::rewindStep()
       {
       unsigned newPos;
       if (unsigned(MusEGlobal::config.division) > pos[0].tick())
@@ -1700,7 +1713,7 @@ void Song::updatePos()
 
 void Song::initLen()
       {
-      _len = MusEGlobal::sigmap.bar2tick(40, 0, 0);    // default song len
+      _songLenTicks = MusEGlobal::sigmap.bar2tick(40, 0, 0);    // default song len
       for (iTrack t = _tracks.begin(); t != _tracks.end(); ++t) {
             Track* track = dynamic_cast<Track*>(*t);
             if (track == 0)
@@ -1708,11 +1721,11 @@ void Song::initLen()
             PartList* parts = track->parts();
             for (iPart p = parts->begin(); p != parts->end(); ++p) {
                   unsigned last = p->second->tick() + p->second->lenTick();
-                  if (last > _len)
-                        _len = last;
+                  if (last > _songLenTicks)
+                        _songLenTicks = last;
                   }
             }
-      _len = roundUpBar(_len);
+      _songLenTicks = roundUpBar(_songLenTicks);
       }
 
 //---------------------------------------------------------
@@ -1892,13 +1905,13 @@ void Song::normalizeWaveParts(Part *partCursor)
 //---------------------------------------------------------
 
 void Song::beat()
-      {
+{
       // Watchdog for checking and setting timebase master state.
       static int _timebaseMasterCounter = 0;
       if(MusEGlobal::audioDevice &&
         MusEGlobal::audioDevice->hasOwnTransport() &&
-        MusEGlobal::audioDevice->hasTimebaseMaster() && 
-        MusEGlobal::config.useJackTransport && 
+        MusEGlobal::audioDevice->hasTimebaseMaster() &&
+        MusEGlobal::config.useJackTransport &&
         (--_timebaseMasterCounter <= 0))
       {
         if(MusEGlobal::config.timebaseMaster)
@@ -1911,103 +1924,161 @@ void Song::beat()
       }
 
       //First: update cpu load toolbar
-
       _fCpuLoad = MusEGlobal::muse->getCPULoad();
       _fDspLoad = 0.0f;
       if (MusEGlobal::audioDevice)
         _fDspLoad = MusEGlobal::audioDevice->getDSP_Load();
       _xRunsCount = MusEGlobal::audio->getXruns();
 
-      // Keep the sync detectors running... 
+      // Keep the sync detectors running...
       for(int port = 0; port < MusECore::MIDI_PORTS; ++port)
           MusEGlobal::midiPorts[port].syncInfo().setTime();
-      
-      
+
       if (MusEGlobal::audio->isPlaying())
         setPos(CPOS, MusEGlobal::audio->tickPos(), true, false, true);
 
       // Process external tempo changes:
       while(!_tempoFifo.isEmpty())
-        MusEGlobal::tempo_rec_list.addTempo(_tempoFifo.get()); 
-      
+        MusEGlobal::tempo_rec_list.addTempo(_tempoFifo.get());
+
       // Update anything related to audio controller graphs etc.
       for(ciTrack it = _tracks.begin(); it != _tracks.end(); ++ it)
       {
         if((*it)->isMidiTrack())
           continue;
-        AudioTrack* at = static_cast<AudioTrack*>(*it); 
+        AudioTrack* at = static_cast<AudioTrack*>(*it);
         CtrlListList* cll = at->controller();
         for(ciCtrlList icl = cll->begin(); icl != cll->end(); ++icl)
         {
           CtrlList* cl = icl->second;
-          if(cl->isVisible() && !cl->dontShow() && cl->guiUpdatePending())  
+          if(cl->isVisible() && !cl->dontShow() && cl->guiUpdatePending())
             emit controllerChanged(at, cl->id());
           cl->setGuiUpdatePending(false);
         }
       }
-      
+
       // Update synth native guis at the heartbeat rate.
       for(ciSynthI is = _synthIs.begin(); is != _synthIs.end(); ++is)
         (*is)->guiHeartBeat();
-      
-      while (noteFifoSize) {
-          int pv = recNoteFifo[noteFifoRindex];
-          noteFifoRindex = (noteFifoRindex + 1) % REC_NOTE_FIFO_SIZE;
-          int pitch = (pv >> 8) & 0xff;
-          int velo = pv & 0xff;
 
-          //---------------------------------------------------
-          // filter midi remote control events
-          //---------------------------------------------------
-
-          bool consumed = false;
-          if (MusEGlobal::rcEnable && velo != 0) {
-              if (pitch == MusEGlobal::rcStopNote) {
-                  setStop(true);
-                  consumed = true;
-              } else if (pitch == MusEGlobal::rcRecordNote) {
-                  setRecord(true);
-                  consumed = true;
-              } else if (pitch == MusEGlobal::rcGotoLeftMarkNote) {
-                  setPos(CPOS, pos[LPOS].tick(), true, true, true);
-                  consumed = true;
-              } else if (pitch == MusEGlobal::rcPlayNote) {
-                  setPlay(true);
-                  consumed = true;
-              } else if (pitch == MusEGlobal::rcForwardNote) {
-                  forward();
-                  consumed = true;
-              } else if (pitch == MusEGlobal::rcBackwardNote) {
-                  rewind();
-                  consumed = true;
-              }
+      int eventsToProcess = realtimeMidiEvents->getSize(false);
+      while (eventsToProcess--)
+      {
+          MidiRecordEvent currentEvent;
+          if (!realtimeMidiEvents->get(currentEvent))
+          {
+              fprintf(stderr, "Song::beat - Missing realtimeMidiEvent!\n");
+              continue;
           }
 
-          if (!consumed)
-              emit MusEGlobal::song->midiNote(pitch, velo);
+          int dataA = currentEvent.dataA();
+          int dataB = currentEvent.dataB();
 
-          --noteFifoSize;
+          if (currentEvent.type() == ME_NOTEON || currentEvent.type() == ME_NOTEOFF)
+          {
+              //---------------------------------------------------
+              // filter midi remote control events
+              //---------------------------------------------------
+              bool consumed = false;
+              if (MusEGlobal::rcEnable) {
+                  if (dataA == MusEGlobal::rcStopNote) {
+                      setStop(true);
+                      consumed = true;
+                  } else if (dataA == MusEGlobal::rcRecordNote) {
+                      if (currentEvent.type() == ME_NOTEOFF)
+                        setRecord(false);
+                      else
+                        setRecord(true);
+                      consumed = true;
+                  } else if (dataA == MusEGlobal::rcGotoLeftMarkNote) {
+                      setPos(CPOS, pos[LPOS].tick(), true, true, true);
+                      consumed = true;
+                  } else if (dataA == MusEGlobal::rcPlayNote) {
+                      setPlay(true);
+                      consumed = true;
+                  } else if (dataA == MusEGlobal::rcForwardNote) {
+                      _fastMove = FAST_FORWARD;
+                      consumed = true;
+                  } else if (dataA == MusEGlobal::rcBackwardNote) {
+                      _fastMove = FAST_REWIND;
+                      consumed = true;
+                  }
+              }
+
+              if (!consumed)
+                  emit MusEGlobal::song->midiNote(dataA, dataB);
+          } // NOTES
+
+          if (MusEGlobal::rcEnableCC && currentEvent.type() == ME_CONTROLLER)
+          {
+              if (dataA == MusEGlobal::rcStopCC)
+                  setStop(true);
+              else if (dataA == MusEGlobal::rcPlayCC)
+                  setPlay(true);
+              else if (dataA == MusEGlobal::rcRecordCC)
+              {
+                if (dataB == 0)
+                  setRecord(false);
+                else
+                  setRecord(true);
+              }
+              else if (dataA == MusEGlobal::rcGotoLeftMarkCC)
+                  setPos(CPOS, pos[LPOS].tick(), true, true, true);
+              else if (dataA == MusEGlobal::rcForwardCC)
+                  _fastMove = FAST_FORWARD;
+              else if (dataA == MusEGlobal::rcBackwardCC)
+                  _fastMove = FAST_REWIND;
+          } // CC
       }
 
-      if (MusEGlobal::rcEnableCC && rcCC > -1) {
+    int mmcToProcess = mmcEvents->getSize(false);
+    while (mmcToProcess--)
+    {
+        MMC_Commands command;
+        if (!mmcEvents->get(command))
+        {
+            fprintf(stderr, "Song::beat - Missing mmc command!\n");
+            continue;
+        }
 
-          int cc = rcCC & 0xff;
-          printf("*** CC in: %d\n", cc);
-          if (cc == MusEGlobal::rcStopCC)
-              setStop(true);
-          else if (cc == MusEGlobal::rcPlayCC)
-              setPlay(true);
-          else if (cc == MusEGlobal::rcRecordCC)
-              setRecord(true);
-          else if (cc == MusEGlobal::rcGotoLeftMarkCC)
-              setPos(CPOS, pos[LPOS].tick(), true, true, true);
-          else if (cc == MusEGlobal::rcForwardCC)
-              forward();
-          else if (cc == MusEGlobal::rcBackwardCC)
-              rewind();
+        // Some syncronization commands have the complete implementation in sync.cc
+        // some have the executive part here in the song class to be executed in the song thread.
+        switch (command)
+        {
+          case MMC_FastForward:
+            _fastMove = FAST_FORWARD;
+            break;
+          case MMC_Rewind:
+            _fastMove = FAST_REWIND;
+            break;
+          case MMC_RecordStrobe:
+            this->setRecord(true);
+            break;
+          case MMC_RecordExit:
+            this->setRecord(false);
+            break;
+          case MMC_Reset:
+            this->setRecord(false);
+            this->rewindStart();
+            _fastMove = NORMAL_MOVEMENT;
+            break;
+          default:
+            fprintf(stderr, "Song::beat - This sync command not implemented here!\n");
+            break;
+        }
+    }
 
-          rcCC = -1;
-      }
+    switch (_fastMove)
+    {
+        case FAST_FORWARD:
+            this->forwardStep();
+            break;
+        case FAST_REWIND:
+            this->rewindStep();
+            break;
+        default:
+            break;
+    }
 }
 
 //---------------------------------------------------------
@@ -2016,7 +2087,7 @@ void Song::beat()
 
 void Song::setLen(unsigned l, bool do_update)
       {
-      _len = l;
+      _songLenTicks = l;
       if(do_update)
         update();
       }
@@ -2276,13 +2347,13 @@ void Song::clear(bool signal, bool clear_all)
           {
             if(clear_all)  // Allow not touching devices. p4.0.17  TESTING: Maybe some problems...
             {
-              // Remove the device from the list.
-              MusEGlobal::midiDevices.erase(imd);
               // Since Jack midi devices are created dynamically, we must delete them.
               // The destructor unregisters the device from Jack, which also disconnects all device-to-jack routes.
               // This will also delete all midi-track-to-device routes, they point to non-existant midi tracks 
               //  which were all deleted above
               delete (*imd);
+              // Remove the device from the list.
+              MusEGlobal::midiDevices.erase(imd);
               loop = true;
               break;
             }  
@@ -2349,7 +2420,7 @@ void Song::clear(bool signal, bool clear_all)
       _cycleMode     = CYCLE_NORMAL;
       _click         = false;
       _quantize      = false;
-      _len           = MusEGlobal::sigmap.bar2tick(150, 0, 0);  // default song len in ticks set for 150 bars
+      _songLenTicks  = MusEGlobal::sigmap.bar2tick(150, 0, 0);  // default song len in ticks set for 150 bars
       _follow        = JUMP;
       dirty          = false;
       initDrumMap();
@@ -2518,6 +2589,12 @@ void Song::seqSignal(int fd)
                         clearRecAutomation(true);
                         setPos(CPOS, MusEGlobal::audio->tickPos(), true, false, true);
                         _startPlayPosition = MusEGlobal::audio->pos(); // update start position
+
+                        if (_startPlayPosition.tick() == 0 || _startPlayPosition.tick() >= _songLenTicks )
+                        {
+                            // if we are moving out of bounds lets clear _fastMove
+                            _fastMove = NORMAL_MOVEMENT;
+                        }
                         break;
                   case 'S':   // shutdown audio
                         MusEGlobal::muse->seqStop();
@@ -2525,23 +2602,23 @@ void Song::seqSignal(int fd)
                         {
                         // give the user a sensible explanation
                         int btn = QMessageBox::critical( MusEGlobal::muse, tr("Jack shutdown!"),
-                            tr("Jack has detected a performance problem which has lead to\n"
+                            tr("Jack has detected a performance problem which has led to\n"
                             "MusE being disconnected.\n"
                             "This could happen due to a number of reasons:\n"
-                            "- a performance issue with your particular setup.\n"
-                            "- a bug in MusE (or possibly in another connected software).\n"
-                            "- a random hiccup which might never occur again.\n"
-                            "- jack was voluntary stopped by you or someone else\n"
-                            "- jack crashed\n"
+                            "- a performance issue with your particular setup\n"
+                            "- a bug in MusE (or possibly in another connected software)\n"
+                            "- a random hiccup which might never occur again\n"
+                            "- Jack was voluntarily stopped by you or someone else\n"
+                            "- Jack crashed\n"
                             "If there is a persisting problem you are much welcome to discuss it\n"
-                            "on the MusE mailinglist.\n"
-                            "(there is information about joining the mailinglist on the MusE\n"
-                            " homepage which is available through the help menu)\n"
+                            "on the MusE forum\n"
+                            "(there is information about the forum on the MusE\n"
+                            " homepage which is available through the help menu).\n"
                             "\n"
-                            "To proceed check the status of Jack and try to restart it and then .\n"
-                            "click on the Restart button."), "restart", "cancel");
+                            "To proceed check the status of Jack and try to restart it and then\n"
+                            "click on the Restart button."), "Restart", "Cancel");
                         if (btn == 0) {
-                              fprintf(stderr, "restarting!\n");
+                              fprintf(stderr, "Restarting!\n");
                               MusEGlobal::muse->seqRestart();
                               }
                         }
@@ -3449,7 +3526,9 @@ void Song::abortRolling()
 //---------------------------------------------------------
 
 void Song::stopRolling(Undo* operations)
-      {
+{
+      _fastMove = NORMAL_MOVEMENT; // reset fast move in stop cases
+
       if(MusEGlobal::audio->freewheel())
         MusEGlobal::audioDevice->setFreewheel(false);
 
@@ -3468,7 +3547,7 @@ void Song::stopRolling(Undo* operations)
 
       if(!operations)
         MusEGlobal::song->applyOperationGroup(ops);
-      }
+}
 
 //---------------------------------------------------------
 //   connectJackRoutes

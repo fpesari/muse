@@ -71,8 +71,6 @@ class Undo;
 struct UndoOp;
 class UndoList;
 
-#define REC_NOTE_FIFO_SIZE    16
-
 //---------------------------------------------------------
 //    Song
 //---------------------------------------------------------
@@ -101,18 +99,16 @@ class Song : public QObject {
         //  and 'start' and 'end' the undo mode. Song is updated.
         OperationUndoMode
       };
+      enum FastMove { //
+          NORMAL_MOVEMENT,
+          FAST_FORWARD,
+          FAST_REWIND,
+      };
 
    private:
-      // fifo for note-on events
-      //    - this events are read by the heart beat interrupt
-      //    - used for single step recording in midi editors
-
-      int recNoteFifo[REC_NOTE_FIFO_SIZE];
-      volatile int noteFifoSize;
-      int noteFifoWindex;
-      int noteFifoRindex;
-
-      volatile char rcCC = -1; // CC remote control
+      // fifos for feeding info events into the GUI
+      LockFreeMPSCRingBuffer<MidiRecordEvent> *realtimeMidiEvents;
+      LockFreeMPSCRingBuffer<MMC_Commands> *mmcEvents;
 
       TempoFifo _tempoFifo; // External tempo changes, processed in heartbeat.
       
@@ -145,6 +141,8 @@ class Song : public QObject {
       LockFreeMPSCRingBuffer<MidiPlayEvent> *_ipcInEventBuffers;
       LockFreeMPSCRingBuffer<MidiPlayEvent> *_ipcOutEventBuffers;
       
+      // Used for fastforward and fastrewind states (currently only through MIDI remote control)
+      FastMove _fastMove = NORMAL_MOVEMENT;
       bool loopFlag;
       bool punchinFlag;
       bool punchoutFlag;
@@ -155,7 +153,7 @@ class Song : public QObject {
       Pos _startPlayPosition;
       bool _click;
       bool _quantize;
-      unsigned _len;         // song len in ticks
+      unsigned _songLenTicks;         // song len in ticks
       FollowMode _follow;
       int _globalPitchShift;
       void readMarker(Xml&);
@@ -219,8 +217,9 @@ class Song : public QObject {
        */
       void informAboutNewParts(const Part* orig, const Part* p1, const Part* p2=nullptr, const Part* p3=nullptr, const Part* p4=nullptr, const Part* p5=nullptr, const Part* p6=nullptr, const Part* p7=nullptr, const Part* p8=nullptr, const Part* p9=nullptr);
 
-      void putEvent(int pv);
-      void putEventCC(char cc);
+      void putEvent(MidiRecordEvent &inputMidiEvent);
+      void putMMC_Command(MMC_Commands command);
+
       void endMsgCmd();
       void processMsg(AudioMsg* msg);
 
@@ -320,7 +319,7 @@ class Song : public QObject {
       //    access tempomap/MusEGlobal::sigmap  (Mastertrack)
       //-----------------------------------------
 
-      unsigned len() const { return _len; }
+      unsigned len() const { return _songLenTicks; }
       void setLen(unsigned l, bool do_update = true);     // set songlen in ticks
       int roundUpBar(int tick) const;
       int roundUpBeat(int tick) const;
@@ -534,15 +533,18 @@ class Song : public QObject {
       void clearTrackRec();
       void setPlay(bool f);
       void setStop(bool);
-      void forward();
+      void forwardStep();
       void rewindStart();
-      void rewind();
+      void rewindStep();
       void setPunchin(bool f);
       void setPunchout(bool f);
       void setClick(bool val);
       void setQuantize(bool val);
       void panic();
       void seqSignal(int fd);
+
+      void resetFastMove() { _fastMove = NORMAL_MOVEMENT; }
+
       // Creates a track but does not add it to the track list, the caller must do that.
       // The track name is not set and must be set by the caller.
       // If setDefaults is true, adds default in/out routes/channels to the track.

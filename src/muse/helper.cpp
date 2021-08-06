@@ -869,7 +869,10 @@ void record_controller_change_and_maybe_send(unsigned tick, int ctrl_num, int va
 	}
 }
 
+
 } // namespace MusECore
+
+
 
 namespace MusEGui {
 
@@ -1300,121 +1303,124 @@ void midiPortsPopupMenu(MusECore::Track* t, int x, int y, bool allClassPorts,
 //   populateAddSynth
 //---------------------------------------------------------
 
-QMenu* populateAddSynth(QWidget* parent)
-{
-  QMenu* synp = new PopupMenu(parent);
+//QMenu* populateAddSynth(QWidget* parent)
+//{
+//  QMenu* synp = new PopupMenu(parent);
   
-  typedef std::multimap<std::string, int > asmap;
-  typedef std::multimap<std::string, int >::iterator imap;
+//  typedef std::multimap<std::string, int > asmap;
+//  typedef std::multimap<std::string, int >::iterator imap;
   
-  const int ntypes = MusECore::Synth::SYNTH_TYPE_END;
-  asmap smaps[ntypes];
-  PopupMenu* mmaps[ntypes];
-  for(int itype = 0; itype < ntypes; ++itype)
-    mmaps[itype] = nullptr;
+//  const int ntypes = MusECore::Synth::SYNTH_TYPE_END;
+//  asmap smaps[ntypes];
+//  PopupMenu* mmaps[ntypes];
+//  for(int itype = 0; itype < ntypes; ++itype)
+//    mmaps[itype] = nullptr;
   
-  MusECore::Synth* synth;
-  MusECore::Synth::Type type;
+//  MusECore::Synth* synth;
+//  MusECore::Synth::Type type;
 
-//  QVector<QAction*> favActions;
-  QMap<QString, QAction*> favActions;
+//  QMap<QString, QAction*> favActions;
   
-  int ii = 0;
-  for(std::vector<MusECore::Synth*>::iterator i = MusEGlobal::synthis.begin(); i != MusEGlobal::synthis.end(); ++i)
-  {
-    synth = *i;
-    type = synth->synthType();
+//  int ii = 0;
+//  for(std::vector<MusECore::Synth*>::iterator i = MusEGlobal::synthis.begin(); i != MusEGlobal::synthis.end(); ++i)
+//  {
+//    synth = *i;
+//    type = synth->synthType();
 
-// dssi-vst is dead, really no point in keeping this case around
-//#ifdef DSSI_SUPPORT
-//    if (type == MusECore::Synth::DSSI_SYNTH && ((MusECore::DssiSynth*)synth)->isDssiVst() ) // Place Wine VSTs in a separate sub menu
-//      type = MusECore::Synth::VST_SYNTH;
-//#endif
+//// dssi-vst is dead, really no point in keeping this case around
+////#ifdef DSSI_SUPPORT
+////    if (type == MusECore::Synth::DSSI_SYNTH && ((MusECore::DssiSynth*)synth)->isDssiVst() ) // Place Wine VSTs in a separate sub menu
+////      type = MusECore::Synth::VST_SYNTH;
+////#endif
 
-    if(type >= ntypes)
-      continue; 
-    smaps[type].insert( std::pair<std::string, int> (synth->description().toLower().toStdString(), ii) );
+//    if(type >= ntypes)
+//      continue;
+//    smaps[type].insert( std::pair<std::string, int> (synth->description().toLower().toStdString(), ii) );
   
-    ++ii;
-  }
+//    ++ii;
+//  }
   
-  int sz = MusEGlobal::synthis.size();
-  for(int itype = 0; itype < ntypes; ++itype)
-  {  
-    for(imap i = smaps[itype].begin(); i != smaps[itype].end(); ++i) 
-    {
-      int idx = i->second;
-      if(idx > sz)           // Sanity check
-        continue;
-      synth = MusEGlobal::synthis[idx];
-      if(synth)
-      {
-        // No sub-menu yet? Create it now.
-        if(!mmaps[itype])
-        {  
-          mmaps[itype] = new PopupMenu(parent);
-          mmaps[itype]->setToolTipsVisible(true);
-          mmaps[itype]->setIcon(*synthSVGIcon);
-          mmaps[itype]->setTitle(MusECore::synthType2String((MusECore::Synth::Type)itype));
-          synp->addMenu(mmaps[itype]);
-        }  
-        //QAction* act = mmaps[itype]->addAction(synth->description() + " <" + synth->name() + ">");
-        QAction* act = mmaps[itype]->addAction(synth->description());
-        act->setData( MENU_ADD_SYNTH_ID_BASE * (itype + 1) + idx );
-        if(!synth->uri().isEmpty())
-          act->setToolTip(synth->uri());
+//  int sz = MusEGlobal::synthis.size();
+//  for(int itype = 0; itype < ntypes; ++itype)
+//  {
+//    for(imap i = smaps[itype].begin(); i != smaps[itype].end(); ++i)
+//    {
+//      int idx = i->second;
+//      if(idx > sz)           // Sanity check
+//        continue;
+//      synth = MusEGlobal::synthis[idx];
+//      if(synth)
+//      {
+//        // No sub-menu yet? Create it now.
+//        if(!mmaps[itype])
+//        {
+//          mmaps[itype] = new PopupMenu(parent);
+//          mmaps[itype]->setToolTipsVisible(true);
+//          mmaps[itype]->setIcon(*synthSVGIcon);
+//          mmaps[itype]->setTitle(MusECore::synthType2String((MusECore::Synth::Type)itype));
+//          synp->addMenu(mmaps[itype]);
+//        }
+//        QAction* act = mmaps[itype]->addAction(synth->description());
+//        act->setData( MENU_ADD_SYNTH_ID_BASE * (itype + 1) + idx );
+//        if(!synth->uri().isEmpty())
+//          act->setToolTip(synth->uri());
 
-        if (SynthDialog::isFav(synth))
-            favActions.insert(synth->description().toLower(), act);
-      }  
-    }
-  }
+//        if (SynthDialog::isFav(synth))
+//            favActions.insert(synth->description().toLower(), act);
+//      }
+//    }
+//  }
 
-  if (!favActions.isEmpty()) {
-      QAction *fa = synp->actions().at(0);
-      synp->insertAction(fa, new MusEGui::MenuTitleItem("Favorites", synp));
-      for (const auto& it : favActions)
-          synp->insertAction(fa, it);
+//  if (!favActions.isEmpty()) {
+//      QAction *fa = synp->actions().at(0);
+//      synp->insertAction(fa, new MusEGui::MenuTitleItem("Favorites", synp));
+//      for (const auto& it : favActions)
+//          synp->insertAction(fa, it);
 
-      synp->insertAction(fa, new MusEGui::MenuTitleItem("All", synp));
-  }
+//      synp->insertAction(fa, new MusEGui::MenuTitleItem("All", synp));
+//  }
 
-  return synp;
-}
+//  return synp;
+//}
 
 //---------------------------------------------------------
 //   populateAddTrack
 //    this is also used in "mixer"
 //---------------------------------------------------------
 
-QActionGroup* populateAddTrack(QMenu* addTrack, bool populateAll, bool insert, bool addHeader)
+QActionGroup* populateAddTrack(QMenu* addTrack, bool populateAll, bool insert, bool addkey)
       {
       QActionGroup* grp = new QActionGroup(addTrack);
 
       if (MusEGlobal::config.addHiddenTracks)
-        populateAll=true;
+          populateAll=true;
 
-      if (addHeader)
-          addTrack->addAction(new MusEGui::MenuTitleItem(qApp->translate("@default", QT_TRANSLATE_NOOP("@default", "Add Track")), addTrack));
+      addTrack->addAction(new MusEGui::MenuTitleItem(qApp->translate("@default", QT_TRANSLATE_NOOP("@default", insert ? "Insert Track" : "Add Track")), addTrack));
 
       if (populateAll || MusECore::MidiTrack::visible()) {
         QAction* midi = addTrack->addAction(*pianorollSVGIcon,
                                           qApp->translate("@default", QT_TRANSLATE_NOOP("@default", "Midi Track")));
         midi->setData(MusECore::Track::MIDI);
-        midi->setShortcut(shortcuts[insert ? SHRT_INSERT_MIDI_TRACK : SHRT_ADD_MIDI_TRACK].key);
+//        midi->setShortcut(shortcuts[insert ? SHRT_INSERT_MIDI_TRACK : SHRT_ADD_MIDI_TRACK].key);
+        if (addkey)
+            midi->setText(midi->text() + "\t" + QKeySequence(shortcuts[insert ? SHRT_INSERT_MIDI_TRACK : SHRT_ADD_MIDI_TRACK].key).toString());
         grp->addAction(midi);
 
         QAction* drum = addTrack->addAction(*drumeditSVGIcon,
                                           qApp->translate("@default", QT_TRANSLATE_NOOP("@default", "Drum Track")));
         drum->setData(MusECore::Track::DRUM);
-        drum->setShortcut(shortcuts[insert ? SHRT_INSERT_DRUM_TRACK : SHRT_ADD_DRUM_TRACK].key);
+//        drum->setShortcut(shortcuts[insert ? SHRT_INSERT_DRUM_TRACK : SHRT_ADD_DRUM_TRACK].key);
+        if (addkey)
+            drum->setText(drum->text() + "\t" + QKeySequence(shortcuts[insert ? SHRT_INSERT_DRUM_TRACK : SHRT_ADD_DRUM_TRACK].key).toString());
         grp->addAction(drum);
       }
       if (populateAll || MusECore::WaveTrack::visible()) {
         QAction* wave = addTrack->addAction(*waveeditorSVGIcon,
                                           qApp->translate("@default", QT_TRANSLATE_NOOP("@default", "Wave Track")));
        wave->setData(MusECore::Track::WAVE);
-       wave->setShortcut(shortcuts[insert ? SHRT_INSERT_WAVE_TRACK : SHRT_ADD_WAVE_TRACK].key);
+//       wave->setShortcut(shortcuts[insert ? SHRT_INSERT_WAVE_TRACK : SHRT_ADD_WAVE_TRACK].key);
+       if (addkey)
+           wave->setText(wave->text() + "\t" + QKeySequence(shortcuts[insert ? SHRT_INSERT_WAVE_TRACK : SHRT_ADD_WAVE_TRACK].key).toString());
        grp->addAction(wave);
       }
 
@@ -1422,7 +1428,9 @@ QActionGroup* populateAddTrack(QMenu* addTrack, bool populateAll, bool insert, b
         QAction* aoutput = addTrack->addAction(*trackOutputSVGIcon,
                                                qApp->translate("@default", QT_TRANSLATE_NOOP("@default", "Audio Output")));
         aoutput->setData(MusECore::Track::AUDIO_OUTPUT);
-        aoutput->setShortcut(shortcuts[insert ? SHRT_INSERT_AUDIO_OUTPUT : SHRT_ADD_AUDIO_OUTPUT].key);
+//        aoutput->setShortcut(shortcuts[insert ? SHRT_INSERT_AUDIO_OUTPUT : SHRT_ADD_AUDIO_OUTPUT].key);
+        if (addkey)
+            aoutput->setText(aoutput->text() + "\t" + QKeySequence(shortcuts[insert ? SHRT_INSERT_AUDIO_OUTPUT : SHRT_ADD_AUDIO_OUTPUT].key).toString());
         grp->addAction(aoutput);
       }
 
@@ -1430,7 +1438,9 @@ QActionGroup* populateAddTrack(QMenu* addTrack, bool populateAll, bool insert, b
         QAction* agroup = addTrack->addAction(*trackGroupVGIcon,
                                               qApp->translate("@default", QT_TRANSLATE_NOOP("@default", "Audio Group")));
         agroup->setData(MusECore::Track::AUDIO_GROUP);
-        agroup->setShortcut(shortcuts[insert ? SHRT_INSERT_AUDIO_GROUP : SHRT_ADD_AUDIO_GROUP].key);
+//        agroup->setShortcut(shortcuts[insert ? SHRT_INSERT_AUDIO_GROUP : SHRT_ADD_AUDIO_GROUP].key);
+        if (addkey)
+            agroup->setText(agroup->text() + "\t" + QKeySequence(shortcuts[insert ? SHRT_INSERT_AUDIO_GROUP : SHRT_ADD_AUDIO_GROUP].key).toString());
         grp->addAction(agroup);
       }
 
@@ -1438,7 +1448,9 @@ QActionGroup* populateAddTrack(QMenu* addTrack, bool populateAll, bool insert, b
         QAction* ainput = addTrack->addAction(*trackInputSVGIcon,
                                               qApp->translate("@default", QT_TRANSLATE_NOOP("@default", "Audio Input")));
         ainput->setData(MusECore::Track::AUDIO_INPUT);
-        ainput->setShortcut(shortcuts[insert ? SHRT_INSERT_AUDIO_INPUT : SHRT_ADD_AUDIO_INPUT].key);
+//        ainput->setShortcut(shortcuts[insert ? SHRT_INSERT_AUDIO_INPUT : SHRT_ADD_AUDIO_INPUT].key);
+        if (addkey)
+            ainput->setText(ainput->text() + "\t" + QKeySequence(shortcuts[insert ? SHRT_INSERT_AUDIO_INPUT : SHRT_ADD_AUDIO_INPUT].key).toString());
         grp->addAction(ainput);
       }
 
@@ -1446,24 +1458,56 @@ QActionGroup* populateAddTrack(QMenu* addTrack, bool populateAll, bool insert, b
         QAction* aaux = addTrack->addAction(*trackAuxSVGIcon,
                                             qApp->translate("@default", QT_TRANSLATE_NOOP("@default", "Aux Send")));
         aaux->setData(MusECore::Track::AUDIO_AUX);
-        aaux->setShortcut(shortcuts[insert ? SHRT_INSERT_AUDIO_AUX : SHRT_ADD_AUDIO_AUX].key);
+//        aaux->setShortcut(shortcuts[insert ? SHRT_INSERT_AUDIO_AUX : SHRT_ADD_AUDIO_AUX].key);
+        if (addkey)
+            aaux->setText(aaux->text() + "\t" + QKeySequence(shortcuts[insert ? SHRT_INSERT_AUDIO_AUX : SHRT_ADD_AUDIO_AUX].key).toString());
         grp->addAction(aaux);
       }
 
       if (populateAll || MusECore::SynthI::visible()) {
           addTrack->addSeparator();
           QAction *asynthd = addTrack->addAction(*synthSVGIcon,
-                                                   qApp->translate("@default", QT_TRANSLATE_NOOP("@default", "Synth (Show Dialog)...")));
+                                                   qApp->translate("@default", QT_TRANSLATE_NOOP("@default", "Synths...")));
           asynthd->setData(MusECore::Track::AUDIO_SOFTSYNTH);
-          asynthd->setShortcut(shortcuts[insert ? SHRT_INSERT_SYNTH_TRACK : SHRT_ADD_SYNTH_TRACK].key);
+//          asynthd->setShortcut(shortcuts[insert ? SHRT_INSERT_SYNTH_TRACK : SHRT_ADD_SYNTH_TRACK].key);
+          if (addkey)
+              asynthd->setText(asynthd->text() + "\t" + QKeySequence(shortcuts[insert ? SHRT_INSERT_SYNTH_TRACK : SHRT_ADD_SYNTH_TRACK].key).toString());
           grp->addAction(asynthd);
 
-          // Create a sub-menu and fill it with found synth types. Make addTrack the owner.
-          QMenu* synp = populateAddSynth(addTrack);
-          synp->setTitle(qApp->translate("@default", QT_TRANSLATE_NOOP("@default", "Synth")));
+          auto favsIdx = SynthDialog::getFavsIdx();
+          if (!favsIdx.empty()) {
+              QMenu* synfav = new QMenu(addTrack);
+              synfav->setTitle(qApp->translate("@default", QT_TRANSLATE_NOOP("@default", "Favorites")));
 
-          // Add the sub-menu to the given menu.
-          addTrack->addMenu(synp);
+              for (const auto it : favsIdx) {
+                  synfav->addAction(MusEGlobal::synthis[it]->description())->setData(MENU_ADD_SYNTH_ID_BASE + it);
+              }
+              addTrack->addMenu(synfav);
+          }
+
+          auto recentsIdx = SynthDialog::getRecentsIdx();
+          if (!recentsIdx.empty()) {
+              addTrack->addAction(new MusEGui::MenuTitleItem(qApp->translate("@default", QT_TRANSLATE_NOOP("@default", "Recently Used")), addTrack));
+//              QMenu* synrec = new QMenu(addTrack);
+//              synrec->setTitle(qApp->translate("@default", QT_TRANSLATE_NOOP("@default", "Recently Used")));
+
+              int ik = 0;
+              for (const auto it : recentsIdx) {
+                  QAction *a = new QAction("&" + QString::number(++ik) + " " + MusEGlobal::synthis[it]->description(), addTrack);
+                  a->setData(MENU_ADD_SYNTH_ID_BASE + it);
+                  addTrack->addAction(a);
+//                  addTrack->addAction(MusEGlobal::synthis[it]->description())->setData(MENU_ADD_SYNTH_ID_BASE + it);
+                  if (ik >= SynthDialog::RECENTS_SIZE)
+                      break;
+              }
+          }
+
+//          // Create a sub-menu and fill it with found synth types. Make addTrack the owner.
+//          QMenu* synp = populateAddSynth(addTrack);
+//          synp->setTitle(qApp->translate("@default", QT_TRANSLATE_NOOP("@default", "Synth")));
+
+//          // Add the sub-menu to the given menu.
+//          addTrack->addMenu(synp);
       }
 
       return grp;
@@ -2065,13 +2109,16 @@ void loadTheme(const QString& theme)
     QString stylePathUser = MusEGlobal::configPath + "/themes/" + theme + ".qss";
     QString stylePathDef = MusEGlobal::museGlobalShare + "/themes/" + theme + ".qss";
 
-    QFile fdef(stylePathDef);
-    if (!fdef.open(QIODevice::ReadOnly)) {
-        printf("loading style sheet <%s> failed\n", qPrintable(theme));
-        return;
+    QByteArray sdef;
+    if (QFile::exists(stylePathDef)) {
+        QFile fdef(stylePathDef);
+        if (fdef.open(QIODevice::ReadOnly)) {
+            sdef = fdef.readAll();
+        } else {
+            printf("loading style sheet <%s> failed\n", qPrintable(theme));
+        }
+        fdef.close();
     }
-    QByteArray sdef = fdef.readAll();
-    fdef.close();
 
     QByteArray suser;
     if (QFile::exists(stylePathUser)) {
@@ -2084,9 +2131,17 @@ void loadTheme(const QString& theme)
         fuser.close();
     }
 
+    if (sdef.isEmpty() && suser.isEmpty()) {
+        printf("loading style sheet <%s> failed\n", qPrintable(theme));
+        return;
+    }
+
+
     QString sheet;
     if (suser.isEmpty()) {
         sheet = QString::fromUtf8(sdef.data());
+    } else if (sdef.isEmpty()) {
+        sheet = QString::fromUtf8(suser.data());
     } else {
         if (MusEGlobal::config.cascadeStylesheets)
             sheet = QString::fromUtf8(sdef.data()) + '\n' + QString::fromUtf8(suser.data());
@@ -2123,6 +2178,19 @@ void loadThemeColors(const QString& theme)
     }
 
     MusECore::readConfiguration(qPrintable(configColorPath));
+}
+
+int countSelectedParts()
+{
+    int cnt = 0;
+
+    for(const auto& it : qAsConst(*MusEGlobal::song->tracks())) {
+        for(const auto& ip : *it->cparts())
+            if(ip.second->selected())
+                cnt++;
+    }
+
+    return cnt;
 }
 
 

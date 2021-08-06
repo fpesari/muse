@@ -122,6 +122,8 @@ enum {
     SHRT_PASTE_CLONE_TO_TRACK, //CTRL+SHIFT+Key_B
     SHRT_PASTE_DIALOG, //Ctrl+G
     SHRT_DELETE,//Delete
+    SHRT_RETURN,
+    SHRT_ESCAPE,
 
 
     //Main:
@@ -206,6 +208,8 @@ enum {
     SHRT_MIXER_SNAPSHOT, //Default: undefined
     SHRT_MIXER_AUTOMATION_CLEAR, //Default: undefined
 
+    SHRT_ADD_TRACK_MENU, //Default: Ins
+
     SHRT_ADD_MIDI_TRACK, //Default: Ctrl+J
     SHRT_ADD_DRUM_TRACK, //Default: Ctrl+k
 //    SHRT_ADD_NEW_STYLE_DRUM_TRACK, //Default: undefined
@@ -239,13 +243,15 @@ enum {
     SHRT_SEL_BELOW_ADD, //move down and add to selection
 
     SHRT_INSERTMEAS, //Ctrl+Shift+M - insert measures
+
+    //Arranger tracks
     SHRT_DUPLICATE_TRACK, // Ctrl+Shift+D
+    SHRT_DELETE_TRACK, // Ctrl+DEL
     SHRT_MOVEUP_TRACK,
     SHRT_MOVEDOWN_TRACK,
     SHRT_MOVETOP_TRACK,
     SHRT_MOVEBOTTOM_TRACK,
 
-    //Arranger tracks
     SHRT_SEL_TRACK_BELOW,
     SHRT_SEL_TRACK_ABOVE,
     SHRT_EDIT_TRACK_NAME,
@@ -309,7 +315,8 @@ enum {
       */
 
     SHRT_LOCATORS_TO_SELECTION, //Alt+P, currently in arranger & pianoroll
-    SHRT_INSERT_AT_LOCATION, //Shift+CrsrRight
+    SHRT_LOC_PUSH_EVENTS,
+    SHRT_LOC_PULL_EVENTS,
     SHRT_INCREASE_LEN,
     SHRT_DECREASE_LEN,
 

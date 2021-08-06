@@ -325,6 +325,7 @@ GlobalConfigValues config = {
       false,                        // markerVisible;
 //      true,                         // arrangerVisible;
       true,                         // showSplashScreen
+      false,                        // enableLash
       1,                            // canvasShowPartType 1 - names, 2 events
       5,                            // canvasShowPartEvent
       true,                         // canvasShowGrid;
@@ -337,7 +338,6 @@ GlobalConfigValues config = {
 //      QString("Fusion"),            // style
       QString("Dark Flat"),         // theme
       QString("sweep"),             // externalWavEditor
-      false,                        // useOldStyleStopShortCut
       true,                         // useRewindOnStop
       false,                        // moveArmedCheckBox
       true,                         // useDenormalBias
@@ -370,7 +370,7 @@ GlobalConfigValues config = {
       true,                         // warnOnFileVersions Warn if file version different than current
       MusEGlobal::CONF_LV2_UI_USE_FIRST, //lv2UiBehavior
       4,                            // audioEffectsRackVisibleItems
-      true,                         // preferKnobsVsSliders Whether to prefer the use of knobs over sliders, esp in mixer.
+      false,                        // preferKnobsVsSliders Whether to prefer the use of knobs over sliders, esp in mixer.
       true,                         // showControlValues Whether to show the value along with label in small controls, esp in mixer.
       true,                         // monitorOnRecord  Whether to automatically monitor on record arm.
       true,                         // lineEditStyleHack Force line edit widgets to draw a frame at small sizes. Some styles refuse to draw the frame.
@@ -394,7 +394,9 @@ GlobalConfigValues config = {
       true,                         // noPluginScaling
       true,                         // keepTransportWindowOnTop
       true,                         // showStatusBar
-      6                             // recentListLength - number of files in recent menu
-    };
+      6,                             // recentListLength - number of files in recent menu
+      false,
+      false
+};
 
 } // namespace MusEGlobal

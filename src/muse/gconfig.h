@@ -349,6 +349,7 @@ struct GlobalConfigValues {
 //      bool arrangerVisible;
 
       bool showSplashScreen;
+      bool enableLash;
       int canvasShowPartType;       // 1 - names, 2 events
       int canvasShowPartEvent;      //
       bool canvasShowGrid;
@@ -362,7 +363,6 @@ struct GlobalConfigValues {
       QString theme;
 
       QString externalWavEditor;
-      bool useOldStyleStopShortCut;
       bool useRewindOnStop;
       bool moveArmedCheckBox;
       bool useDenormalBias;
@@ -431,6 +431,9 @@ struct GlobalConfigValues {
       bool keepTransportWindowOnTop;
       bool showStatusBar;
       int recentListLength;
+
+      bool mixerDockedA;
+      bool mixerDockedB;
       };
 
 
